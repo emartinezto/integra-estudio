@@ -35,6 +35,42 @@
 </div>
 {% endmacro %}
 
+{% macro areaListCard(icon, title, rows, tag, note) %}
+<div class="area-list-card">
+  <div class="area-list-card__head">
+    <h3>{{ title }}</h3>
+    <span class="area-list-card__icon" aria-hidden="true">{{ icon }}</span>
+  </div>
+  <div class="area-list-card__rows">
+    {% for row in rows %}
+      {% if row.group %}
+        <p class="area-list-card__group-title">{{ row.group }}</p>
+        <div class="area-list-card__group-rows">
+          {% for sub in row.items %}
+          <a class="area-list-card__group-row" href="{{ sub.url }}">
+            <span>{{ sub.label }}</span>
+            <span class="area-list-card__row-arrow" aria-hidden="true">→</span>
+          </a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <a class="area-list-card__row" href="{{ row.url }}">
+          <span>{{ row.label }}</span>
+          <span class="area-list-card__row-arrow" aria-hidden="true">→</span>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% if note %}
+  <div class="area-list-card__note">
+    <span>{{ note }}</span>
+    <span class="area-list-card__note-icon" aria-hidden="true">{{ iconClock() }}</span>
+  </div>
+  {% endif %}
+  {% if tag %}<span class="area-list-card__tag">{{ tag }}</span>{% endif %}
+</div>
+{% endmacro %}
+
 {% macro button(text, url, style="primary") %}
 <a class="btn btn--{{ style }}" href="{{ url }}">{{ text }}</a>
 {% endmacro %}

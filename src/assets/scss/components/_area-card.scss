@@ -1,6 +1,23 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+.area-cards-mobile {
+  @include desktop {
+    display: none;
+  }
+}
+
+.area-cards-desktop {
+  display: none;
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+}
+
 .area-card {
   display: flex;
   flex-direction: column;

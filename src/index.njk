@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: Inicio
 description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bienestar, en cada etapa de tu vida."
 ---
-{% from "macros/ui.njk" import button, sectionHead, pillar, card, quoteCard, ctaBanner, mediaPlaceholder, areaCard, iconCuerpo, iconMente, iconMovimiento %}
+{% from "macros/ui.njk" import button, sectionHead, pillar, card, quoteCard, ctaBanner, mediaPlaceholder, areaCard, areaListCard, iconCuerpo, iconMente, iconMovimiento %}
 
 <section class="hero">
   <div class="hero__grid">
@@ -121,10 +121,34 @@ description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bi
       { title: "Pilates", body: "Clases individuales y en grupos muy reducidos en Reformer, Cadillac y suelo con accesorios terapéuticos." }
     ] %}
 
-    <div class="grid">
+    <div class="grid area-cards-mobile">
       {{ areaCard(iconCuerpo(), "Cuerpo", cuerpoItems, "Sesiones individuales") }}
       {{ areaCard(iconMente(), "Mente", menteItems, "Personal y formativo") }}
       {{ areaCard(iconMovimiento(), "Movimiento", movimientoItems, "Grupos reducidos y 1:1", "Próximamente nuevas disciplinas conscientes") }}
+    </div>
+
+    {% set cuerpoRows = [
+      { label: "Prevención", url: "/cuerpo/" },
+      { label: "Fisioterapia", url: "/cuerpo/fisioterapia/" },
+      { label: "Recuperación", url: "/cuerpo/" }
+    ] %}
+    {% set menteRows = [
+      { label: "Orientación", url: "/mente/" },
+      { label: "Apoyo", url: "/mente/" },
+      { group: "Formación específica", items: [
+        { label: "Técnico de Educación Infantil", url: "/formacion/" },
+        { label: "Magisterio", url: "/formacion/" },
+        { label: "Auxiliar Administrativo", url: "/formacion/" }
+      ] }
+    ] %}
+    {% set movimientoRows = [
+      { label: "Pilates (Suelo)", url: "/movimiento/" }
+    ] %}
+
+    <div class="area-cards-desktop">
+      {{ areaListCard(iconCuerpo(), "Cuerpo", cuerpoRows, "Sesiones individuales") }}
+      {{ areaListCard(iconMente(), "Mente", menteRows, "Personal y formativo") }}
+      {{ areaListCard(iconMovimiento(), "Movimiento", movimientoRows, "Grupos reducidos y 1:1", "Próximamente nuevas disciplinas conscientes") }}
     </div>
   </div>
 </section>
