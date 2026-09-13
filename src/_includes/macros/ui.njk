@@ -71,6 +71,14 @@
 </div>
 {% endmacro %}
 
+{% macro personaCard(number, headline, body) %}
+<div class="persona-card">
+  <p class="persona-card__number">{{ number }}</p>
+  <p class="persona-card__headline">{{ headline }}</p>
+  <p class="persona-card__body">{{ body }}</p>
+</div>
+{% endmacro %}
+
 {% macro button(text, url, style="primary") %}
 <a class="btn btn--{{ style }}" href="{{ url }}">{{ text }}</a>
 {% endmacro %}

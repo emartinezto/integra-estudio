@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as *;
+
+.persona-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  padding: 32px;
+  background: $c-bg-alt;
+  border-radius: $radius-lg;
+
+  &__number {
+    font-family: $font-serif;
+    font-size: 20px;
+    color: $c-accent;
+  }
+
+  &__headline {
+    font-family: $font-sans;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24.8px;
+    letter-spacing: 0;
+    color: $c-brand;
+  }
+
+  &__body {
+    font-family: $font-sans;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0;
+    color: $c-text;
+  }
+}

@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: Inicio
 description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bienestar, en cada etapa de tu vida."
 ---
-{% from "macros/ui.njk" import button, sectionHead, pillar, card, quoteCard, ctaBanner, mediaPlaceholder, areaCard, areaListCard, iconCuerpo, iconMente, iconMovimiento %}
+{% from "macros/ui.njk" import button, sectionHead, pillar, card, quoteCard, ctaBanner, mediaPlaceholder, areaCard, areaListCard, personaCard, iconCuerpo, iconMente, iconMovimiento %}
 
 <section class="hero">
   <div class="hero__grid">
@@ -155,11 +155,11 @@ description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bi
 
 <section class="section">
   <div class="container">
-    {{ sectionHead("Enfoque personalizado", "Para quién es Integra Studio", "", "center") }}
+    {{ sectionHead("Comunidad Integra", "Para quién es este espacio", "Diseñado para personas que valoran el rigor profesional con calidez humana.", "center") }}
     <div class="grid">
-      {{ card("", "Quien busca recuperarse", "Personas en proceso de rehabilitación física que necesitan un acompañamiento cercano y técnico.", "", "") }}
-      {{ card("", "Quien busca claridad mental", "Quienes atraviesan procesos de cambio, estudio u orientación y buscan un espacio de apoyo.", "", "") }}
-      {{ card("", "Quien busca moverse mejor", "Personas que quieren ganar fuerza, movilidad y bienestar a través del movimiento consciente.", "", "") }}
+      {{ personaCard("01", "Para quienes quieren cuidar su cuerpo y sentirse bien en él.", "Para prevenir, recuperarse o aliviar esas molestias que no te dejan estar como te gustaría.") }}
+      {{ personaCard("02", "Para quienes necesitan orientación, apoyo o acompañamiento en algún momento de su camino.", "Un espacio para parar, ordenar ideas y encontrar el apoyo que necesitas en cada momento.") }}
+      {{ personaCard("03", "Para quienes quieren volver a moverse, ganar fuerza y conectar con su cuerpo.", "A través del movimiento, te ayudamos a sentirte más ágil, fuerte y cómodo en tu día a día.") }}
     </div>
   </div>
 </section>

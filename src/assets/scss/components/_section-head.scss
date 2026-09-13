@@ -10,11 +10,7 @@
     color: $c-text;
   }
 
-  &--center {
-    margin-inline: auto;
-    text-align: center;
-  }
-
+  &--center,
   &--center-desktop {
     text-align: left;
 
