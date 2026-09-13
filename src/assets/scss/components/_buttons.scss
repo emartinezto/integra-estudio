@@ -38,12 +38,10 @@
     background: $c-bg-soft;
     color: $c-brand;
     box-shadow: $shadow-sm;
-  }
 
-  &--ghost-light {
-    background: transparent;
-    color: $c-white;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    &:hover {
+      background: color.adjust($c-bg-soft, $lightness: -6%);
+    }
   }
 
   &--sm {

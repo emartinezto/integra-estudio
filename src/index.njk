@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: Inicio
 description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bienestar, en cada etapa de tu vida."
 ---
-{% from "macros/ui.njk" import button, sectionHead, pillar, card, quoteCard, ctaBanner, mediaPlaceholder, areaCard, areaListCard, personaCard, iconCuerpo, iconMente, iconMovimiento %}
+{% from "macros/ui.njk" import button, sectionHead, pillar, card, quoteCard, ctaBanner, mediaPlaceholder, areaCard, areaListCard, personaCard, personaCardDesktop, iconCuerpo, iconMente, iconMovimiento, iconCalendar %}
 
 <section class="hero">
   <div class="hero__grid">
@@ -156,10 +156,17 @@ description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bi
 <section class="section">
   <div class="container">
     {{ sectionHead("Comunidad Integra", "Para quién es este espacio", "Diseñado para personas que valoran el rigor profesional con calidez humana.", "center") }}
-    <div class="grid">
+
+    <div class="grid persona-cards-mobile">
       {{ personaCard("01", "Para quienes quieren cuidar su cuerpo y sentirse bien en él.", "Para prevenir, recuperarse o aliviar esas molestias que no te dejan estar como te gustaría.") }}
       {{ personaCard("02", "Para quienes necesitan orientación, apoyo o acompañamiento en algún momento de su camino.", "Un espacio para parar, ordenar ideas y encontrar el apoyo que necesitas en cada momento.") }}
       {{ personaCard("03", "Para quienes quieren volver a moverse, ganar fuerza y conectar con su cuerpo.", "A través del movimiento, te ayudamos a sentirte más ágil, fuerte y cómodo en tu día a día.") }}
+    </div>
+
+    <div class="persona-cards-desktop">
+      {{ personaCardDesktop(iconCuerpo(), "Ámbito Cuerpo", "Para quienes quieren cuidar su cuerpo y sentirse bien en él.", "Para prevenir, recuperarse o aliviar esas molestias que no te dejan estar como te gustaría.") }}
+      {{ personaCardDesktop(iconMente(), "Ámbito Mente", "Para quienes necesitan orientación, apoyo o acompañamiento en algún momento de su camino.", "Un espacio para parar, ordenar ideas y encontrar el apoyo que necesitas en cada momento.") }}
+      {{ personaCardDesktop(iconMovimiento(), "Ámbito Movimiento", "Para quienes quieren volver a moverse, ganar fuerza y conectar con su cuerpo.", "A través del movimiento, te ayudamos a sentirte más ágil, fuerte y cómodo en tu día a día.") }}
     </div>
   </div>
 </section>
@@ -175,4 +182,9 @@ description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bi
   </div>
 </section>
 
-{{ ctaBanner("", "Empieza tu proceso hoy", "Da el primer paso hacia un bienestar integral, con un equipo que te acompaña en cada etapa.", "Reservar una sesión", "/contacto/", "Conocer el método", "/metodo/") }}
+<div class="cta-banner-mobile">
+  {{ ctaBanner("Comienza tu proceso", "Empezamos escuchándote", "Queremos conocerte, entender cómo te encuentras y saber qué necesitas en este momento.", "Reserva tu primera sesión", "/contacto/", "", "", "Atención con cita previa · Primera valoración sin compromiso", iconCalendar(), false) }}
+</div>
+<div class="cta-banner-desktop">
+  {{ ctaBanner("Intégrate en el bienestar", "Empezamos escuchándote", "Queremos conocerte, entender cómo te encuentras y saber qué necesitas en este momento. A partir de ahí, vemos contigo la mejor manera de acompañarte, respetando tu ritmo y tus objetivos.", "Reserva tu primera sesión", "/contacto/", "Contactar con el equipo", "/contacto/", "Calle Alcorcón 12, Parla · Atención con cita previa") }}
+</div>

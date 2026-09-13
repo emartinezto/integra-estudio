@@ -1,4 +1,11 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.persona-cards-mobile {
+  @include desktop {
+    display: none;
+  }
+}
 
 .persona-card {
   display: flex;
