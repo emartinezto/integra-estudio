@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: Inicio
 description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bienestar, en cada etapa de tu vida."
 ---
-{% from "macros/ui.njk" import button, sectionHead, pillar, card, quoteCard, ctaBanner, mediaPlaceholder %}
+{% from "macros/ui.njk" import button, sectionHead, pillar, card, quoteCard, ctaBanner, mediaPlaceholder, areaCard, iconCuerpo, iconMente, iconMovimiento %}
 
 <section class="hero">
   <div class="hero__grid">
@@ -105,11 +105,26 @@ description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bi
 
 <section class="section section--alt" id="areas-de-trabajo">
   <div class="container">
-    {{ sectionHead("Estructura terapéutica", "Nuestras áreas de trabajo", "Programas y servicios organizados con rigor técnico y calidez humana.", "center") }}
+    {{ sectionHead("Metodología aplicada", "Áreas de Trabajo", "Especialidades guiadas por profesionales sanitarios y docentes certificados.", "center") }}
+
+    {% set cuerpoItems = [
+      { title: "Prevención", body: "Higiene postural y cribado preventivo en el entorno laboral y deportivo." },
+      { title: "Fisioterapia", body: "Terapia manual ortopédica, punción seca y modulación miofascial." },
+      { title: "Recuperación", body: "Readaptación funcional post-quirúrgica y vuelta al movimiento activo." }
+    ] %}
+    {% set menteItems = [
+      { title: "Orientación", body: "Clarificación vocacional, resolución de bloqueos y toma de decisiones." },
+      { title: "Apoyo", body: "Escucha guiada, gestión de la ansiedad vital y acompañamiento emocional." },
+      { title: "Formación", body: "Programas específicos para: Técnico de Educación Infantil, Magisterio y Auxiliar Administrativo." }
+    ] %}
+    {% set movimientoItems = [
+      { title: "Pilates", body: "Clases individuales y en grupos muy reducidos en Reformer, Cadillac y suelo con accesorios terapéuticos." }
+    ] %}
+
     <div class="grid">
-      {{ card("Cuerpo", "Fisioterapia · Prevención · Recuperación", "Tratamientos individualizados para cada etapa del proceso físico.", "Ver Cuerpo", "/cuerpo/") }}
-      {{ card("Mente", "Orientación · Apoyo · Formación", "Acompañamiento psicológico y preparación de oposiciones.", "Ver Mente", "/mente/") }}
-      {{ card("Movimiento", "Pilates · Yoga · Funcional", "Clases y programas para moverte con conciencia y propósito.", "Ver Movimiento", "/movimiento/") }}
+      {{ areaCard(iconCuerpo(), "Cuerpo", cuerpoItems, "Sesiones individuales") }}
+      {{ areaCard(iconMente(), "Mente", menteItems, "Personal y formativo") }}
+      {{ areaCard(iconMovimiento(), "Movimiento", movimientoItems, "Grupos reducidos y 1:1", "Próximamente nuevas disciplinas conscientes") }}
     </div>
   </div>
 </section>

@@ -1,0 +1,122 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.area-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: $c-bg-soft;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  height: 100%;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    h3 {
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex: none;
+    border-radius: 50%;
+    background: #ffd9b8;
+    color: $c-brand;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @include desktop {
+      background: $c-bg-alt;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 12px;
+    padding: 14px;
+    border-radius: $radius-sm;
+    background: $c-bg-alt;
+  }
+
+  &__check {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    color: $c-accent;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__item-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: $c-heading;
+  }
+
+  &__item-body {
+    margin-top: 2px;
+    font-size: 13px;
+    color: $c-text;
+  }
+
+  &__note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    font-style: italic;
+    color: $c-text-muted;
+  }
+
+  &__note-icon {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__tag {
+    display: none;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: $c-bg-alt;
+    font-size: 12px;
+    font-weight: 500;
+    color: $c-text-muted;
+
+    @include desktop {
+      display: inline-flex;
+    }
+  }
+}
