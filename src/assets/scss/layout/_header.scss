@@ -18,19 +18,49 @@
     padding-block: 16px;
   }
 
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
   &__brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  &__brand-main {
     font-family: $font-serif;
     font-size: 18px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: $c-brand;
   }
 
+  &__brand-sub {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: $c-text-muted;
+  }
+
   &__cta {
+    order: 3;
+  }
+
+  &__cta-text--desktop {
     display: none;
 
     @include desktop {
-      display: inline-flex;
+      display: inline;
+    }
+  }
+
+  &__cta-text--mobile {
+    @include desktop {
+      display: none;
     }
   }
 }
@@ -40,6 +70,7 @@
 
   @include desktop {
     display: block;
+    order: 2;
   }
 
   ul {
@@ -49,14 +80,24 @@
   }
 
   a {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
     color: $c-text;
+    text-decoration: none;
+    text-underline-offset: 4px;
     transition: color 0.2s ease;
 
-    &:hover,
-    &[aria-current="page"] {
+    &:hover {
       color: $c-brand;
+      text-decoration: underline;
+    }
+
+    &[aria-current="page"] {
+      font-weight: 700;
+      color: $c-heading;
+      text-decoration: underline;
     }
   }
 }
@@ -99,23 +140,116 @@
     display: none !important;
   }
 
-  background: rgba(246, 244, 241, 0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.04);
-  padding: 24px 20px 32px;
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 20px;
+  &[hidden] {
+    display: none;
   }
 
-  a {
-    display: block;
-    padding: 12px 4px;
-    font-size: 16px;
-    font-weight: 500;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: $c-bg-soft;
+
+  &__topbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
     border-bottom: 1px solid $c-border;
+  }
+
+  &__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: $c-heading;
+    flex: none;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__brand {
+    flex: 1;
+    align-items: center;
+    margin-right: 32px;
+  }
+
+  &__body {
+    flex: 1;
+    padding: 8px 24px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+    li {
+      border-bottom: 1px solid $c-border;
+    }
+
+    a {
+      display: block;
+      padding: 20px 4px;
+      font-family: $font-serif;
+      font-size: 22px;
+      color: $c-heading;
+    }
+  }
+
+  &__footer {
+    padding: 24px 24px 32px;
+  }
+
+  &__cta {
+    display: flex;
+    width: 100%;
+  }
+
+  &__address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: $c-text-muted;
+    text-align: center;
+  }
+
+  &__address-icon {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    flex: none;
+    color: $c-accent;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    font-size: 12px;
+    color: $c-text-muted;
+
+    a:hover {
+      color: $c-brand;
+    }
   }
 }

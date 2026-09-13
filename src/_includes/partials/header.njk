@@ -1,6 +1,16 @@
+{% from "macros/ui.njk" import iconPin %}
 <header class="site-header" data-header>
   <div class="site-header__inner">
-    <a class="site-header__brand" href="/">{{ site.name }}</a>
+    <div class="site-header__left">
+      <button class="nav-toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a class="site-header__brand" href="/">
+        <span class="site-header__brand-main">Integra</span>
+        <span class="site-header__brand-sub">Studio</span>
+      </a>
+    </div>
 
     <nav class="site-nav" aria-label="Navegación principal">
       <ul>
@@ -10,19 +20,44 @@
       </ul>
     </nav>
 
-    <a class="btn btn--primary btn--sm site-header__cta" href="/contacto/">Reservar</a>
-
-    <button class="nav-toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn--primary btn--sm site-header__cta" href="/contacto/">
+      <span class="site-header__cta-text--mobile">Reservar</span>
+      <span class="site-header__cta-text--desktop">Reservar sesión</span>
+    </a>
   </div>
 
   <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
-    <ul>
-      {% for item in site.nav %}
-      <li><a href="{{ item.url }}">{{ item.label }}</a></li>
-      {% endfor %}
-    </ul>
-    <a class="btn btn--primary" href="/contacto/">Reservar una sesión</a>
+    <div class="mobile-nav__topbar">
+      <button class="mobile-nav__close" data-nav-close type="button" aria-label="Cerrar menú">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 4.5l11 11M15.5 4.5l-11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <a class="site-header__brand mobile-nav__brand" href="/">
+        <span class="site-header__brand-main">Integra</span>
+        <span class="site-header__brand-sub">Studio</span>
+      </a>
+    </div>
+
+    <nav class="mobile-nav__body" aria-label="Navegación móvil">
+      <ul>
+        {% for item in site.nav %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="mobile-nav__footer">
+      <a class="btn btn--primary mobile-nav__cta" href="/contacto/">Reservar</a>
+      <p class="mobile-nav__address">
+        <span class="mobile-nav__address-icon" aria-hidden="true">{{ iconPin() }}</span>
+        {{ site.address[0] }}, {{ site.address[1] }}
+      </p>
+      <p class="mobile-nav__legal">
+        <a href="/aviso-legal/">Aviso Legal</a>
+        <span aria-hidden="true">·</span>
+        <a href="/privacidad/">Privacidad</a>
+        <span aria-hidden="true">·</span>
+        <span>&copy; {{ site.currentYear }} {{ site.name }}</span>
+      </p>
+    </div>
   </div>
 </header>

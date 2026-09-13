@@ -8,11 +8,10 @@ module.exports = {
   currentYear: new Date().getFullYear(),
   nav: [
     { label: "Inicio", url: "/" },
-    { label: "El Método", url: "/metodo/" },
+    { label: "El Método Integra", url: "/metodo/" },
     { label: "Cuerpo", url: "/cuerpo/" },
     { label: "Mente", url: "/mente/" },
     { label: "Movimiento", url: "/movimiento/" },
-    { label: "Formación", url: "/formacion/" },
     { label: "Contacto", url: "/contacto/" },
   ],
   footer: {
