@@ -1,0 +1,70 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.concept-graphic {
+  margin-top: 40px;
+
+  &__simple {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $c-text;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__divider {
+    width: 32px;
+    height: 1px;
+    background: $c-border;
+    flex: none;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 16px;
+    background: $c-bg-soft;
+    border-radius: $radius-md;
+    box-shadow: $shadow-sm;
+
+    p {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $c-heading;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    color: $c-heading;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

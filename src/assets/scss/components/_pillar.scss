@@ -5,13 +5,14 @@
   display: grid;
   gap: 32px;
   align-items: center;
-  padding: 24px;
   background: rgba(243, 238, 233, 0.6);
   border-radius: $radius-lg;
+  overflow: hidden;
 
   @include desktop {
     grid-template-columns: 7fr 5fr;
     padding: 48px;
+    overflow: visible;
   }
 
   &--reverse {
@@ -28,12 +29,89 @@
     }
   }
 
+  &__media {
+    position: relative;
+
+    .media-placeholder {
+      border-radius: $radius-lg $radius-lg 0 0;
+      box-shadow: none;
+
+      @include desktop {
+        border-radius: $radius-lg;
+        box-shadow: $shadow-md;
+      }
+    }
+  }
+
+  &__tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__tag--floating {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(246, 244, 241, 0.95);
+    backdrop-filter: blur(6px);
+    box-shadow: $shadow-sm;
+    color: $c-heading;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__tag--inline {
+    display: none;
+    color: $c-text-muted;
+    margin-bottom: 8px;
+
+    @include desktop {
+      display: block;
+      color: $c-accent-sage;
+    }
+  }
+
+  &__content {
+    padding: 24px;
+
+    @include desktop {
+      padding: 0;
+    }
+  }
+
   &__content h3 {
-    margin-bottom: 12px;
+    margin-bottom: 4px;
   }
 
   &__content p {
     color: $c-text;
+  }
+
+  &__content &__tag--inline {
+    color: $c-text-muted;
+
+    @include desktop {
+      color: $c-accent-sage;
+    }
+  }
+
+  &__content &__subtitle {
+    font-size: 13px;
+    color: $c-text-muted;
+    margin-bottom: 12px;
+
+    @include desktop {
+      font-family: $font-serif;
+      font-size: 20px;
+      color: $c-accent;
+      margin-bottom: 16px;
+    }
   }
 
   &__content .link-arrow {

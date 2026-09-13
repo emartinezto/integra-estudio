@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .section-head {
   max-width: 42rem;
@@ -12,6 +13,35 @@
   &--center {
     margin-inline: auto;
     text-align: center;
+  }
+
+  &--center-desktop {
+    text-align: left;
+
+    @include desktop {
+      margin-inline: auto;
+      text-align: center;
+    }
+  }
+
+  &--left {
+    @include desktop {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: none;
+
+      .section-head__heading {
+        max-width: 32rem;
+      }
+
+      .section-head__body {
+        max-width: 26rem;
+        margin-top: 0;
+        flex: none;
+      }
+    }
   }
 
   &--split {
