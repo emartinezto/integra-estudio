@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as *;
+
+.media-placeholder {
+  position: relative;
+  aspect-ratio: var(--ratio, 4 / 3);
+  width: 100%;
+  border-radius: $radius-lg;
+  background: linear-gradient(135deg, $c-bg-alt, $c-bg-muted);
+  box-shadow: $shadow-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-family: $font-sans;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $c-text-muted;
+    padding: 8px 16px;
+    text-align: center;
+  }
+}

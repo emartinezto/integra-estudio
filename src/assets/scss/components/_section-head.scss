@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+
+.section-head {
+  max-width: 42rem;
+  margin-bottom: 48px;
+
+  &__body {
+    margin-top: 12px;
+    color: $c-text;
+  }
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &--split {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: none;
+    flex-wrap: wrap;
+  }
+}

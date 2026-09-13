@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: Movimiento
+description: "Pilates, yoga terapéutico y entrenamiento funcional para moverte con conciencia."
+---
+{% from "macros/ui.njk" import button, sectionHead, card, ctaBanner, mediaPlaceholder, breadcrumb %}
+
+<div class="page-hero">
+  {{ breadcrumb([{ label: "Movimiento" }]) }}
+  <div class="hero__grid">
+    <div class="page-hero__head">
+      <p class="eyebrow">Pilar Movimiento</p>
+      <h1>Devuelve fuerza y calma a tu cuerpo</h1>
+      <p class="hero__body">Programas de movimiento consciente: pilates, yoga terapéutico y entrenamiento funcional, en grupos reducidos.</p>
+      <div class="hero__actions">
+        {{ button("Reservar una clase", "/contacto/", "primary") }}
+      </div>
+    </div>
+    <div>{{ mediaPlaceholder("Fotografía: sala de movimiento") }}</div>
+  </div>
+</div>
+
+<div class="container">
+  {{ mediaPlaceholder("Fotografía: clase de pilates", "21 / 9") }}
+</div>
+
+<section class="section section--alt">
+  <div class="container">
+    {{ sectionHead("Nuestras clases", "Programas de movimiento", "Grupos reducidos, atención personalizada y progresión adaptada a cada nivel.", "center") }}
+    <div class="grid">
+      {{ card("", "Pilates", "Fortalece el centro del cuerpo, mejora la postura y previene lesiones.") }}
+      {{ card("", "Yoga terapéutico", "Trabajo de movilidad, respiración y calma, adaptado a cada cuerpo.") }}
+      {{ card("", "Entrenamiento funcional", "Fuerza y resistencia aplicadas a los movimientos del día a día.") }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container hero__grid">
+    <div>
+      <p class="eyebrow">Filosofía</p>
+      <h2>Moverse con conciencia, no por rutina</h2>
+      <p>Nuestras clases combinan técnica y escucha corporal: no se trata de repetir ejercicios, sino de entender cómo se mueve tu cuerpo y por qué.</p>
+    </div>
+    <div>{{ mediaPlaceholder("Fotografía: entrenamiento funcional") }}</div>
+  </div>
+</section>
+
+{{ ctaBanner("", "Prueba tu primera clase", "Reserva una clase de prueba y descubre el programa que mejor encaja contigo.", "Reservar una clase", "/contacto/") }}

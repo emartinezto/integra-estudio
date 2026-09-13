@@ -1,0 +1,57 @@
+---
+layout: layouts/base.njk
+title: El Método Integra
+description: "Un proceso holístico terapéutico que pone a la persona en el centro."
+---
+{% from "macros/ui.njk" import button, sectionHead, card, quoteCard, ctaBanner, mediaPlaceholder, breadcrumb %}
+
+<div class="page-hero">
+  {{ breadcrumb([{ label: "El Método" }]) }}
+  <div class="page-hero__head">
+    <p class="eyebrow">Proceso holístico terapéutico</p>
+    <h1>El Método Integra</h1>
+    <p class="hero__body">Una manera de acompañar que combina cuerpo, mente y movimiento en un único proceso, adaptado a cada persona.</p>
+  </div>
+</div>
+
+<div class="container">
+  {{ mediaPlaceholder("Fotografía: panorámica del estudio", "21 / 9") }}
+</div>
+
+<section class="section">
+  <div class="container hero__grid">
+    <div>{{ mediaPlaceholder("Fotografía: escucha activa en sesión") }}</div>
+    <div>
+      <p class="eyebrow">Filosofía del método</p>
+      <h2>La persona en el centro</h2>
+      <p>No tratamos síntomas aislados: escuchamos primero, entendemos el contexto y diseñamos un proceso a medida donde cuerpo, mente y movimiento avanzan juntos.</p>
+      <div class="quote-card" style="margin-top: 24px;">
+        <p class="quote-card__text">“El método no impone un camino: lo construye contigo, sesión a sesión.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    {{ sectionHead("El espacio", "Un espacio pensado para acompañarte", "Un estudio cálido, luminoso y cuidado en cada detalle, en Parla, Madrid.", "center") }}
+    <div class="grid">
+      {{ card("", "Salas de fisioterapia", "Equipadas para tratamiento individualizado y rehabilitación funcional.") }}
+      {{ card("", "Sala de movimiento", "Amplia y luminosa, preparada para pilates, yoga y entrenamiento.") }}
+      {{ card("", "Espacio de escucha", "Un rincón tranquilo pensado para las sesiones de acompañamiento psicológico.") }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ sectionHead("Nuestros tres pilares", "Un método, tres disciplinas", "") }}
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      {{ card("Pilar I", "Cuerpo", "Fisioterapia, prevención y recuperación funcional para cada etapa del proceso físico.", "Ver Cuerpo", "/cuerpo/") }}
+      {{ card("Pilar II", "Mente", "Orientación, apoyo psicológico y preparación de oposiciones con acompañamiento cercano.", "Ver Mente", "/mente/") }}
+      {{ card("Pilar III", "Movimiento", "Pilates, yoga terapéutico y entrenamiento funcional para moverte con conciencia.", "Ver Movimiento", "/movimiento/") }}
+    </div>
+  </div>
+</section>
+
+{{ ctaBanner("", "Empieza tu proceso", "Reserva una primera sesión y descubre cómo el método se adapta a ti.", "Reservar una sesión", "/contacto/") }}

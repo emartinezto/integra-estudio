@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+title: Mente
+description: "Orientación, apoyo psicológico y preparación de oposiciones con cercanía y método."
+---
+{% from "macros/ui.njk" import button, sectionHead, card, ctaBanner, mediaPlaceholder, breadcrumb %}
+
+<div class="page-hero">
+  {{ breadcrumb([{ label: "Mente" }]) }}
+  <div class="hero__grid">
+    <div class="page-hero__head">
+      <p class="eyebrow">Pilar Mente</p>
+      <h1>Espacio para pensar con calma</h1>
+      <p class="hero__body">Orientación, apoyo psicológico y preparación de oposiciones, con cercanía, método y respeto por tu ritmo.</p>
+      <div class="hero__actions">
+        {{ button("Reservar una sesión", "/contacto/", "primary") }}
+      </div>
+    </div>
+    <div>{{ mediaPlaceholder("Fotografía: espacio de escucha") }}</div>
+  </div>
+</div>
+
+<div class="container">
+  {{ mediaPlaceholder("Fotografía: sesión de acompañamiento", "21 / 9") }}
+</div>
+
+<section class="section section--alt">
+  <div class="container hero__grid">
+    <div>
+      <h2>Te acompañamos, sin prisas</h2>
+      <div class="quote-card" style="margin-top: 16px;">
+        <p class="quote-card__text">“Te acompañamos durante el proceso, con cercanía, método y respetando tu ritmo.”</p>
+      </div>
+    </div>
+    <div>
+      <p>No creemos en soluciones estándar. Cada persona llega con su propia historia, y el trabajo consiste en escuchar primero, entender después y avanzar juntos, paso a paso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ sectionHead("Tres áreas de trabajo", "Cómo te podemos ayudar", "") }}
+    <div class="grid">
+      {{ card("Área 01", "Orientación", "Espacio de escucha para ordenar ideas, tomar decisiones y ganar claridad en momentos de cambio.") }}
+      {{ card("Área 02", "Apoyo psicológico", "Acompañamiento terapéutico continuado ante ansiedad, duelo, autoestima o procesos vitales.") }}
+      {{ card("Área 03", "Formación y oposiciones", "Preparación psicológica y de estudio para oposiciones de cuerpos de seguridad, emergencias y administración pública.") }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    {{ sectionHead("Cómo entendemos el acompañamiento", "Nuestros principios metodológicos", "", "center") }}
+    <div class="grid">
+      {{ card("", "Escucha activa", "Cada sesión empieza escuchando, no diagnosticando de antemano.") }}
+      {{ card("", "Método propio", "Un proceso estructurado, adaptado a los tiempos y objetivos de cada persona.") }}
+      {{ card("", "Acompañamiento real", "Seguimiento cercano entre sesiones, no solo dentro de la consulta.") }}
+    </div>
+  </div>
+</section>
+
+{{ ctaBanner("", "Da el primer paso", "Reserva una primera sesión de orientación, sin compromiso.", "Reservar una sesión", "/contacto/") }}

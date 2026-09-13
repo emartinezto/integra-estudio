@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+
+.quote-card {
+  padding: 32px;
+  background: $c-bg-soft;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  height: 100%;
+
+  &__text {
+    font-family: $font-serif;
+    font-size: 18px;
+    color: $c-heading;
+    margin-bottom: 16px;
+  }
+
+  &__author {
+    font-size: 13px;
+    color: $c-text-muted;
+    letter-spacing: 0.02em;
+  }
+}

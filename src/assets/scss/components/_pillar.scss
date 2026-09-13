@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.pillar {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+  padding: 24px;
+  background: rgba(243, 238, 233, 0.6);
+  border-radius: $radius-lg;
+
+  @include desktop {
+    grid-template-columns: 7fr 5fr;
+    padding: 48px;
+  }
+
+  &--reverse {
+    @include desktop {
+      grid-template-columns: 5fr 7fr;
+
+      .pillar__media {
+        order: 2;
+      }
+
+      .pillar__content {
+        order: 1;
+      }
+    }
+  }
+
+  &__content h3 {
+    margin-bottom: 12px;
+  }
+
+  &__content p {
+    color: $c-text;
+  }
+
+  &__content .link-arrow {
+    margin-top: 16px;
+  }
+}

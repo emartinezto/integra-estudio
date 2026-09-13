@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.cta-banner {
+  @include container;
+  padding-block: 56px;
+
+  @include desktop {
+    padding-block: 104px;
+  }
+
+  &__inner {
+    position: relative;
+    overflow: hidden;
+    background: $c-brand;
+    color: $c-white;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    padding: 48px 24px;
+    text-align: center;
+
+    @include desktop {
+      padding: 104px 120px;
+    }
+
+    h2 {
+      color: $c-white;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.85);
+      margin-inline: auto;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+  }
+}

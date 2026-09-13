@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.container {
+  @include container;
+}
+
+.section {
+  @include section-padding;
+}
+
+.section--alt {
+  background: $c-bg-alt;
+}
+
+.section--soft {
+  background: $c-bg-soft-2;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

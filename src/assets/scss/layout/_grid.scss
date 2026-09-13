@@ -1,0 +1,24 @@
+@use "../abstracts/mixins" as *;
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  &--2 {
+    grid-template-columns: 1fr;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

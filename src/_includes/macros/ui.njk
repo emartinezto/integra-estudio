@@ -1,0 +1,71 @@
+{% macro button(text, url, style="primary") %}
+<a class="btn btn--{{ style }}" href="{{ url }}">{{ text }}</a>
+{% endmacro %}
+
+{% macro mediaPlaceholder(label, ratio="4 / 3") %}
+<div class="media-placeholder" style="--ratio: {{ ratio }};">
+  <span>{{ label }}</span>
+</div>
+{% endmacro %}
+
+{% macro sectionHead(eyebrowText, title, body, align="left") %}
+<div class="section-head section-head--{{ align }}">
+  <p class="eyebrow">{{ eyebrowText }}</p>
+  <h2>{{ title }}</h2>
+  {% if body %}<p class="section-head__body">{{ body }}</p>{% endif %}
+</div>
+{% endmacro %}
+
+{% macro pillar(eyebrowText, title, body, ctaText, ctaUrl, imageLabel, reverse=false) %}
+<div class="pillar {% if reverse %}pillar--reverse{% endif %}">
+  <div class="pillar__media">{{ mediaPlaceholder(imageLabel) }}</div>
+  <div class="pillar__content">
+    <p class="eyebrow">{{ eyebrowText }}</p>
+    <h3>{{ title }}</h3>
+    <p>{{ body }}</p>
+    {% if ctaUrl %}<a class="link-arrow" href="{{ ctaUrl }}">{{ ctaText }} →</a>{% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro card(eyebrowText, title, body, ctaText, ctaUrl, variant="") %}
+<div class="card {% if variant %}card--{{ variant }}{% endif %}">
+  {% if eyebrowText %}<p class="eyebrow">{{ eyebrowText }}</p>{% endif %}
+  <h3>{{ title }}</h3>
+  <p>{{ body }}</p>
+  {% if ctaUrl %}<a class="link-arrow" href="{{ ctaUrl }}">{{ ctaText }} →</a>{% endif %}
+</div>
+{% endmacro %}
+
+{% macro quoteCard(quote, author, role) %}
+<div class="quote-card">
+  <p class="quote-card__text">“{{ quote }}”</p>
+  <p class="quote-card__author">{{ author }}{% if role %} · {{ role }}{% endif %}</p>
+</div>
+{% endmacro %}
+
+{% macro ctaBanner(eyebrowText, title, body, ctaText, ctaUrl, secondaryText, secondaryUrl) %}
+<section class="cta-banner">
+  <div class="cta-banner__inner">
+    {% if eyebrowText %}<p class="eyebrow eyebrow--light">{{ eyebrowText }}</p>{% endif %}
+    <h2>{{ title }}</h2>
+    {% if body %}<p>{{ body }}</p>{% endif %}
+    <div class="cta-banner__actions">
+      <a class="btn btn--light" href="{{ ctaUrl }}">{{ ctaText }}</a>
+      {% if secondaryUrl %}<a class="btn btn--ghost-light" href="{{ secondaryUrl }}">{{ secondaryText }}</a>{% endif %}
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro breadcrumb(items) %}
+<nav class="breadcrumb" aria-label="Ruta de navegación">
+  <ol>
+    <li><a href="/">Inicio</a></li>
+    {% for item in items %}
+      <li aria-hidden="true">/</li>
+      <li>{% if item.url %}<a href="{{ item.url }}">{{ item.label }}</a>{% else %}<span aria-current="page">{{ item.label }}</span>{% endif %}</li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endmacro %}

@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+title: Cuerpo
+description: "Fisioterapia, prevención y recuperación funcional con un enfoque cercano y técnico."
+---
+{% from "macros/ui.njk" import button, sectionHead, card, pillar, ctaBanner, mediaPlaceholder, breadcrumb %}
+
+<div class="page-hero">
+  {{ breadcrumb([{ label: "Cuerpo" }]) }}
+  <div class="hero__grid">
+    <div class="page-hero__head">
+      <p class="eyebrow">Pilar Cuerpo</p>
+      <h1>Cuidamos tu cuerpo en cada etapa</h1>
+      <p class="hero__body">Prevención, fisioterapia y recuperación funcional para acompañarte desde la lesión hasta el rendimiento.</p>
+      <div class="hero__actions">
+        {{ button("Reservar una sesión", "/contacto/", "primary") }}
+      </div>
+    </div>
+    <div>{{ card("", "+10 años", "de experiencia clínica acompañando procesos de recuperación.") }}</div>
+  </div>
+</div>
+
+<div class="container">
+  {{ mediaPlaceholder("Fotografía: sala de fisioterapia", "21 / 9") }}
+</div>
+
+<section class="section">
+  <div class="container hero__grid">
+    <div>
+      <p class="eyebrow">Filosofía</p>
+      <h2>Un enfoque técnico y cercano</h2>
+      <p>Cada tratamiento parte de una valoración individual: entendemos el origen del problema antes de actuar sobre él, con métodos contrastados y trato humano.</p>
+    </div>
+    <div>
+      <p>Trabajamos codo a codo contigo en cada fase: diagnóstico, tratamiento activo y prevención de recaídas, con seguimiento continuo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    {{ sectionHead("Áreas de acción", "Cómo trabajamos tu cuerpo", "") }}
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      {{ pillar("REA 01 · Prevención", "Prevención", "Programas para evitar lesiones y preparar el cuerpo ante la actividad física y el día a día.", "Saber más", "/contacto/", "Fotografía: valoración preventiva") }}
+      {{ pillar("REA 02 · Fisioterapia", "Fisioterapia", "Tratamiento clínico especializado para lesiones musculoesqueléticas, con planes personalizados.", "Ver Fisioterapia", "/cuerpo/fisioterapia/", "Fotografía: sesión de fisioterapia", true) }}
+      {{ pillar("REA 03 · Recuperación", "Recuperación funcional", "Readaptación progresiva tras lesión o cirugía, hasta recuperar tu nivel de actividad habitual.", "Saber más", "/contacto/", "Fotografía: recuperación funcional") }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ sectionHead("Método de atención", "Nuestros principios", "", "center") }}
+    <div class="grid">
+      {{ card("", "Valoración individual", "Cada proceso empieza con una escucha y evaluación a fondo, sin protocolos genéricos.") }}
+      {{ card("", "Seguimiento continuo", "Acompañamos la evolución sesión a sesión, ajustando el plan cuando hace falta.") }}
+      {{ card("", "Trabajo en equipo", "Coordinación con Mente y Movimiento cuando el proceso lo requiere.") }}
+    </div>
+  </div>
+</section>
+
+{{ ctaBanner("", "Empieza tu recuperación", "Reserva una valoración inicial y diseñemos juntos tu plan de tratamiento.", "Reservar una sesión", "/contacto/") }}

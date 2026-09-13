@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.hero {
+  @include container;
+  padding-block: 40px 56px;
+
+  @include desktop {
+    padding-block: 48px 104px;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+
+    @include desktop {
+      grid-template-columns: 5fr 7fr;
+      gap: 48px;
+    }
+  }
+
+  &__eyebrow {
+    margin-bottom: 8px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  &__body {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+}
+
+.page-hero {
+  @include container;
+  padding-block: 32px 40px;
+
+  &__head {
+    max-width: 48rem;
+  }
+}

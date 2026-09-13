@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+title: Inicio
+description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bienestar, en cada etapa de tu vida."
+---
+{% from "macros/ui.njk" import button, sectionHead, pillar, card, quoteCard, ctaBanner, mediaPlaceholder %}
+
+<section class="hero">
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow hero__eyebrow">Bienestar integral</p>
+      <h1>Tu bienestar,<br>en el centro de todo.</h1>
+      <p class="hero__body">Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bienestar. En cada etapa de tu vida.</p>
+      <div class="hero__actions">
+        {{ button("Reservar una sesión", "/contacto/", "primary") }}
+        {{ button("Conocer el método", "/metodo/", "secondary") }}
+      </div>
+    </div>
+    <div>
+      {{ mediaPlaceholder("Fotografía: espacio Integra Studio", "4 / 3") }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container section-head section-head--center">
+    <p class="eyebrow">Concepto</p>
+    <h2>Todo está conectado.</h2>
+    <p class="section-head__body">Cuerpo, mente y movimiento no funcionan de manera aislada. Entendemos el bienestar como un diálogo continuo donde cada aspecto potencia a los demás, creando una experiencia terapéutica integral, cercana y transformadora.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ sectionHead("Los tres pilares", "Cuerpo, mente y movimiento", "Un ecosistema vivo donde cada disciplina nutre y equilibra a la persona en su totalidad.") }}
+    <div style="display: flex; flex-direction: column; gap: 32px;">
+      {{ pillar("Cuerpo", "Fisioterapia y prevención", "Tratamos, prevenimos y acompañamos la recuperación física con un enfoque cercano y basado en la evidencia.", "Descubrir Cuerpo", "/cuerpo/", "Fotografía: sesión de fisioterapia") }}
+      {{ pillar("Mente", "Orientación y acompañamiento", "Un espacio de escucha y trabajo psicológico para ordenar, sostener y avanzar a tu ritmo.", "Descubrir Mente", "/mente/", "Fotografía: sesión de acompañamiento", true) }}
+      {{ pillar("Movimiento", "Pilates, yoga y entrenamiento", "Programas de movimiento consciente que devuelven fuerza, flexibilidad y calma al cuerpo.", "Descubrir Movimiento", "/movimiento/", "Fotografía: clase de movimiento") }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    {{ sectionHead("Estructura terapéutica", "Nuestras áreas de trabajo", "Programas y servicios organizados con rigor técnico y calidez humana.", "center") }}
+    <div class="grid">
+      {{ card("Cuerpo", "Fisioterapia · Prevención · Recuperación", "Tratamientos individualizados para cada etapa del proceso físico.", "Ver Cuerpo", "/cuerpo/") }}
+      {{ card("Mente", "Orientación · Apoyo · Formación", "Acompañamiento psicológico y preparación de oposiciones.", "Ver Mente", "/mente/") }}
+      {{ card("Movimiento", "Pilates · Yoga · Funcional", "Clases y programas para moverte con conciencia y propósito.", "Ver Movimiento", "/movimiento/") }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ sectionHead("Enfoque personalizado", "Para quién es Integra Studio", "", "center") }}
+    <div class="grid">
+      {{ card("", "Quien busca recuperarse", "Personas en proceso de rehabilitación física que necesitan un acompañamiento cercano y técnico.", "", "") }}
+      {{ card("", "Quien busca claridad mental", "Quienes atraviesan procesos de cambio, estudio u orientación y buscan un espacio de apoyo.", "", "") }}
+      {{ card("", "Quien busca moverse mejor", "Personas que quieren ganar fuerza, movilidad y bienestar a través del movimiento consciente.", "", "") }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    {{ sectionHead("Experiencias", "Voces del estudio", "", "center") }}
+    <div class="grid">
+      {{ quoteCard("Encontré un espacio donde cada profesional entiende cómo se conecta mi cuerpo con mi cabeza.", "María G.", "paciente de Fisioterapia") }}
+      {{ quoteCard("El acompañamiento en Mente me dio herramientas reales, con cercanía y sin prisas.", "Javier R.", "paciente de Mente") }}
+      {{ quoteCard("Las clases de Movimiento cambiaron mi relación con mi cuerpo por completo.", "Laura S.", "alumna de Movimiento") }}
+    </div>
+  </div>
+</section>
+
+{{ ctaBanner("", "Empieza tu proceso hoy", "Da el primer paso hacia un bienestar integral, con un equipo que te acompaña en cada etapa.", "Reservar una sesión", "/contacto/", "Conocer el método", "/metodo/") }}

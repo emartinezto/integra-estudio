@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+title: Formación
+description: "Formación y preparación de oposiciones con acompañamiento cercano de Integra Studio."
+---
+{% from "macros/ui.njk" import button, sectionHead, card, ctaBanner, mediaPlaceholder, breadcrumb %}
+
+<div class="page-hero">
+  {{ breadcrumb([{ label: "Formación" }]) }}
+  <div class="page-hero__head">
+    <p class="eyebrow">Formación</p>
+    <h1>Formación y preparación de oposiciones</h1>
+    <p class="hero__body">Acompañamos la preparación física y mental de opositores a cuerpos de seguridad, emergencias y administración pública.</p>
+    <div class="hero__actions">
+      {{ button("Solicitar información", "/contacto/", "primary") }}
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  {{ mediaPlaceholder("Fotografía: preparación de oposiciones", "21 / 9") }}
+</div>
+
+<section class="section section--alt">
+  <div class="container">
+    {{ sectionHead("Itinerarios", "Programas de formación", "", "center") }}
+    <div class="grid">
+      {{ card("", "Cuerpos de seguridad", "Preparación física y psicológica para Policía Nacional, Local y Guardia Civil.") }}
+      {{ card("", "Bomberos y emergencias", "Entrenamiento funcional específico y acompañamiento psicológico durante la oposición.") }}
+      {{ card("", "Administración pública", "Apoyo psicológico para sostener el ritmo de estudio y gestionar la presión del proceso.") }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container hero__grid">
+    <div>
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>Cuerpo y mente preparados por igual</h2>
+      <p>Combinamos entrenamiento físico específico con seguimiento psicológico, para llegar a la prueba con el cuerpo entrenado y la cabeza tranquila.</p>
+    </div>
+    <div>{{ mediaPlaceholder("Fotografía: entrenamiento específico") }}</div>
+  </div>
+</section>
+
+{{ ctaBanner("", "Empieza tu preparación", "Cuéntanos a qué oposición te presentas y diseñamos tu plan de preparación.", "Solicitar información", "/contacto/") }}

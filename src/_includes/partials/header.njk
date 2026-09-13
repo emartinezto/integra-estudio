@@ -1,0 +1,28 @@
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="/">{{ site.name }}</a>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <ul>
+        {% for item in site.nav %}
+        <li><a href="{{ item.url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <a class="btn btn--primary btn--sm site-header__cta" href="/contacto/">Reservar</a>
+
+    <button class="nav-toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+    <ul>
+      {% for item in site.nav %}
+      <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+    <a class="btn btn--primary" href="/contacto/">Reservar una sesión</a>
+  </div>
+</header>

@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as *;
+
+.breadcrumb {
+  margin-bottom: 24px;
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: $c-text-muted;
+  }
+
+  a:hover {
+    color: $c-brand;
+  }
+
+  [aria-current="page"] {
+    color: $c-heading;
+  }
+}
