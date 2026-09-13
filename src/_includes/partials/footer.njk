@@ -2,28 +2,45 @@
   <div class="site-footer__inner">
     <div class="site-footer__brand">
       <p class="site-footer__logo">{{ site.name }}</p>
-      <p class="site-footer__tagline">{{ site.tagline }}</p>
+      <p class="site-footer__tagline">{{ site.footer.tagline }}</p>
+      <span class="site-footer__tag">{{ site.footer.tag }}</span>
     </div>
 
-    <div class="footer-col">
-      <p class="footer-col__title">Navegación</p>
+    <div class="footer-col footer-col--pilares">
+      <p class="footer-col__title">Pilares</p>
       <ul>
-        {% for item in site.nav %}
+        {% for item in site.footer.pilares %}
         <li><a href="{{ item.url }}">{{ item.label }}</a></li>
         {% endfor %}
       </ul>
     </div>
 
-    <div class="site-footer__contact">
-      <p class="eyebrow">Ubicación &amp; contacto</p>
-      <p>{{ site.address[0] }}<br>{{ site.address[1] }}</p>
-      <p><a class="link-arrow" href="tel:{{ site.phone }}">{{ site.phone }}</a></p>
-      <p><a class="link-arrow" href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-      <a class="link-arrow" href="{{ site.mapsUrl }}" target="_blank" rel="noopener">Cómo llegar →</a>
+    <div class="footer-col footer-col--nav">
+      <p class="footer-col__title">Navegación</p>
+      <ul>
+        {% for item in site.footer.nav %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col footer-col--contact">
+      <p class="footer-col__title">Contacto</p>
+      <ul>
+        <li>{{ site.footer.address }}</li>
+        <li><a href="tel:{{ site.phone }}">{{ site.phone }}</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li class="footer-col__hours">{{ site.footer.hours }}</li>
+      </ul>
     </div>
   </div>
 
   <div class="site-footer__bottom">
-    <p>&copy; {{ site.currentYear }} {{ site.name }}. Todos los derechos reservados.</p>
+    <ul class="site-footer__legal">
+      {% for item in site.footer.legal %}
+      <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+    <p>&copy; {{ site.name }}. Todos los derechos reservados.</p>
   </div>
 </footer>

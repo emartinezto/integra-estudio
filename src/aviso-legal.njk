@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+title: Aviso Legal
+description: "Información legal sobre Integra Studio y las condiciones de uso de este sitio web."
+---
+{% from "macros/ui.njk" import breadcrumb %}
+
+<div class="page-hero">
+  {{ breadcrumb([{ label: "Aviso Legal" }]) }}
+  <div class="page-hero__head">
+    <h1>Aviso Legal</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container" style="max-width: 65ch;">
+    <p style="margin-bottom: 24px;">En cumplimiento de la normativa vigente, se informa que este sitio web es titularidad de Integra Studio, con domicilio en {{ site.address[0] }}, {{ site.address[1] }}.</p>
+    <p style="margin-bottom: 24px;">El acceso y uso de este sitio web atribuye la condición de usuario y supone la aceptación de las condiciones aquí recogidas. Integra Studio se reserva el derecho de modificar el contenido de este aviso legal sin previo aviso.</p>
+    <p style="margin-bottom: 24px;">Todos los contenidos del sitio (textos, imágenes, marcas, logotipos) son propiedad de Integra Studio o de terceros que han autorizado su uso, y están protegidos por la normativa de propiedad intelectual e industrial.</p>
+    <p>Este texto es un modelo de referencia y debe ser revisado por un profesional legal antes de su publicación definitiva.</p>
+  </div>
+</section>

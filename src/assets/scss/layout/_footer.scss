@@ -2,17 +2,28 @@
 @use "../abstracts/mixins" as *;
 
 .site-footer {
-  background: $c-bg-muted;
+  background: $c-bg-alt;
   margin-top: 80px;
 
   &__inner {
     @include container;
     display: grid;
-    gap: 40px;
+    gap: 32px 24px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "brand brand"
+      "pilares nav"
+      "contact contact";
     padding-block: 56px 32px;
 
     @include tablet {
       grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-areas: none;
+      gap: 40px;
+    }
+
+    @include desktop {
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
     }
   }
 
@@ -29,40 +40,119 @@
     font-size: 13px;
     color: $c-text;
     max-width: 32ch;
+    margin-bottom: 16px;
   }
 
-  &__contact p {
-    font-size: 13px;
-    margin-bottom: 6px;
+  &__brand {
+    grid-area: brand;
+
+    @include tablet {
+      grid-area: auto;
+    }
+  }
+
+  &__tag {
+    display: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(169, 176, 162, 0.2);
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e4130;
+
+    @include desktop {
+      display: inline-flex;
+    }
   }
 
   &__bottom {
     border-top: 1px solid $c-border;
+  }
+}
 
-    p {
-      @include container;
-      padding-block: 16px;
-      font-size: 11px;
-      letter-spacing: 0.05em;
-      color: $c-text-muted;
+.site-footer__bottom {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-block: 16px;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  p {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: $c-text-muted;
+  }
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  a {
+    font-size: 13px;
+    color: $c-text-muted;
+
+    &:hover {
+      color: $c-brand;
     }
   }
 }
 
 .footer-col {
+  &--pilares {
+    grid-area: pilares;
+
+    @include tablet {
+      grid-area: auto;
+    }
+  }
+
+  &--nav {
+    grid-area: nav;
+
+    @include tablet {
+      grid-area: auto;
+    }
+  }
+
+  &--contact {
+    grid-area: contact;
+
+    @include tablet {
+      grid-area: auto;
+    }
+  }
+
   &__title {
-    font-size: 11px;
+    font-family: $font-serif;
+    font-size: 16px;
     font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: $c-text-muted;
-    margin-bottom: 12px;
+    color: $c-heading;
+    margin-bottom: 16px;
   }
 
   ul {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+  }
+
+  li {
+    font-size: 14px;
+    color: $c-text;
+  }
+
+  li.footer-col__hours {
+    color: $c-accent;
   }
 
   a {
