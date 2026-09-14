@@ -3,20 +3,23 @@ layout: layouts/base.njk
 title: Cuerpo
 description: "Fisioterapia, prevención y recuperación funcional con un enfoque cercano y técnico."
 ---
-{% from "macros/ui.njk" import button, sectionHead, card, pillar, ctaBanner, mediaPlaceholder, breadcrumb %}
+{% from "macros/ui.njk" import button, sectionHead, card, pillar, ctaBanner, mediaPlaceholder, breadcrumb, quoteCard, iconClock, iconShield, iconLeaf %}
 
 <div class="page-hero">
   {{ breadcrumb([{ label: "Cuerpo" }]) }}
   <div class="hero__grid">
     <div class="page-hero__head">
-      <p class="eyebrow">Pilar Cuerpo</p>
-      <h1>Cuidamos tu cuerpo en cada etapa</h1>
-      <p class="hero__body">Prevención, fisioterapia y recuperación funcional para acompañarte desde la lesión hasta el rendimiento.</p>
+      <p class="eyebrow">Pilar fundamental · 01</p>
+      <h1>Cuerpo</h1>
+      <p class="hero__body">Fisioterapia, prevención y recuperación para acompañarte en cada etapa.</p>
+    </div>
+    <div>
+      <p>Entendemos que cada cuerpo es diferente y que detrás de cada molestia hay una historia. Por eso escuchamos, valoramos lo que necesitas y trabajamos contigo para ayudarte a recuperar el bienestar y volver a sentirte bien en tu cuerpo.</p>
       <div class="hero__actions">
-        {{ button("Reservar una sesión", "/contacto/", "primary") }}
+        {{ button("Reservar primera valoración", "/contacto/", "primary") }}
+        <a class="link-arrow" href="#areas">Explorar áreas ↓</a>
       </div>
     </div>
-    <div>{{ card("", "+10 años", "de experiencia clínica acompañando procesos de recuperación.") }}</div>
   </div>
 </div>
 
@@ -27,36 +30,44 @@ description: "Fisioterapia, prevención y recuperación funcional con un enfoque
 <section class="section">
   <div class="container hero__grid">
     <div>
-      <p class="eyebrow">Filosofía</p>
-      <h2>Un enfoque técnico y cercano</h2>
-      <p>Cada tratamiento parte de una valoración individual: entendemos el origen del problema antes de actuar sobre él, con métodos contrastados y trato humano.</p>
+      <p class="eyebrow">Filosofía terapéutica</p>
+      <h2>Un cuerpo escuchado es un cuerpo que recupera su equilibrio.</h2>
+      {{ quoteCard("No tratamos solo una molestia. Escuchamos tu cuerpo, entendemos lo que necesita y te acompañamos en el proceso de volver a sentirte bien.", "— Dirección clínica, Integra Studio") }}
     </div>
     <div>
-      <p>Trabajamos codo a codo contigo en cada fase: diagnóstico, tratamiento activo y prevención de recaídas, con seguimiento continuo.</p>
+      <p>En Integra no entendemos una molestia como algo aislado.</p>
+      <p>Cada cuerpo tiene su historia y hay muchas cosas que pueden influir en cómo nos encontramos. Por eso nos tomamos el tiempo de escucharte, entender qué te pasa y valorar lo que necesitas antes de empezar a trabajar contigo.</p>
+      <p>Nuestro objetivo no es simplemente aliviar una molestia. Queremos acompañarte en tu proceso, respetando tu ritmo y ayudándote a recuperar poco a poco la confianza y el bienestar en tu cuerpo.</p>
+      <p>Creemos que cada recuperación necesita su tiempo. Por eso ponemos a la persona en el centro de cada decisión y adaptamos el acompañamiento a su momento y a sus necesidades.</p>
+      <div style="display: flex; gap: 16px; margin-top: 24px;">
+        {{ card("", "60'", "Dedicación íntegra individual") }}
+        {{ card("", "100%", "Terapia manual y presencia activa") }}
+        {{ card("", "03", "Fases integradas de evolución") }}
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section section--alt" id="areas">
   <div class="container">
-    {{ sectionHead("Áreas de acción", "Cómo trabajamos tu cuerpo", "") }}
+    {{ sectionHead("Especialidades del pilar", "Áreas de Acción", "Tres dimensiones clínicas concebidas como un continuo de cuidado: desde la anticipación consciente hasta la readaptación activa.", "left") }}
     <div style="display: flex; flex-direction: column; gap: 24px;">
-      {{ pillar("REA 01 · Prevención", "Prevención", "", "Programas para evitar lesiones y preparar el cuerpo ante la actividad física y el día a día.", "Saber más", "/contacto/", "Fotografía: valoración preventiva") }}
-      {{ pillar("REA 02 · Fisioterapia", "Fisioterapia", "", "Tratamiento clínico especializado para lesiones musculoesqueléticas, con planes personalizados.", "Ver Fisioterapia", "/cuerpo/fisioterapia/", "Fotografía: sesión de fisioterapia", true) }}
-      {{ pillar("REA 03 · Recuperación", "Recuperación funcional", "", "Readaptación progresiva tras lesión o cirugía, hasta recuperar tu nivel de actividad habitual.", "Saber más", "/contacto/", "Fotografía: recuperación funcional") }}
+      {{ pillar("01 · Cuidado proactivo", "Fisioterapia", "", "Valoramos tus molestias, cómo te encuentras y lo que necesitas en este momento para trabajar contigo de forma cercana y personalizada, sin prisas y respetando tu ritmo.", "Conoce el programa de Fisioterapia", "/cuerpo/fisioterapia/", "Fotografía: sesión de fisioterapia", false, "I · Fisioterapia", ["Atención personalizada", "Dolor y molestias", "Acompañamiento cercano"]) }}
+      {{ pillar("02 · Tratamiento clínico consciente", "Prevención", "", "Observamos cómo te mueves y cómo se comporta tu cuerpo en el día a día para detectar aquello que puede estar generando una sobrecarga.", "Explorar Prevención", "/contacto/", "Fotografía: valoración preventiva", true, "II · Prevención", ["Tu cuerpo en el día a día", "Postura y movimiento", "Bienestar cotidiano"]) }}
+      {{ pillar("03 · Readaptación funcional", "Recuperación", "", "Cada proceso es diferente y necesita su tiempo. Por eso adaptamos el trabajo a cómo te encuentras, respetando tu ritmo y acompañándote paso a paso.", "Ver proceso de Recuperación", "/contacto/", "Fotografía: recuperación funcional", false, "III · Recuperación", ["Transición hacia la autonomía", "Reintegración del gesto cotidiano", "Prevención de recaídas"]) }}
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    {{ sectionHead("Método de atención", "Nuestros principios", "", "center") }}
+    {{ sectionHead("Garantía de atención", "Los Principios de Nuestra Práctica", "", "center") }}
     <div class="grid">
-      {{ card("", "Valoración individual", "Cada proceso empieza con una escucha y evaluación a fondo, sin protocolos genéricos.") }}
-      {{ card("", "Seguimiento continuo", "Acompañamos la evolución sesión a sesión, ajustando el plan cuando hace falta.") }}
-      {{ card("", "Trabajo en equipo", "Coordinación con Mente y Movimiento cuando el proceso lo requiere.") }}
+      {{ card("", "1:1 Sesiones individuales de 60 minutos", "Dedicación exclusiva. Toda la sesión transcurre con tu terapeuta presente en cabina privada, sin rotaciones ni boxes compartidos.", "", "", "", iconClock(), "Tiempo & presencia") }}
+      {{ card("", "Fisioterapeutas colegiados y docentes", "Equipo con trayectoria académica hospitalaria y formativa continua en terapia manual ortopédica, neurobiología y cadenas miofasciales.", "", "", "", iconShield(), "Rigor científico") }}
+      {{ card("", "Entorno sereno y acústica cuidada", "Materiales orgánicos, linos naturales, iluminación tenue indirecta y silencio arquitectónico concebidos para modular el estrés desde el primer instante.", "", "", "", iconLeaf(), "Espacio protector") }}
     </div>
   </div>
 </section>
 
-{{ ctaBanner("", "Empieza tu recuperación", "Reserva una valoración inicial y diseñemos juntos tu plan de tratamiento.", "Reservar una sesión", "/contacto/") }}
+{{ ctaBanner("Intégrate en el bienestar", "Momento de cuidar tu cuerpo", "Un espacio para escucharte, entender lo que necesitas y acompañarte en el camino para aliviar tus molestias y volver a sentirte bien.", "Reservar sesión", "/contacto/", "", "", "Atención individualizada con cita previa en Parla · Alcorcón 12", "", false) }}

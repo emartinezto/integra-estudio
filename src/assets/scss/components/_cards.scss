@@ -28,3 +28,27 @@
     box-shadow: none;
   }
 }
+
+.card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: $radius-sm;
+  background: $c-bg-alt;
+  color: $c-heading;
+  margin-bottom: 8px;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.card__footer {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 8px;
+}

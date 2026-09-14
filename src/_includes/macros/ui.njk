@@ -8,6 +8,10 @@
 
 {% macro iconClock() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.3"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endmacro %}
 
+{% macro iconShield() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2l6 2.2v4.3c0 4-2.6 7.1-6 8.5-3.4-1.4-6-4.5-6-8.5V4.2L10 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7.2 10l1.9 1.9 3.7-4.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endmacro %}
+
+{% macro iconLeaf() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 16c-.5-6 3-11 12-11 .6 6-2 11-9 11-1 0-2-.2-3 0z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4 16c2-3 5-5.5 9-7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>{% endmacro %}
+
 {% macro areaCard(icon, title, items, tag, note) %}
 <div class="area-card">
   <div class="area-card__head">
@@ -108,27 +112,37 @@
 </div>
 {% endmacro %}
 
-{% macro pillar(tag, title, subtitle, body, ctaText, ctaUrl, imageLabel, reverse=false) %}
+{% macro pillar(tag, title, subtitle, body, ctaText, ctaUrl, imageLabel, reverse=false, mediaTag="", points=[]) %}
 <div class="pillar {% if reverse %}pillar--reverse{% endif %}">
   <div class="pillar__media">
     {{ mediaPlaceholder(imageLabel) }}
-    {% if tag %}<span class="pillar__tag pillar__tag--floating">{{ tag }}</span>{% endif %}
+    {% if mediaTag or tag %}<span class="pillar__tag pillar__tag--floating">{{ mediaTag or tag }}</span>{% endif %}
   </div>
   <div class="pillar__content">
     {% if tag %}<p class="pillar__tag pillar__tag--inline">{{ tag }}</p>{% endif %}
     <h3>{{ title }}</h3>
     {% if subtitle %}<p class="pillar__subtitle">{{ subtitle }}</p>{% endif %}
     <p>{{ body }}</p>
+    {% if points and points|length %}
+    <div class="pillar__points">
+      <p class="pillar__points-label">Puntos clave</p>
+      <div class="pillar__points-list">
+        {% for point in points %}<span class="pillar__point">{{ point }}</span>{% endfor %}
+      </div>
+    </div>
+    {% endif %}
     {% if ctaUrl %}<a class="link-arrow" href="{{ ctaUrl }}">{{ ctaText }} →</a>{% endif %}
   </div>
 </div>
 {% endmacro %}
 
-{% macro card(eyebrowText, title, body, ctaText, ctaUrl, variant="") %}
+{% macro card(eyebrowText, title, body, ctaText, ctaUrl, variant="", icon="", footerLabel="") %}
 <div class="card {% if variant %}card--{{ variant }}{% endif %}">
+  {% if icon %}<span class="card__icon" aria-hidden="true">{{ icon }}</span>{% endif %}
   {% if eyebrowText %}<p class="eyebrow">{{ eyebrowText }}</p>{% endif %}
   <h3>{{ title }}</h3>
   <p>{{ body }}</p>
+  {% if footerLabel %}<p class="eyebrow card__footer">{{ footerLabel }}</p>{% endif %}
   {% if ctaUrl %}<a class="link-arrow" href="{{ ctaUrl }}">{{ ctaText }} →</a>{% endif %}
 </div>
 {% endmacro %}
