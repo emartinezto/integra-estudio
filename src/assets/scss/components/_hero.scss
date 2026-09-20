@@ -157,16 +157,27 @@
 
   &__head {
     max-width: 48rem;
+  }
 
+  &--cuerpo &__head .hero__body {
     @include desktop {
-      .hero__body {
-        font-family: $font-serif;
-        font-weight: 400;
-        font-size: 28px;
-        line-height: 38.5px;
-        letter-spacing: 0;
-        color: $c-brand;
-      }
+      font-family: $font-serif;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 38.5px;
+      letter-spacing: 0;
+      color: $c-brand;
+    }
+  }
+
+  &--metodo &__head .hero__body {
+    @include desktop {
+      font-family: $font-sans;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 29.3px;
+      letter-spacing: 0;
+      color: $c-text;
     }
   }
 
