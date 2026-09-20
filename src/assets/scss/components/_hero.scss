@@ -149,5 +149,28 @@
 
   &__head {
     max-width: 48rem;
+
+    @include desktop {
+      .hero__body {
+        font-family: $font-serif;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 38.5px;
+        letter-spacing: 0;
+        color: $c-brand;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 16px;
+    align-items: start;
+
+    @include desktop {
+      grid-template-columns: 8fr 4fr;
+      gap: 48px;
+      align-items: end;
+    }
   }
 }

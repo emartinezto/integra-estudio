@@ -1,7 +1,12 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .breadcrumb {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+
+  @include desktop {
+    margin-bottom: 48px;
+  }
 
   ol {
     display: flex;
