@@ -147,3 +147,37 @@
   font-size: 13px;
   color: $c-text;
 }
+
+// Ajustes específicos del bloque "Áreas de Acción" en /cuerpo/
+#areas {
+  .pillar {
+    align-items: stretch;
+    overflow: hidden;
+    background: $c-bg-alt;
+
+    @include desktop {
+      padding: 0;
+    }
+
+    &__media .media-placeholder {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    &__content {
+      @include desktop {
+        padding: 48px 48px 48px 0;
+      }
+    }
+  }
+
+  .pillar--reverse .pillar__content {
+    @include desktop {
+      padding: 48px 0 48px 48px;
+    }
+  }
+
+  .pillar__point {
+    background: $c-bg;
+  }
+}

@@ -21,6 +21,11 @@
   background: rgba($c-bg-alt, 0.7);
 }
 
+// Fondo específico del bloque "Áreas de Acción" en /cuerpo/
+#areas.section--alt {
+  background: $c-bg;
+}
+
 .text-center {
   text-align: center;
 }
