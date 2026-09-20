@@ -2,21 +2,28 @@
 
 .quote-card {
   padding: 32px;
-  background: $c-bg-soft;
+  background: $c-bg;
   border-radius: $radius-md;
   box-shadow: $shadow-sm;
   height: 100%;
 
   &__text {
     font-family: $font-serif;
+    font-weight: 400;
+    font-style: italic;
     font-size: 18px;
+    line-height: 29.3px;
+    letter-spacing: 0.72px;
     color: $c-heading;
     margin-bottom: 16px;
   }
 
   &__author {
-    font-size: 13px;
-    color: $c-text-muted;
-    letter-spacing: 0.02em;
+    font-family: $font-sans;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.55px;
+    color: $c-accent;
   }
 }

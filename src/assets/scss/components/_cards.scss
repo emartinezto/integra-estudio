@@ -27,6 +27,23 @@
     background: $c-bg-alt;
     box-shadow: none;
   }
+
+  &--muted {
+    background: $c-bg;
+
+    h3 {
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 38px;
+      letter-spacing: 0;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 21px;
+      letter-spacing: 0;
+    }
+  }
 }
 
 .card__icon {

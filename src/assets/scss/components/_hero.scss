@@ -147,6 +147,14 @@
   @include container;
   padding-block: 32px 40px;
 
+  &__media {
+    margin-bottom: 40px;
+
+    @include desktop {
+      margin-bottom: 64px;
+    }
+  }
+
   &__head {
     max-width: 48rem;
 

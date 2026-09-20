@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.philosophy {
+  h2 {
+    margin-bottom: 24px;
+
+    @include desktop {
+      line-height: 50px;
+    }
+  }
+
+  &__content {
+    p + p {
+      margin-top: 16px;
+    }
+  }
+
+  &__stats {
+    margin-top: 24px;
+    gap: 16px;
+  }
+}
