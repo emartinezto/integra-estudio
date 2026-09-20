@@ -52,6 +52,45 @@
     }
   }
 
+  &__inner--left {
+    text-align: center;
+
+    > p {
+      max-width: 34rem;
+    }
+
+    .cta-banner__note {
+      margin-top: 0;
+    }
+
+    @include desktop {
+      text-align: left;
+
+      h2 {
+        margin-inline: 0;
+      }
+
+      > p {
+        margin-inline: 0;
+      }
+
+      .cta-banner__actions {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__blob {
+    position: absolute;
+    right: -40px;
+    bottom: -60px;
+    width: 274px;
+    height: 265px;
+    background: url("/assets/images/cta-blob.svg") no-repeat center / contain;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
   &__actions {
     display: flex;
     justify-content: center;
