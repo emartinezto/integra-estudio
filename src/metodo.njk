@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: El Método Integra
 description: "Un proceso holístico terapéutico que pone a la persona en el centro."
 ---
-{% from "macros/ui.njk" import button, sectionHead, card, quoteCard, ctaBanner, mediaPlaceholder, breadcrumb %}
+{% from "macros/ui.njk" import button, sectionHead, card, quoteCard, ctaBanner, mediaPlaceholder, breadcrumb, atmosphereCard, iconCuerpo, iconMente, iconMovimiento %}
 
 <div class="page-hero page-hero--metodo">
   {{ breadcrumb([{ label: "El Método Integra" }]) }}
@@ -39,9 +39,9 @@ description: "Un proceso holístico terapéutico que pone a la persona en el cen
   <div class="container">
     {{ sectionHead("Atmósfera y entorno", "Un espacio pensado para acompañarte", "Queremos que cuando entres en Integra sientas que estás en un lugar en el que puedes estar tranquilo, parar un momento y sentirte a gusto.", "center") }}
     <div class="grid">
-      {{ card("Cuerpo", "Cuidado y recuperación", "") }}
-      {{ card("Mente", "Escucha y acompañamiento", "") }}
-      {{ card("Movimiento", "Energía y conexión", "") }}
+      {{ atmosphereCard("Fotografía: espacio de calma", "Cuerpo", iconCuerpo(), "Cuidado y recuperación") }}
+      {{ atmosphereCard("Fotografía: conversación de acompañamiento", "Mente", iconMente(), "Escucha y acompañamiento") }}
+      {{ atmosphereCard("Fotografía: rincón de lectura", "Movimiento", iconMovimiento(), "Energía y conexión") }}
     </div>
   </div>
 </section>

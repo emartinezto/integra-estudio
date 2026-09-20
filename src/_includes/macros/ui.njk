@@ -92,6 +92,19 @@
 </div>
 {% endmacro %}
 
+{% macro atmosphereCard(imageLabel, label, icon, title) %}
+<div class="atmosphere-card">
+  {{ mediaPlaceholder(imageLabel) }}
+  <div class="atmosphere-card__body">
+    <div class="atmosphere-card__row">
+      <p class="atmosphere-card__label">{{ label }}</p>
+      {% if icon %}<span class="atmosphere-card__icon" aria-hidden="true">{{ icon }}</span>{% endif %}
+    </div>
+    <h3>{{ title }}</h3>
+  </div>
+</div>
+{% endmacro %}
+
 {% macro button(text, url, style="primary") %}
 <a class="btn btn--{{ style }}" href="{{ url }}">{{ text }}</a>
 {% endmacro %}

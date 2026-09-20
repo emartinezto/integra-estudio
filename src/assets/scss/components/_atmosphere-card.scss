@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as *;
+
+.atmosphere-card {
+  display: flex;
+  flex-direction: column;
+  background: $c-bg-soft;
+  border-radius: $radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  height: 100%;
+
+  .media-placeholder {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &__body {
+    padding: 20px 24px 24px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__label {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.55px;
+    text-transform: uppercase;
+    color: $c-accent;
+  }
+
+  &__icon {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    flex: none;
+    color: $c-accent;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.72px;
+  }
+}
