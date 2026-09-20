@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .quote-card {
   padding: 32px;
@@ -25,5 +26,47 @@
     line-height: 16px;
     letter-spacing: 0.55px;
     color: $c-accent;
+  }
+}
+
+// Sección "La persona en el centro de cada proceso" en /metodo/
+#filosofia {
+  background: rgba($c-bg-alt, 0.4);
+
+  h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  p + p {
+    margin-top: 16px;
+  }
+
+  .quote-card {
+    border-left: 4px solid $c-accent;
+  }
+
+  .hero__grid {
+    gap: 24px;
+  }
+
+  @include desktop {
+    .hero__grid {
+      grid-template-areas: "media head" "media content";
+      row-gap: 16px;
+      column-gap: 32px;
+    }
+
+    .filosofia__head {
+      grid-area: head;
+    }
+
+    .filosofia__media {
+      grid-area: media;
+    }
+
+    .filosofia__content {
+      grid-area: content;
+    }
   }
 }
