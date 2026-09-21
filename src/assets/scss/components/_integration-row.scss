@@ -1,0 +1,88 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.integration-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "number tag"
+    "title title"
+    "body body"
+    "cta cta";
+  row-gap: 16px;
+  column-gap: 16px;
+  padding: 32px;
+  background: $c-bg-soft;
+  border-radius: $radius-md;
+
+  @include desktop {
+    grid-template-columns: 48px 200px 1fr auto;
+    grid-template-areas: "number tag body cta" "number title body cta";
+    align-items: center;
+    row-gap: 8px;
+    column-gap: 32px;
+  }
+
+  &__number {
+    grid-area: number;
+    font-family: $font-serif;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 38px;
+    letter-spacing: -0.56px;
+    color: rgba($c-accent, 0.4);
+
+    @include desktop {
+      line-height: 68px;
+    }
+  }
+
+  &__tag {
+    grid-area: tag;
+    justify-self: end;
+    align-self: start;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(#a9b0a2, 0.15);
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.88px;
+    color: #2e4130;
+
+    @include desktop {
+      justify-self: start;
+      align-self: auto;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    font-size: 22px;
+  }
+
+  &__body {
+    grid-area: body;
+    color: $c-text;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24.4px;
+    letter-spacing: 0;
+  }
+
+  &__cta {
+    grid-area: cta;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.39px;
+    color: $c-heading;
+
+    @include desktop {
+      margin-left: 16px;
+    }
+  }
+}

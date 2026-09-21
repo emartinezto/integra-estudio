@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: El Método Integra
 description: "Un proceso holístico terapéutico que pone a la persona en el centro."
 ---
-{% from "macros/ui.njk" import button, sectionHead, card, quoteCard, ctaBanner, mediaPlaceholder, breadcrumb, atmosphereCard, iconCuerpo, iconMente, iconMovimiento %}
+{% from "macros/ui.njk" import button, sectionHead, card, quoteCard, ctaBanner, mediaPlaceholder, breadcrumb, atmosphereCard, iconCuerpo, iconMente, iconMovimiento, integrationRow %}
 
 <div class="page-hero page-hero--metodo">
   {{ breadcrumb([{ label: "El Método Integra" }]) }}
@@ -50,9 +50,9 @@ description: "Un proceso holístico terapéutico que pone a la persona en el cen
   <div class="container">
     {{ sectionHead("Integración constante", "Cuerpo · Mente · Movimiento", "Cuerpo, mente y movimiento se relacionan y se complementan. Conoce cómo cada uno puede acompañarte para ayudarte a sentirte bien.", "split") }}
     <div style="display: flex; flex-direction: column; gap: 24px;">
-      {{ card("Cuidado & Recuperación", "Cuerpo", "Fisioterapia, prevención y recuperación. Cuidamos tu cuerpo en cada momento: para prevenir, aliviar una molestia o acompañarte en tu recuperación. Escuchamos lo que necesitas y trabajamos contigo para ayudarte a volver a sentirte bien.", "Conoce el área de Cuerpo", "/cuerpo/") }}
-      {{ card("Escucha & Acompañamiento", "Mente", "Orientación, apoyo y formación. Un espacio para escuchar, acompañar y ayudarte a avanzar. Desde tus procesos personales hasta tus objetivos de formación y preparación de oposiciones, estamos a tu lado en cada momento.", "Conoce el área de Mente", "/mente/") }}
-      {{ card("Energía & Conexión", "Movimiento", "Pilates y movimiento consciente. Un espacio para conocer mejor tu cuerpo, ganar fuerza, mejorar tu movilidad y volver a moverte con seguridad. Trabajamos de forma personalizada, respetando tu ritmo y lo que necesitas en cada momento.", "Conoce el área de Movimiento", "/movimiento/") }}
+      {{ integrationRow("I", "Cuidado & Recuperación", "Cuerpo", "Fisioterapia, prevención y recuperación. Cuidamos tu cuerpo en cada momento: para prevenir, aliviar una molestia o acompañarte en tu recuperación. Escuchamos lo que necesitas y trabajamos contigo para ayudarte a volver a sentirte bien.", "Conoce el área de Cuerpo", "/cuerpo/") }}
+      {{ integrationRow("II", "Escucha & Acompañamiento", "Mente", "Orientación, apoyo y formación. Un espacio para escuchar, acompañar y ayudarte a avanzar. Desde tus procesos personales hasta tus objetivos de formación y preparación de oposiciones, estamos a tu lado en cada momento.", "Conoce el área de Mente", "/mente/") }}
+      {{ integrationRow("III", "Energía & Conexión", "Movimiento", "Pilates y movimiento consciente. Un espacio para conocer mejor tu cuerpo, ganar fuerza, mejorar tu movilidad y volver a moverte con seguridad. Trabajamos de forma personalizada, respetando tu ritmo y lo que necesitas en cada momento.", "Conoce el área de Movimiento", "/movimiento/") }}
     </div>
   </div>
 </section>

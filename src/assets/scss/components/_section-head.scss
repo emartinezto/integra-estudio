@@ -41,11 +41,26 @@
   }
 
   &--split {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 24px;
-    max-width: none;
-    flex-wrap: wrap;
+    .section-head__body {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: 0;
+    }
+
+    @include desktop {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: none;
+      flex-wrap: wrap;
+
+      .section-head__body {
+        max-width: 26rem;
+        margin-top: 0;
+        flex: none;
+      }
+    }
   }
 }
