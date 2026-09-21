@@ -30,6 +30,16 @@
 
 {% macro iconHandRaised() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 10.3V4.8a1 1 0 0 1 2 0V9M9 9V3.8a1 1 0 0 1 2 0V9M11 9V4.3a1 1 0 0 1 2 0V10M13 10.2V6.2a1 1 0 0 1 2 0v6.3c0 3-2.2 5-5 5-2 0-3.1-.6-4.1-2.1L3.6 11c-.4-.6-.2-1.4.4-1.8.6-.4 1.4-.2 1.7.4L7 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endmacro %}
 
+{% macro iconEar() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3c-3 0-5.5 2.4-5.5 5.5 0 1.8.8 3 1.8 4.3.7.9 1.2 1.6 1.2 2.7a2 2 0 0 0 4 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 8.5c0-1 .8-1.8 1.8-1.8s1.7.7 1.7 1.6c0 .8-.5 1.2-1 1.6-.4.3-.7.6-.7 1.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>{% endmacro %}
+
+{% macro iconPulse() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10h3.2l1.6-4 2.4 8 1.8-6 1.2 2H18" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endmacro %}
+
+{% macro iconInfinity() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 7.5c-1.7 0-3 1.3-3 2.9s1.3 2.9 3 2.9c2.3 0 3-5.8 6-5.8 1.7 0 3 1.3 3 2.9s-1.3 2.9-3 2.9c-3 0-3.7-5.8-6-5.8Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>{% endmacro %}
+
+{% macro iconSitting() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="4" r="1.6" stroke="currentColor" stroke-width="1.2"/><path d="M8 6v4.5M8 10.5H4M8 10.5l3 1.5v4M11 12l3.5-1M4 17h4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endmacro %}
+
+{% macro iconBandage() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.5" y="7.5" width="15" height="5" rx="2.5" transform="rotate(-20 10 10)" stroke="currentColor" stroke-width="1.3"/><path d="M8 8.3l1.4 3.4M11 6.9l1.4 3.4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>{% endmacro %}
+
 {% macro areaCard(icon, title, items, tag, note) %}
 <div class="area-card">
   <div class="area-card__head">
@@ -235,6 +245,16 @@
   <a class="link-arrow" href="{{ ctaUrl }}">{{ ctaText }} →</a>
   {% endif %}
 </div>
+{% endmacro %}
+
+{% macro faqItem(question, answer) %}
+<details class="faq-item">
+  <summary class="faq-item__summary">
+    <span>{{ question }}</span>
+    <span class="faq-item__icon" aria-hidden="true">+</span>
+  </summary>
+  <div class="faq-item__answer"><p>{{ answer }}</p></div>
+</details>
 {% endmacro %}
 
 {% macro opoCard(icon, category, title, body, checks, ctaText, ctaUrl) %}

@@ -1,0 +1,54 @@
+@use "../abstracts/variables" as *;
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.faq-item {
+  background: $c-bg-soft;
+  border-radius: $radius-md;
+  padding-inline: 24px;
+}
+
+.faq-item__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 20px;
+  cursor: pointer;
+  list-style: none;
+  font-family: $font-serif;
+  font-size: 16px;
+  color: $c-heading;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.faq-item__icon {
+  flex: none;
+  font-size: 20px;
+  font-weight: 300;
+  color: $c-accent;
+  transition: transform 0.2s ease;
+}
+
+details[open] .faq-item__icon {
+  transform: rotate(45deg);
+}
+
+.faq-item__answer {
+  padding-bottom: 20px;
+  margin-top: -8px;
+
+  p {
+    font-size: 14px;
+    color: $c-text;
+    max-width: 65ch;
+  }
+}

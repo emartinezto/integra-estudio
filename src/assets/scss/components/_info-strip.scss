@@ -1,0 +1,77 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.info-strip {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: $c-bg-alt;
+  border-radius: $radius-md;
+  margin-top: 24px;
+  overflow: hidden;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.info-strip__item {
+  padding: 16px 20px;
+  border-bottom: 1px solid $c-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .eyebrow {
+    margin-bottom: 6px;
+  }
+
+  p:last-child {
+    font-size: 14px;
+    color: $c-text;
+  }
+
+  @include tablet {
+    border-bottom: none;
+    border-right: 1px solid $c-border;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.page-hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  .breadcrumb {
+    margin-bottom: 0;
+  }
+}
+
+.pilar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: $c-bg-alt;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $c-heading;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    flex: none;
+    border-radius: 50%;
+    background: $c-accent-sage;
+  }
+}

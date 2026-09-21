@@ -30,6 +30,13 @@
   text-align: center;
 }
 
+.text-underline {
+  text-decoration: underline;
+  text-decoration-color: $c-accent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

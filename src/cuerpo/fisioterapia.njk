@@ -1,47 +1,111 @@
 ---
 layout: layouts/base.njk
 title: Fisioterapia
-description: "Tratamiento fisioterapéutico especializado, con planes personalizados para cada lesión."
+description: "Tratamiento fisioterapéutico personalizado, con planes de recuperación adaptados a cada persona."
 ---
-{% from "macros/ui.njk" import button, sectionHead, card, ctaBanner, mediaPlaceholder, breadcrumb %}
+{% from "macros/ui.njk" import button, sectionHead, card, quoteCard, faqItem, ctaBanner, mediaPlaceholder, breadcrumb, iconEar, iconPulse, iconInfinity, iconSitting, iconBandage, iconHandRaised %}
 
 <div class="page-hero">
-  {{ breadcrumb([{ label: "Cuerpo", url: "/cuerpo/" }, { label: "Fisioterapia" }]) }}
-  <div class="page-hero__head">
-    <p class="eyebrow">Cuerpo · Subárea</p>
-    <h1>Fisioterapia</h1>
-    <p class="hero__body">Tratamiento clínico especializado para lesiones musculoesqueléticas, con un plan de recuperación diseñado para ti.</p>
-    <div class="hero__actions">
-      {{ button("Reservar una sesión", "/contacto/", "primary") }}
-      {{ button("Volver a Cuerpo", "/cuerpo/", "secondary") }}
+  <div class="page-hero__top">
+    {{ breadcrumb([{ label: "Cuerpo", url: "/cuerpo/" }, { label: "Fisioterapia" }]) }}
+    <span class="pilar-badge">Pilar 01 · Cuerpo</span>
+  </div>
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow">Área de cuidados manuales</p>
+      <h1>Fisioterapia</h1>
+      <p class="hero__body">Un tratamiento personalizado y adaptado a ti para aliviar el dolor, recuperar la movilidad y ayudarte a volver a sentirte bien en tu cuerpo.</p>
+
+      <div class="info-strip">
+        <div class="info-strip__item">
+          <p class="eyebrow">Formato</p>
+          <p>Sesión 1:1 en exclusiva</p>
+        </div>
+        <div class="info-strip__item">
+          <p class="eyebrow">Duración</p>
+          <p>60 minutos íntegros</p>
+        </div>
+        <div class="info-strip__item">
+          <p class="eyebrow">Especialistas</p>
+          <p>Fisioterapeutas colegiados</p>
+        </div>
+      </div>
+
+      <div class="hero__actions">
+        {{ button("Reservar primera sesión", "/contacto/", "primary") }}
+        <a class="link-arrow" href="/contacto/">Consultar dudas previas</a>
+      </div>
+    </div>
+    <div>
+      {{ mediaPlaceholder("Fotografía: sesión de fisioterapia", "4 / 3") }}
+      <p class="eyebrow eyebrow--dot" style="margin-top: 12px;">Atención individualizada en cabina privada serena · Estudio Velázquez, Madrid</p>
     </div>
   </div>
 </div>
 
-<div class="container">
-  {{ mediaPlaceholder("Fotografía: tratamiento de fisioterapia", "21 / 9") }}
-</div>
+<section class="section section--tint">
+  <div class="container hero__grid">
+    <div>
+      <p class="eyebrow">Filosofía de intervención</p>
+      <h2 class="text-underline">En qué consiste</h2>
+      <p style="margin-top: 16px;">En Integra entendemos la fisioterapia como un trabajo que empieza por escucharte y entender lo que te ocurre. A partir de ahí, trabajamos con tu cuerpo de forma cuidadosa y personalizada, respetando siempre lo que necesita y el momento en el que se encuentra.</p>
+      <p style="margin-top: 16px;">Aquí no trabajamos con prisas ni de forma impersonal. Dedicamos el tiempo que necesitas para entender qué está pasando, conocer el origen de tus molestias y acompañarte en tu recuperación, respetando siempre el ritmo de tu cuerpo.</p>
+      <div style="margin-top: 24px;">
+        {{ quoteCard("La molestia nos dice dónde duele. Escucharte nos ayuda a entender qué hay detrás.", "Equipo de Fisioterapia Clínica Integra") }}
+      </div>
+    </div>
+    <div>
+      {{ mediaPlaceholder("Fotografía: palpación clínica") }}
+      <p style="font-size: 13px; color: #81756E; margin-top: 12px;">Palpación consciente y respeto por los umbrales del tejido</p>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="container">
-    {{ sectionHead("Qué tratamos", "Especialidades de fisioterapia", "", "center") }}
-    <div class="grid">
-      {{ card("", "Lesiones deportivas", "Diagnóstico y tratamiento de lesiones musculares, tendinosas y articulares.") }}
-      {{ card("", "Dolor de espalda y cervical", "Tratamiento de patologías de columna, contracturas y sobrecargas.") }}
-      {{ card("", "Rehabilitación post-quirúrgica", "Readaptación progresiva tras intervenciones quirúrgicas o inmovilizaciones.") }}
+    {{ sectionHead("Criterio terapéutico", "Beneficios de nuestra práctica", "Un abordaje respetuoso con tus tiempos.", "") }}
+    <div class="grid grid--4">
+      {{ card("", "Alivio profundo del dolor", "Reducción sistemática de tensiones miofasciales agudas y crónicas sin recurrir a manipulaciones invasivas ni técnicas agresivas.", "", "", "", "", "Terapia Manual", "01") }}
+      {{ card("", "Reeducación biomecánica", "Observamos cómo te mueves y qué hábitos de tu día a día pueden estar influyendo en tus molestias, para ayudarte a prevenir que vuelvan a aparecer.", "", "", "", "", "Higiene Postural", "02") }}
+      {{ card("", "Regulación neurosensorial", "Te ayudamos a liberar la tensión que tu cuerpo puede ir acumulando por el cansancio, la postura o el estrés del día a día.", "", "", "", "", "Neuromuscular", "03") }}
+      {{ card("", "Autonomía y confianza", "Te damos herramientas sencillas y pequeños movimientos para que puedas entender mejor tu cuerpo y participar activamente en tu recuperación.", "", "", "", "", "Educación y Vida", "04") }}
     </div>
   </div>
 </section>
 
 <section class="section section--alt">
-  <div class="container hero__grid">
-    <div>
-      <p class="eyebrow">Cómo trabajamos</p>
-      <h2>Un plan, no una sesión suelta</h2>
-      <p>Empezamos con una valoración completa para entender el origen del dolor o la lesión. A partir de ahí, diseñamos un plan de tratamiento con objetivos claros y revisiones periódicas.</p>
+  <div class="container">
+    {{ sectionHead("Itinerario de cuidados", "¿Cómo funciona el proceso?", "Un camino estructurado en tres tiempos sin aceleraciones artificiales.", "left") }}
+    <div class="grid">
+      {{ card("", "Primera toma de contacto", "Empezamos escuchándote, conociendo tu historia y valorando cómo se encuentra tu cuerpo antes de empezar a trabajar. Así podemos entender mejor qué puede estar detrás de tus molestias y decidir contigo cómo acompañarte.", "", "", "", iconEar(), "", "01") }}
+      {{ card("", "Valoración y acompañamiento", "Trabajamos con técnicas manuales y movilizaciones suaves, adaptando cada sesión a cómo responde tu cuerpo y a lo que necesitas en cada momento.", "", "", "", iconPulse(), "", "02") }}
+      {{ card("", "Proceso personalizado", "Te acompañamos también después de la sesión, con recomendaciones para tu día a día, cuando lo necesites, conectando el trabajo con el área de Movimiento para seguir avanzando en tu recuperación.", "", "", "", iconInfinity(), "", "03") }}
     </div>
-    <div>{{ mediaPlaceholder("Fotografía: valoración funcional") }}</div>
   </div>
 </section>
 
-{{ ctaBanner("", "Reserva tu valoración inicial", "Cuéntanos qué te ocurre y te ayudamos a diseñar el mejor plan de tratamiento.", "Reservar una sesión", "/contacto/") }}
+<section class="section">
+  <div class="container">
+    {{ sectionHead("Destinatarios", "Para quién está pensado", "La fisioterapia en Integra acoge a perfiles que priorizan la calidad de atención y el análisis holístico de sus síntomas.", "center") }}
+    <div class="grid">
+      {{ card("", "Dolencias recidivantes", "Para personas que conviven con molestias en la zona cervical, dorsal o lumbar, especialmente cuando están relacionadas con muchas horas sentado, la postura o tensiones que se repiten en el día a día.", "", "", "", iconSitting()) }}
+      {{ card("", "Recuperación funcional post-lesión", "Para quienes, después de una rehabilitación, necesitan seguir recuperando movilidad, soltura y confianza para volver a moverse con seguridad.", "", "", "", iconBandage()) }}
+      {{ card("", "Cuidado riguroso y consciente", "Para quienes buscan una atención profesional y personalizada, con el tiempo y el cuidado necesarios para escuchar, entender y tratar lo que necesita tu cuerpo.", "", "", "", iconHandRaised()) }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    {{ sectionHead("Dudas habituales", "Preguntas frecuentes", "", "center") }}
+    <div class="faq-list">
+      {{ faqItem("¿Necesito prescripción médica previa para acudir?", "No es imprescindible. Puedes acudir directamente a una valoración inicial; si detectamos que necesitas una prueba diagnóstica o la opinión de otro especialista, te lo indicaremos durante el proceso.") }}
+      {{ faqItem("¿Cómo se diferencian las sesiones de una mutua o clínica convencional?", "Trabajamos con sesiones individuales de una hora completa, sin solapar pacientes ni fragmentar el tiempo entre varias personas, con seguimiento continuo del mismo fisioterapeuta.") }}
+      {{ faqItem("¿Cuántas sesiones suelen ser necesarias para notar mejoría?", "Depende de cada caso, pero la mayoría de las personas empiezan a notar cambios entre la tercera y la quinta sesión. En la valoración inicial te damos una estimación orientativa de tu proceso.") }}
+      {{ faqItem("¿Qué ropa o preparación es recomendable llevar?", "Ropa cómoda que permita moverte con libertad, como la que usarías para hacer deporte. Si tu molestia afecta a una zona concreta, procura que quede accesible.") }}
+      {{ faqItem("¿Cómo se conecta la fisioterapia con las sesiones de Pilates de Integra?", "Cuando lo consideramos beneficioso, coordinamos tu plan de fisioterapia con el área de Movimiento, para que el trabajo de recuperación continúe de forma segura en las sesiones de Pilates.") }}
+    </div>
+  </div>
+</section>
+
+{{ ctaBanner("Tu momento de recuperación", "Ponte en nuestras manos", "Reserva tu primera valoración diagnóstica o llámanos para resolver cualquier consulta sobre tu caso particular con nuestro equipo.", "Reservar sesión", "/contacto/", "Contactar por teléfono", "tel:" ~ site.phone, "Atención individualizada con cita previa en Integra Studio") }}
