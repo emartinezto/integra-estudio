@@ -1,0 +1,204 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Hero image with bottom caption bar (/contacto/)
+.contact-hero-media {
+  position: relative;
+  margin-top: 32px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: $radius-lg;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 40%);
+    pointer-events: none;
+  }
+}
+
+.contact-hero-media__bar {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 16px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: $c-white;
+  font-size: 13px;
+
+  @include desktop {
+    left: 32px;
+    right: 32px;
+    bottom: 24px;
+  }
+}
+
+.contact-hero-media__tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba($c-white, 0.85);
+}
+
+// Contact info cards
+.contact-card {
+  padding: 24px;
+  background: $c-bg-soft;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  height: 100%;
+}
+
+.contact-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $c-bg-alt;
+  color: $c-heading;
+  margin-bottom: 16px;
+
+  svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.contact-card h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.contact-card__lines {
+  font-size: 14px;
+  color: $c-text;
+  line-height: 1.5;
+}
+
+.contact-card__footer,
+.contact-card__footer-note {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: $c-accent-sage;
+}
+
+// "Cómo llegar" panel
+.transit-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eyebrow {
+    margin-bottom: 4px;
+  }
+
+  p:last-child {
+    font-size: 14px;
+    color: $c-text;
+  }
+}
+
+// Map
+.contact-map {
+  position: relative;
+  margin-top: 16px;
+}
+
+.contact-map__pin {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: $c-heading;
+  color: $c-white;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    flex: none;
+    border-radius: 50%;
+    background: $c-accent-sage;
+  }
+}
+
+// Form card extras
+.contact-form__header {
+  margin-bottom: 24px;
+
+  h2 {
+    font-size: 26px;
+  }
+
+  p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: $c-text-muted;
+  }
+}
+
+.contact-form__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-form__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: $c-text-muted;
+
+  input {
+    margin-top: 3px;
+    flex: none;
+    width: 16px;
+    height: 16px;
+  }
+
+  a {
+    color: $c-brand;
+    text-decoration: underline;
+  }
+}
+
+.contact-form__lock-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: $c-text-muted;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    flex: none;
+    margin-top: 2px;
+  }
+}

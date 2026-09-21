@@ -3,59 +3,120 @@ layout: layouts/base.njk
 title: Contacto
 description: "Reserva tu primera sesión en Integra Studio, en Parla, Madrid."
 ---
-{% from "macros/ui.njk" import breadcrumb %}
+{% from "macros/ui.njk" import breadcrumb, mediaPlaceholder, contactCard, iconPin, iconPhone, iconMail, iconClock, iconTrain, iconLock %}
 
 <div class="page-hero">
-  {{ breadcrumb([{ label: "Contacto" }]) }}
+  <div class="page-hero__top">
+    {{ breadcrumb([{ label: "Contacto" }]) }}
+    <span class="pilar-badge">Atención & acompañamiento</span>
+  </div>
   <div class="page-hero__head">
-    <p class="eyebrow">Contacto</p>
-    <h1>Hablemos de tu proceso</h1>
-    <p class="hero__body">Cuéntanos qué necesitas y te ayudamos a encontrar el pilar y el profesional adecuado para empezar.</p>
+    <h1>Estamos aquí para acompañarte</h1>
+    <p class="hero__body">Si tienes alguna duda, quieres conocer mejor Integra o dar el primer paso, estaremos encantados de escucharte y valorar contigo la mejor manera de acompañarte.</p>
+  </div>
+</div>
+
+<div class="container contact-hero-media">
+  {{ mediaPlaceholder("Fotografía: recepción de Integra Studio", "21 / 9") }}
+  <div class="contact-hero-media__bar">
+    <span>Recepción y espacio de acogida · Integra Studio, {{ site.address[0] }}</span>
+    <span class="contact-hero-media__tag">Estudio presencial</span>
   </div>
 </div>
 
 <section class="section">
-  <div class="container hero__grid">
+  <div class="container grid grid--2" style="align-items: start;">
+    <div>
+      <p class="eyebrow">Ubicación & atención</p>
+      <h2>Encuéntranos en Parla</h2>
+      <p style="margin-top: 12px;">Atendemos siempre con cita previa y dedicando a cada persona el tiempo y la atención que necesita, en un espacio tranquilo donde puedas sentirte cómodo y acompañado.</p>
+
+      <div class="grid grid--2" style="margin-top: 24px;">
+        {{ contactCard(iconPin(), "Dirección", site.address[0] ~ "<br>" ~ site.address[1], "Edificio residencial accesible") }}
+        {{ contactCard(iconPhone(), "Teléfono directo", site.phone ~ "<br>Atención sosegada en recepción", "Llamar ahora", "tel:" ~ site.phone) }}
+        {{ contactCard(iconMail(), "Correo electrónico", site.email, "Respuesta en 24h laborables") }}
+        {{ contactCard(iconClock(), "Horario de estudio", "Lunes a Viernes: 09:00 – 20:00 h<br>Sábados: Con cita previa diagnóstica", "Domingos cerrado por descanso") }}
+      </div>
+
+      <div class="panel" style="margin-top: 24px;">
+        <p class="eyebrow" style="display: flex; align-items: center; gap: 8px; margin-bottom: 0;">
+          <span style="display: inline-flex; width: 16px; height: 16px;" aria-hidden="true">{{ iconTrain() }}</span>
+          Cómo llegar
+        </p>
+        <div class="transit-row">
+          <div>
+            <p class="eyebrow">RENFE</p>
+            <p>Estación de Parla a 3 min a pie</p>
+          </div>
+          <div>
+            <p class="eyebrow">Tranvía de Parla</p>
+            <p>Parla Centro</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-map">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+          <p class="eyebrow" style="margin-bottom: 0;">Cartografía del entorno</p>
+          <a class="link-arrow" href="{{ site.mapsUrl }}" target="_blank" rel="noopener">Ver en Google Maps ↗</a>
+        </div>
+        {{ mediaPlaceholder("Mapa: entorno de Integra Studio", "16 / 10") }}
+        <span class="contact-map__pin">{{ site.address[0] }}, Parla</span>
+      </div>
+    </div>
+
     <form class="contact-form" action="#" method="post">
-      <div class="contact-form__row">
-        <label for="name">Nombre</label>
-        <input id="name" name="name" type="text" required>
+      <div class="contact-form__header">
+        <p class="eyebrow">Formulario de contacto</p>
+        <h2>Escríbenos tu consulta</h2>
+        <p>Te responderemos con calma en un plazo máximo de 24 horas laborables.</p>
       </div>
+
       <div class="contact-form__row">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required>
+        <label for="name">Nombre y apellidos *</label>
+        <input id="name" name="name" type="text" placeholder="ej. Elena Morales" required>
       </div>
-      <div class="contact-form__row">
-        <label for="phone">Teléfono</label>
-        <input id="phone" name="phone" type="tel">
+
+      <div class="contact-form__grid">
+        <div class="contact-form__row">
+          <label for="email">Correo electrónico *</label>
+          <input id="email" name="email" type="email" placeholder="elena@ejemplo.com" required>
+        </div>
+        <div class="contact-form__row">
+          <label for="phone">Teléfono de contacto</label>
+          <input id="phone" name="phone" type="tel" placeholder="+34 600 000 000">
+        </div>
       </div>
+
       <div class="contact-form__row">
-        <label for="interest">Me interesa</label>
-        <select id="interest" name="interest">
+        <label for="interest">Motivo de consulta o pilar de interés *</label>
+        <select id="interest" name="interest" required>
+          <option value="" selected disabled>Selecciona un área de interés</option>
           <option value="cuerpo">Cuerpo · Fisioterapia</option>
           <option value="mente">Mente · Orientación y apoyo</option>
-          <option value="movimiento">Movimiento · Pilates y yoga</option>
+          <option value="movimiento">Movimiento · Pilates</option>
           <option value="formacion">Formación · Oposiciones</option>
         </select>
       </div>
+
       <div class="contact-form__row">
-        <label for="message">Mensaje</label>
-        <textarea id="message" name="message" rows="4"></textarea>
+        <label for="message">Mensaje o situación actual *</label>
+        <textarea id="message" name="message" rows="4" placeholder="Cuéntanos brevemente en qué podemos ayudarte o tu situación actual…" required></textarea>
       </div>
-      <button class="btn btn--primary" type="submit">Enviar mensaje</button>
+
+      <label class="contact-form__check">
+        <input type="checkbox" name="consent" required>
+        <span>Acepto la <a href="/privacidad/">política de privacidad</a> y el tratamiento consciente de mis datos personales según las directrices del RGPD.</span>
+      </label>
+
+      <button class="btn btn--primary" type="submit">Enviar mensaje →</button>
+
+      <p class="contact-form__lock-note">
+        <span aria-hidden="true">{{ iconLock() }}</span>
+        Tus datos son tratados con estricta confidencialidad médica y profesional.
+      </p>
+
       <p class="contact-form__note">Este formulario aún no está conectado a ningún servicio de envío: hay que enlazarlo con tu proveedor de email o formularios antes de publicarlo.</p>
     </form>
-
-    <div>
-      <h2>Visítanos</h2>
-      <p>{{ site.address[0] }}<br>{{ site.address[1] }}</p>
-      <p style="margin-top: 16px;">
-        <a class="link-arrow" href="tel:{{ site.phone }}">{{ site.phone }}</a><br>
-        <a class="link-arrow" href="mailto:{{ site.email }}">{{ site.email }}</a>
-      </p>
-      <div style="margin-top: 24px;">
-        <div class="media-placeholder" style="--ratio: 4 / 3;"><span>Mapa: {{ site.address[1] }}</span></div>
-      </div>
-    </div>
   </div>
 </section>

@@ -40,6 +40,14 @@
 
 {% macro iconBandage() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.5" y="7.5" width="15" height="5" rx="2.5" transform="rotate(-20 10 10)" stroke="currentColor" stroke-width="1.3"/><path d="M8 8.3l1.4 3.4M11 6.9l1.4 3.4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>{% endmacro %}
 
+{% macro iconPhone() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 2.5H4a1.5 1.5 0 0 0-1.5 1.6c.3 3.2 1.7 6.2 4 8.5s5.3 3.7 8.5 4a1.5 1.5 0 0 0 1.6-1.5v-2.5l-3.3-1-1.4 1.7a10 10 0 0 1-5-5l1.7-1.4-1-3.3Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>{% endmacro %}
+
+{% macro iconMail() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.5" y="4.5" width="15" height="11" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M3 5.5l7 5.5 7-5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endmacro %}
+
+{% macro iconLock() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="9" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 9V6.5a3.5 3.5 0 0 1 7 0V9" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="12.8" r="1.1" fill="currentColor"/></svg>{% endmacro %}
+
+{% macro iconTrain() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="2.5" width="12" height="10" rx="3" stroke="currentColor" stroke-width="1.2"/><path d="M4 9h12M7 12.5 5 16M13 12.5l2 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="7.2" cy="6.5" r=".9" fill="currentColor"/><circle cx="12.8" cy="6.5" r=".9" fill="currentColor"/></svg>{% endmacro %}
+
 {% macro areaCard(icon, title, items, tag, note) %}
 <div class="area-card">
   <div class="area-card__head">
@@ -243,6 +251,19 @@
   </p>
   {% else %}
   <a class="link-arrow" href="{{ ctaUrl }}">{{ ctaText }} →</a>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro contactCard(icon, title, lines, footerText, footerUrl) %}
+<div class="contact-card">
+  <span class="contact-card__icon" aria-hidden="true">{{ icon }}</span>
+  <h3>{{ title }}</h3>
+  <p class="contact-card__lines">{{ lines | safe }}</p>
+  {% if footerUrl %}
+  <a class="contact-card__footer link-arrow" href="{{ footerUrl }}">{{ footerText }} →</a>
+  {% elif footerText %}
+  <p class="contact-card__footer-note">{{ footerText }}</p>
   {% endif %}
 </div>
 {% endmacro %}
