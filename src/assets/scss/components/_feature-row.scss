@@ -1,0 +1,45 @@
+@use "../abstracts/variables" as *;
+
+.feature-row {
+  padding: 24px;
+  background: $c-bg-alt;
+  border-radius: $radius-md;
+}
+
+.feature-row__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  h3 {
+    font-size: 19px;
+  }
+}
+
+.feature-row__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border-radius: $radius-sm;
+  background: $c-bg-soft;
+  color: $c-accent-sage;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.feature-row__body {
+  margin-top: 8px;
+  font-size: 14px;
+  color: $c-text;
+  padding-left: 44px;
+}
+
+.feature-cta {
+  width: 100%;
+}

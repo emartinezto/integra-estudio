@@ -1,49 +1,142 @@
 ---
 layout: layouts/base.njk
 title: Movimiento
-description: "Pilates, yoga terapéutico y entrenamiento funcional para moverte con conciencia."
+description: "Pilates, movimiento consciente y trabajo corporal integral para moverte con conciencia."
 ---
-{% from "macros/ui.njk" import button, sectionHead, card, ctaBanner, mediaPlaceholder, breadcrumb %}
+{% from "macros/ui.njk" import button, sectionHead, card, quoteInline, featureRow, pillarOverviewCard, ctaBanner, mediaPlaceholder, breadcrumb, iconLeaf, iconScan, iconHandRaised, iconCuerpo, iconMente, iconMovimiento %}
 
-<div class="page-hero">
+<section class="hero">
   {{ breadcrumb([{ label: "Movimiento" }]) }}
   <div class="hero__grid">
-    <div class="page-hero__head">
-      <p class="eyebrow">Pilar Movimiento</p>
-      <h1>Devuelve fuerza y calma a tu cuerpo</h1>
-      <p class="hero__body">Programas de movimiento consciente: pilates, yoga terapéutico y entrenamiento funcional, en grupos reducidos.</p>
+    <div>
+      <div class="hero__eyebrow-rule">
+        <p class="eyebrow">Conocer tu cuerpo y moverte mejor</p>
+      </div>
+      <h1>Movimiento</h1>
+      <p class="hero__subtitle">Muévete con más conciencia.<br>Conecta con tu cuerpo.</p>
+      <p class="hero__body">En Integra entendemos el movimiento como una forma de conectar con tu cuerpo. Un espacio para ganar fuerza, sentirte más ágil y moverte con mayor libertad en tu día a día.</p>
       <div class="hero__actions">
-        {{ button("Reservar una clase", "/contacto/", "primary") }}
+        {{ button("Conoce Pilates →", "/contacto/", "primary") }}
+        {{ button("Consultar valoración", "/contacto/", "secondary") }}
+      </div>
+      <div class="hero-info-row">
+        <div class="hero-info-row__item">
+          <p class="eyebrow">Ratio</p>
+          <p>Grupos reducidos máx. 8 personas</p>
+        </div>
+        <div class="hero-info-row__item">
+          <p class="eyebrow">Cuidado</p>
+          <p>Atención somática individualizada 1:1</p>
+        </div>
+        <div class="hero-info-row__item">
+          <p class="eyebrow">Enfoque</p>
+          <p>Alineación articular y respiración</p>
+        </div>
       </div>
     </div>
-    <div>{{ mediaPlaceholder("Fotografía: sala de movimiento") }}</div>
+    <div class="hero-media">
+      {{ mediaPlaceholder("Fotografía: estiramiento consciente", "4 / 5") }}
+      <div class="hero-media__quote">
+        <p class="eyebrow eyebrow--dot hero-media__quote-label">Presencia somática</p>
+        <p class="hero-media__quote-text">«La postura no es una posición fija que se impone, sino un equilibrio dinámico que se descubre al respirar.»</p>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="container">
-  {{ mediaPlaceholder("Fotografía: clase de pilates", "21 / 9") }}
-</div>
+</section>
 
 <section class="section section--alt">
   <div class="container">
-    {{ sectionHead("Nuestras clases", "Programas de movimiento", "Grupos reducidos, atención personalizada y progresión adaptada a cada nivel.", "center") }}
-    <div class="grid">
-      {{ card("", "Pilates", "Fortalece el centro del cuerpo, mejora la postura y previene lesiones.") }}
-      {{ card("", "Yoga terapéutico", "Trabajo de movilidad, respiración y calma, adaptado a cada cuerpo.") }}
-      {{ card("", "Entrenamiento funcional", "Fuerza y resistencia aplicadas a los movimientos del día a día.") }}
+    <div class="section-head section-head--center-desktop">
+      <p class="eyebrow">Manifiesto del movimiento</p>
+      <h2>El movimiento también es una forma de cuidarte.</h2>
+    </div>
+    <div class="manifesto-grid">
+      <div>
+        {{ quoteInline("El movimiento no consiste en exigirle más a tu cuerpo, sino en aprender a conocerlo, escucharlo y moverte respetando tu propio ritmo.", "Equipo de Movimiento, Integra Studio") }}
+      </div>
+      <div>
+        {{ mediaPlaceholder("Fotografía: materiales naturales", "1 / 1") }}
+        <p class="eyebrow" style="text-align: center; margin-top: 12px;">Materiales naturales · Roble & Lino</p>
+      </div>
+      <div>
+        <p>En Integra no buscamos hacer más ni llegar más lejos. Trabajamos para que conozcas mejor tu cuerpo, entiendas cómo te mueves y encuentres una forma de hacerlo con mayor seguridad y libertad.</p>
+        <p style="margin-top: 16px;">A través del movimiento, te ayudamos a ganar fuerza, mejorar tu movilidad y sentirte más cómodo en tu cuerpo, para que todo eso te acompañe también en tu día a día.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pilates">
+  <div class="container">
+    <p class="eyebrow eyebrow--dot">Práctica fundamental</p>
+    <h2>Pilates: precisión, alineación y calma activa</h2>
+    <p style="margin-top: 12px; max-width: 42rem;">Un trabajo consciente del cuerpo para mejorar fuerza profunda, movilidad articular, control motor y bienestar general sostenido.</p>
+
+    <div class="hero__grid" style="margin-top: 32px; align-items: start;">
+      <div>
+        {{ mediaPlaceholder("Fotografía: sesión de Pilates en reformer", "4 / 5") }}
+        <div style="display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; flex-wrap: wrap;">
+          <p class="eyebrow" style="margin-bottom: 0;">Estudio central · Reformers de roble macizo</p>
+          <p style="font-size: 13px; color: #81756E; margin: 0;">Luz natural cenital y ventilación serena</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        {{ featureRow(iconLeaf(), "Movimiento consciente", "Entender cómo se mueve tu cuerpo y ayudarte a moverte mejor.") }}
+        {{ featureRow(iconScan(), "Trabajo corporal integral", "Tonificación de la musculatura tónica profunda, transverso abdominal, estabilizadores lumbares y suelo pélvico.") }}
+        {{ featureRow(iconHandRaised(), "Acompañamiento profesional", "Instrucción clínica y correcciones táctiles de sutileza milimétrica por fisioterapeutas y especialistas certificados.") }}
+        {{ button("Conoce la práctica de Pilates →", "/contacto/", "primary") }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    {{ sectionHead("Fundamentos de la práctica", "Una forma diferente de moverte", "Sustituimos el conteo acelerado de repeticiones por la calidad atenta del gesto motor. El resultado es un cuerpo ágil que no acumula dolor.", "") }}
+    <div class="grid grid--4">
+      {{ card("", "Consciencia corporal", "Aprender a escuchar tu cuerpo y reconocer esas pequeñas señales que pueden aparecer antes de que se conviertan en una molestia.", "", "", "", "", "", "01") }}
+      {{ card("", "Movilidad y fluidez", "Recuperar movilidad y dar a tu cuerpo el espacio que necesita para moverse con mayor libertad.", "", "", "", "", "", "02") }}
+      {{ card("", "Fuerza equilibrada", "Desarrollar una fuerza que te ayude a sentirte más estable, ágil y seguro en tu día a día.", "", "", "", "", "", "03") }}
+      {{ card("", "Bienestar integral", "Un momento para parar, desconectar y volver a centrarte en ti a través del movimiento.", "", "", "", "", "", "04") }}
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container hero__grid">
-    <div>
-      <p class="eyebrow">Filosofía</p>
-      <h2>Moverse con conciencia, no por rutina</h2>
-      <p>Nuestras clases combinan técnica y escucha corporal: no se trata de repetir ejercicios, sino de entender cómo se mueve tu cuerpo y por qué.</p>
+  <div class="container">
+    {{ sectionHead("Tu bienestar, en el centro de todo", "Movimiento conectado", "Para nosotros, el movimiento forma parte de un todo. Está conectado con el cuerpo, la mente y la forma en la que nos sentimos cada día.", "center") }}
+    <div class="grid">
+      {{ pillarOverviewCard(iconCuerpo(), "Pilar 01", "Cuerpo", "Aliviamos las molestias y trabajamos sobre aquello que está limitando tu movimiento para ayudarte a volver a moverte con mayor libertad y confianza.", "Explorar pilar Cuerpo", "/cuerpo/") }}
+      {{ pillarOverviewCard(iconMente(), "Pilar 02", "Mente", "A través de la respiración y la atención al movimiento, te ayudamos a bajar el ritmo, conectar con tu cuerpo y moverte desde un lugar más tranquilo y consciente.", "Explorar pilar Mente", "/mente/") }}
+      {{ pillarOverviewCard(iconMovimiento(), "Pilar 03 · Activo", "Movimiento", "Trabajamos la fuerza, el control postural y la movilidad para que tu cuerpo gane autonomía y puedas mantener esos avances en el tiempo, reduciendo el riesgo de que vuelvan a aparecer las mismas molestias.", "Práctica en curso", "", true) }}
     </div>
-    <div>{{ mediaPlaceholder("Fotografía: entrenamiento funcional") }}</div>
   </div>
 </section>
 
-{{ ctaBanner("", "Prueba tu primera clase", "Reserva una clase de prueba y descubre el programa que mejor encaja contigo.", "Reservar una clase", "/contacto/") }}
+<section class="section section--alt">
+  <div class="container">
+    {{ sectionHead("Entorno terapéutico", "Un espacio para moverte, escucharte y avanzar.", "Un espacio tranquilo y cuidado, pensado para que puedas bajar el ritmo desde que entras. La luz, los materiales y el silencio forman parte de un entorno sin distracciones, donde puedas sentirte cómodo y estar presente.", "left") }}
+    <div class="gallery-split">
+      {{ mediaPlaceholder("Fotografía: sala principal de Pilates", "4 / 5") }}
+      <div class="gallery-split__stack">
+        {{ mediaPlaceholder("Fotografía: detalle de materiales", "1 / 1") }}
+        {{ mediaPlaceholder("Fotografía: sesión individual", "1 / 1") }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="panel panel--split">
+      <div>
+        <p class="eyebrow eyebrow--dot">Evolución orgánica</p>
+        <h2>Propuestas en evolución</h2>
+        <p style="margin-top: 12px;">En Integra concebimos la práctica somática en constante crecimiento. En este momento Pilates conforma nuestro eje principal, pero el espacio reserva plazas para futuros talleres de movimiento restaurativo, danza terapéutica y movilidad funcional estacional.</p>
+      </div>
+      {{ button("Saber más sobre talleres →", "/contacto/", "secondary") }}
+    </div>
+  </div>
+</section>
+
+{{ ctaBanner("Tu punto de partida", "Encuentra tu manera de moverte.", "Te acompañamos en una primera sesión de valoración individual para conocer tu historia física, patrones de movilidad y diseñar un plan adaptado a tu momento vital.", "Reservar sesión de valoración", "/contacto/", "Contactar con el equipo", "/contacto/", "", "", true, "left", true) }}

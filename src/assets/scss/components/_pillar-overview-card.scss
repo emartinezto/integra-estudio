@@ -1,0 +1,89 @@
+@use "../abstracts/variables" as *;
+
+.pillar-overview-card {
+  padding: 28px;
+  background: $c-bg-soft;
+  border-radius: $radius-md;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  &--active {
+    background: $c-bg-alt;
+    box-shadow: $shadow-sm;
+
+    .pillar-overview-card__icon {
+      background: $c-brand;
+      color: $c-white;
+    }
+  }
+}
+
+.pillar-overview-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-sm;
+  background: $c-bg-alt;
+  color: $c-heading;
+  margin-bottom: 16px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.pillar-overview-card__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $c-accent;
+  margin-bottom: 4px;
+}
+
+.pillar-overview-card__body {
+  font-size: 14px;
+  color: $c-text;
+}
+
+.pillar-overview-card__divider {
+  margin-top: auto;
+  padding-top: 16px;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: $c-border;
+    margin-bottom: 16px;
+  }
+}
+
+.pillar-overview-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $c-accent-sage;
+}
+
+.pillar-overview-card__status-icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

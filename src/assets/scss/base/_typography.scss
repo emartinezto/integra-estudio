@@ -57,6 +57,21 @@ p {
   &--light {
     color: rgba(255, 255, 255, 0.75);
   }
+
+  &--dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    &::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      flex: none;
+      border-radius: 50%;
+      background: $c-accent-sage;
+    }
+  }
 }
 
 .link-arrow {

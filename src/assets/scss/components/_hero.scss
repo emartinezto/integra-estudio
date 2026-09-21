@@ -69,6 +69,98 @@
   flex: none;
 }
 
+.hero__eyebrow-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  .eyebrow {
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: $c-border;
+  }
+}
+
+.hero__subtitle {
+  font-family: $font-serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.4;
+  color: $c-heading;
+  margin-top: 12px;
+
+  @include desktop {
+    font-size: 24px;
+  }
+}
+
+.hero-info-row {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid $c-border;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.hero-info-row__item {
+  .eyebrow {
+    margin-bottom: 6px;
+  }
+
+  p:last-child {
+    font-size: 14px;
+    color: $c-text;
+  }
+}
+
+.hero-media {
+  position: relative;
+
+  @include desktop {
+    margin-bottom: 48px;
+  }
+}
+
+.hero-media__quote {
+  margin-top: 16px;
+  padding: 20px 24px;
+  background: $c-bg-soft;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+
+  @include desktop {
+    position: absolute;
+    left: -32px;
+    bottom: -32px;
+    max-width: 320px;
+    margin-top: 0;
+  }
+}
+
+.hero-media__quote-label {
+  margin-bottom: 8px;
+}
+
+.hero-media__quote-text {
+  font-family: $font-serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5;
+  color: $c-heading;
+}
+
 .hero__badge-icon {
   display: inline-flex;
   width: 14px;

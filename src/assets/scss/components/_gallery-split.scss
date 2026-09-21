@@ -1,0 +1,24 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.gallery-split {
+  display: grid;
+  gap: 16px;
+  margin-top: 40px;
+
+  @include desktop {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 24px;
+  }
+}
+
+.gallery-split__stack {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include desktop {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
