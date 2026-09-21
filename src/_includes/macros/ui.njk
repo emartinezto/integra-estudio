@@ -12,6 +12,20 @@
 
 {% macro iconLeaf() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 16c-.5-6 3-11 12-11 .6 6-2 11-9 11-1 0-2-.2-3 0z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4 16c2-3 5-5.5 9-7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>{% endmacro %}
 
+{% macro iconGraduate() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4 18 8l-8 4-8-4 8-4Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.5 9.8V13c0 1.1 2 2 4.5 2s4.5-.9 4.5-2V9.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M17 8.5v3.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>{% endmacro %}
+
+{% macro iconUsers() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="6.5" r="2.3" stroke="currentColor" stroke-width="1.3"/><path d="M2.5 16c.3-3 2-4.8 4.5-4.8s4.2 1.8 4.5 4.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="7" r="1.8" stroke="currentColor" stroke-width="1.3"/><path d="M12.5 11.5c1.8-.3 3.6.6 4.5 2.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endmacro %}
+
+{% macro iconMindSpark() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17v-2.3c-1.9-1-3.2-3-3.2-5.2C3.8 5.9 6.6 3 10 3s6.2 2.9 6.2 6.5c0 1.7-.7 3.2-1.8 4.3l-.4 3.2h-3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><path d="M8.5 17h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="10.5" cy="8.5" r="1" fill="currentColor"/></svg>{% endmacro %}
+
+{% macro iconMeditate() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="4.5" r="1.8" stroke="currentColor" stroke-width="1.3"/><path d="M10 6.5v4M6 9.2 10 10.5l4-1.3M6.5 17l2-5.5M13.5 17l-2-5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endmacro %}
+
+{% macro iconFaceSmile() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.3"/><circle cx="7.3" cy="8.5" r=".9" fill="currentColor"/><circle cx="12.7" cy="8.5" r=".9" fill="currentColor"/><path d="M6.8 12c.9 1.1 2 1.6 3.2 1.6s2.3-.5 3.2-1.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>{% endmacro %}
+
+{% macro iconBookOpen() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 5.2C8.8 4.2 7 3.7 3.5 3.7v11c3.5 0 5.3.5 6.5 1.5 1.2-1 3-1.5 6.5-1.5v-11c-3.5 0-5.3.5-6.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M10 5.2v11" stroke="currentColor" stroke-width="1.3"/></svg>{% endmacro %}
+
+{% macro iconFolder() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 5.5c0-.6.4-1 1-1h3.6l1.4 1.6h7.5c.6 0 1 .4 1 1v7.4c0 .6-.4 1-1 1h-12.5c-.6 0-1-.4-1-1V5.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>{% endmacro %}
+
 {% macro areaCard(icon, title, items, tag, note) %}
 <div class="area-card">
   <div class="area-card__head">
@@ -149,9 +163,16 @@
 </div>
 {% endmacro %}
 
-{% macro card(eyebrowText, title, body, ctaText, ctaUrl, variant="", icon="", footerLabel="") %}
+{% macro card(eyebrowText, title, body, ctaText, ctaUrl, variant="", icon="", footerLabel="", number="") %}
 <div class="card {% if variant %}card--{{ variant }}{% endif %}">
-  {% if icon %}<span class="card__icon" aria-hidden="true">{{ icon }}</span>{% endif %}
+  {% if number %}
+  <div class="card__head">
+    <span class="card__number">{{ number }}</span>
+    {% if icon %}<span class="card__icon" aria-hidden="true">{{ icon }}</span>{% endif %}
+  </div>
+  {% elif icon %}
+  <span class="card__icon" aria-hidden="true">{{ icon }}</span>
+  {% endif %}
   {% if eyebrowText %}<p class="eyebrow">{{ eyebrowText }}</p>{% endif %}
   <h3>{{ title }}</h3>
   <p>{{ body }}</p>
@@ -160,10 +181,35 @@
 </div>
 {% endmacro %}
 
-{% macro quoteCard(quote, author, role) %}
+{% macro quoteCard(quote, author, role, icon) %}
 <div class="quote-card">
   <p class="quote-card__text">“{{ quote }}”</p>
+  {% if icon %}
+  <div class="quote-card__meta">
+    <span class="quote-card__avatar" aria-hidden="true">{{ icon }}</span>
+    <div>
+      <p class="quote-card__author">{{ author }}</p>
+      {% if role %}<p class="quote-card__role">{{ role }}</p>{% endif %}
+    </div>
+  </div>
+  {% else %}
   <p class="quote-card__author">{{ author }}{% if role %} · {{ role }}{% endif %}</p>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro opoCard(icon, category, title, body, checks, ctaText, ctaUrl) %}
+<div class="opo-card">
+  <span class="opo-card__icon" aria-hidden="true">{{ icon }}</span>
+  <p class="opo-card__category">{{ category }}</p>
+  <h3 class="opo-card__title">{{ title }}</h3>
+  <p class="opo-card__body">{{ body }}</p>
+  <ul class="opo-card__checks">
+    {% for item in checks %}
+    <li><span class="opo-card__check-icon" aria-hidden="true">{{ iconCheck() }}</span>{{ item }}</li>
+    {% endfor %}
+  </ul>
+  {% if ctaUrl %}<a class="link-arrow opo-card__cta" href="{{ ctaUrl }}">{{ ctaText }} →</a>{% endif %}
 </div>
 {% endmacro %}
 

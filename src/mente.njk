@@ -3,61 +3,115 @@ layout: layouts/base.njk
 title: Mente
 description: "Orientación, apoyo psicológico y preparación de oposiciones con cercanía y método."
 ---
-{% from "macros/ui.njk" import button, sectionHead, card, ctaBanner, mediaPlaceholder, breadcrumb %}
+{% from "macros/ui.njk" import button, sectionHead, card, pillar, quoteCard, opoCard, ctaBanner, mediaPlaceholder, breadcrumb, iconMente, iconPin, iconGraduate, iconUsers, iconMindSpark, iconMeditate, iconFaceSmile, iconBookOpen, iconFolder %}
 
 <div class="page-hero">
   {{ breadcrumb([{ label: "Mente" }]) }}
-  <div class="hero__grid">
+  <div class="page-hero__grid">
     <div class="page-hero__head">
-      <p class="eyebrow">Pilar Mente</p>
-      <h1>Espacio para pensar con calma</h1>
-      <p class="hero__body">Orientación, apoyo psicológico y preparación de oposiciones, con cercanía, método y respeto por tu ritmo.</p>
-      <div class="hero__actions">
-        {{ button("Reservar una sesión", "/contacto/", "primary") }}
+      <div class="hero__badge">
+        <span class="hero__badge-icon" aria-hidden="true">{{ iconMente() }}</span>
+        <p class="eyebrow">Cuidado cognitivo & transición vital</p>
       </div>
+      <h1>Mente</h1>
+      <p class="hero__body">Para quienes necesitan orientación, apoyo o simplemente sentirse acompañados en algún momento de su camino. Y para quienes se preparan unas oposiciones y buscan recorrer ese proceso con método, calma y el apoyo necesario para seguir avanzando.</p>
     </div>
-    <div>{{ mediaPlaceholder("Fotografía: espacio de escucha") }}</div>
+    <div class="page-hero__actions-col">
+      <div class="hero__actions">
+        {{ button("Solicitar información", "/contacto/", "primary") }}
+      </div>
+      <a class="link-arrow" href="#formacion">Explorar áreas formativas ↓</a>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  {{ mediaPlaceholder("Fotografía: sesión de acompañamiento", "21 / 9") }}
+<div class="container page-hero__media">
+  <div class="media-feature">
+    {{ mediaPlaceholder("Fotografía: sesión de acompañamiento en Mente", "21 / 9") }}
+    <div class="media-feature__badge">
+      <span class="media-feature__badge-icon" aria-hidden="true">{{ iconPin() }}</span>
+      <span>Alcorcón 12, Parla · Madrid</span>
+    </div>
+    <div class="media-feature__caption">
+      <p class="eyebrow eyebrow--light">Espacio de escucha & acompañamiento</p>
+      <p class="media-feature__caption-text">Un acompañamiento cercano, a tu ritmo.</p>
+    </div>
+  </div>
+  <div class="media-feature__notes">
+    <p><span class="media-feature__dot" aria-hidden="true"></span>Acompañamiento 1:1 o grupos de máximo 6 personas</p>
+    <p><span class="media-feature__dot" aria-hidden="true"></span>Sin masificación: seguimiento continuo de tu ritmo vital</p>
+  </div>
 </div>
 
-<section class="section section--alt">
+<section class="section section--tint philosophy">
   <div class="container hero__grid">
     <div>
-      <h2>Te acompañamos, sin prisas</h2>
-      <div class="quote-card" style="margin-top: 16px;">
-        <p class="quote-card__text">“Te acompañamos durante el proceso, con cercanía, método y respetando tu ritmo.”</p>
+      <p class="eyebrow">— Nuestro manifiesto</p>
+      <h2>Cuidar la mente es ordenar el ritmo con el que habitamos nuestras metas y transiciones.</h2>
+      {{ quoteCard("No concebimos el aprendizaje ni la orientación como una exigencia asfixiante, sino como un proceso de clarificación serena donde la persona adquiere herramientas duraderas de autogestión, presencia y confianza.", "Equipo de Orientación y Pedagogía", "Integra Studio · Madrid", iconGraduate()) }}
+    </div>
+    <div class="philosophy__content">
+      <p>En Integra entendemos cada proceso de estudio, orientación o preparación de oposiciones como algo personal. No se trata solo de estudiar o alcanzar una meta, sino de encontrar una forma de avanzar que tenga sentido para ti.</p>
+      <p>Por eso combinamos el acompañamiento y las herramientas de estudio con espacios para parar, ordenar ideas y recuperar la calma. Porque sabemos que cuando la mente está sobrecargada, también resulta más difícil concentrarse, aprender y seguir avanzando.</p>
+      <p>Te acompañamos durante el proceso, con cercanía, método y respetando tu ritmo.</p>
+      <div class="grid philosophy__stats">
+        {{ card("", "1:1", "O grupos de hasta 6 alumnos", "", "", "muted") }}
+        {{ card("", "100%", "Pedagogía individualizada", "", "", "muted") }}
+        {{ card("", "03", "Itinerarios oficiales guiados", "", "", "muted") }}
       </div>
     </div>
-    <div>
-      <p>No creemos en soluciones estándar. Cada persona llega con su propia historia, y el trabajo consiste en escuchar primero, entender después y avanzar juntos, paso a paso.</p>
-    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="formas-de-cuidar">
   <div class="container">
-    {{ sectionHead("Tres áreas de trabajo", "Cómo te podemos ayudar", "") }}
-    <div class="grid">
-      {{ card("Área 01", "Orientación", "Espacio de escucha para ordenar ideas, tomar decisiones y ganar claridad en momentos de cambio.") }}
-      {{ card("Área 02", "Apoyo psicológico", "Acompañamiento terapéutico continuado ante ansiedad, duelo, autoestima o procesos vitales.") }}
-      {{ card("Área 03", "Formación y oposiciones", "Preparación psicológica y de estudio para oposiciones de cuerpos de seguridad, emergencias y administración pública.") }}
+    {{ sectionHead("Áreas de acción", "Tres formas de cuidar tu trayectoria y tu pensamiento", "Cada propuesta parte de un diagnóstico previo para adaptar calendarios, ritmos cognitivos y objetivos individuales.", "left") }}
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      {{ pillar("01 · Claridad vocacional y decisiones vitales", "Orientación", "", "Un espacio para parar, hablar y poner un poco de orden en aquello que estás viviendo. Te acompañamos en momentos de cambio, dudas o decisiones, ayudándote a entender qué necesitas y hacia dónde quieres avanzar.", "Conoce el programa de Orientación", "/contacto/", "Fotografía: sesión de orientación", true, "", ["Claridad de objetivos", "Gestión de la incertidumbre", "Transición vital"]) }}
+      {{ pillar("02 · Acompañamiento educativo y emocional", "Apoyo", "", "Un apoyo personalizado para esos momentos en los que el estudio se hace cuesta arriba. Te ayudamos a organizarte, encontrar tu forma de estudiar y afrontar los exámenes con más calma y seguridad.", "Explorar sesiones de Apoyo", "/contacto/", "Fotografía: sesión de apoyo al estudio", false, "", ["Técnicas de estudio", "Regulación emocional", "Hábitos de foco"]) }}
     </div>
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section section--alt" id="formacion">
   <div class="container">
-    {{ sectionHead("Cómo entendemos el acompañamiento", "Nuestros principios metodológicos", "", "center") }}
-    <div class="grid">
-      {{ card("", "Escucha activa", "Cada sesión empieza escuchando, no diagnosticando de antemano.") }}
-      {{ card("", "Método propio", "Un proceso estructurado, adaptado a los tiempos y objetivos de cada persona.") }}
-      {{ card("", "Acompañamiento real", "Seguimiento cercano entre sesiones, no solo dentro de la consulta.") }}
+    <div class="formacion-panel">
+      <div class="hero__grid">
+        <div>
+          <p class="eyebrow">03 · Pedagogía cercana y rigor formativo</p>
+          <h2>Formación: Preparación de Oposiciones</h2>
+          <p>Te acompañamos en la preparación de tus oposiciones con método, materiales actualizados y un trabajo adaptado a cada proceso. Queremos ayudarte a avanzar con seguridad, sin olvidar cómo te encuentras durante el camino.</p>
+          <p style="margin-top: 16px;">Aquí no serás un número en un aula masificada. Diseñamos planes de estudio realistas, simulacros individualizados y tutorías semanales donde resolver dudas de temario y calibrar tu descanso.</p>
+        </div>
+        <div class="formacion-panel__media">
+          {{ mediaPlaceholder("Fotografía: preparación de oposiciones", "4 / 3") }}
+          <span class="formacion-panel__media-tag">Itinerarios convocatorias 2025–2026</span>
+        </div>
+      </div>
+
+      <div class="formacion-panel__itineraries">
+        <h3>Itinerarios Oficiales con Acompañamiento Continuo</h3>
+        <p class="eyebrow">Plazas limitadas por grupo</p>
+      </div>
+
+      <div class="grid" style="margin-top: 24px;">
+        {{ opoCard(iconFaceSmile(), "Educación", "Técnico de Educación Infantil (T.E.I.)", "Preparación integral del temario específico y supuestos prácticos con enfoque en pedagogía activa, desarrollo evolutivo y normativa autonómica vigente.", ["Simulacros de examen reales", "Corrección exhaustiva 1:1"], "Ver preparación TEI", "/contacto/") }}
+        {{ opoCard(iconBookOpen(), "Docencia pública", "Magisterio (Infantil y Primaria)", "Elaboración cuidada de la programación didáctica, desarrollo de unidades, defensa oral serena ante tribunal y resolución de casos sin memorizaciones vacías.", ["Oratoria y ensayo ante tribunal", "Unidades didácticas innovadoras"], "Ver preparación Magisterio", "/contacto/") }}
+        {{ opoCard(iconFolder(), "Administración", "Auxiliar Administrativo", "Dominio de la legislación administrativa, ofimática y psicotécnicos con simulacros periódicos pautados y resolución individualizada de dudas jurídicas.", ["Técnicas de agilidad psicotécnica", "Esquemas normativos sintetizados"], "Ver preparación Auxiliar", "/contacto/") }}
+      </div>
     </div>
   </div>
 </section>
 
-{{ ctaBanner("", "Da el primer paso", "Reserva una primera sesión de orientación, sin compromiso.", "Reservar una sesión", "/contacto/") }}
+<section class="section section--soft">
+  <div class="container">
+    {{ sectionHead("Principios del espacio formativo", "Cómo entendemos el acompañamiento", "Nuestra pedagogía se asienta en tres compromisos irrenunciables que garantizan confianza, rigor y calma a lo largo de todo tu recorrido.", "center") }}
+    <div class="grid">
+      {{ card("", "Sin masificación ni prisas", "Un seguimiento cercano durante todo el proceso, respetando tu ritmo y tu forma de avanzar. Trabajamos en grupos reducidos para poder conocerte, acompañarte mejor y ayudarte a encontrar un ritmo de estudio que puedas mantener.", "", "", "", iconUsers(), "Trato cercano garantizado", "01") }}
+      {{ card("", "Docentes y orientadores especializados", "Experiencia contrastada en la función pública, tribunales examinadores y pedagogía terapéutica. Nuestro equipo no solo domina el temario, sino el arte de enseñar con empatía y claridad conceptual.", "", "", "", iconMindSpark(), "Criterio pedagógico oficial", "02") }}
+      {{ card("", "Cuidado integral del opositor", "Preparar unas oposiciones también es cuidar de ti durante el camino. Si lo necesitas, puedes apoyarte en las áreas de Cuerpo y Movimiento para aliviar la sobrecarga de tantas horas de estudio y encontrar un poco de equilibrio en tu día a día.", "", "", "", iconMeditate(), "Salud postural y bienestar", "03") }}
+    </div>
+  </div>
+</section>
+
+{{ ctaBanner("Conversación inicial sin compromiso", "El objetivo, un poco más cerca", "Cuéntanos en qué punto estás. Queremos escucharte y conocer lo que necesitas para valorar juntos la mejor manera de acompañarte.", "Solicitar información", "/contacto/", "Reservar sesión diagnóstica", "/contacto/", "Atención individualizada · Alcorcón 12, Parla · Madrid", "", true, "left", true) }}

@@ -70,6 +70,24 @@
   padding-top: 8px;
 }
 
+.card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+
+  .card__icon {
+    margin-bottom: 0;
+  }
+}
+
+.card__number {
+  font-family: $font-serif;
+  font-size: 28px;
+  line-height: 1;
+  color: $c-border;
+}
+
 // Ajustes específicos del bloque "Los Principios de Nuestra Práctica" en /cuerpo/
 #principios {
   .card {

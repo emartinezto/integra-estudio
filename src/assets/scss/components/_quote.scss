@@ -27,6 +27,35 @@
     letter-spacing: 0.55px;
     color: $c-accent;
   }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex: none;
+    border-radius: 50%;
+    background: $c-bg-alt;
+    color: $c-heading;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__role {
+    font-family: $font-sans;
+    font-size: 12px;
+    color: $c-text-muted;
+  }
 }
 
 // Sección "La persona en el centro de cada proceso" en /metodo/
