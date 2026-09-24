@@ -3,64 +3,62 @@ layout: layouts/base.njk
 title: Movimiento
 description: "Pilates, movimiento consciente y trabajo corporal integral para moverte con conciencia."
 ---
-{% from "macros/ui.njk" import button, sectionHead, card, quoteInline, featureRow, pillarOverviewCard, ctaBanner, mediaPlaceholder, breadcrumb, iconLeaf, iconScan, iconHandRaised, iconCuerpo, iconMente, iconMovimiento %}
+{% from "macros/ui.njk" import button, sectionHead, card, quoteCard, featureRow, pillarOverviewCard, ctaBanner, mediaPlaceholder, breadcrumb, iconLeaf, iconScan, iconHandRaised, iconCuerpo, iconMente, iconMovimiento %}
 
-<section class="hero">
+<div class="page-hero">
   {{ breadcrumb([{ label: "Movimiento" }]) }}
-  <div class="hero__grid">
-    <div>
-      <div class="hero__eyebrow-rule">
-        <p class="eyebrow">Conocer tu cuerpo y moverte mejor</p>
-      </div>
+  <div class="page-hero__grid">
+    <div class="page-hero__head">
+      <p class="eyebrow">Conocer tu cuerpo y moverte mejor</p>
       <h1>Movimiento</h1>
-      <p class="hero__subtitle">Muévete con más conciencia.<br>Conecta con tu cuerpo.</p>
+      <p class="hero__body">Muévete con más conciencia. Conecta con tu cuerpo.</p>
       <p class="hero__body">En Integra entendemos el movimiento como una forma de conectar con tu cuerpo. Un espacio para ganar fuerza, sentirte más ágil y moverte con mayor libertad en tu día a día.</p>
-      <div class="hero__actions">
-        {{ button("Conoce Pilates →", "/contacto/", "primary") }}
-        {{ button("Consultar valoración", "/contacto/", "secondary") }}
-      </div>
-      <div class="hero-info-row">
-        <div class="hero-info-row__item">
-          <p class="eyebrow">Ratio</p>
-          <p>Grupos reducidos máx. 8 personas</p>
-        </div>
-        <div class="hero-info-row__item">
-          <p class="eyebrow">Cuidado</p>
-          <p>Atención somática individualizada 1:1</p>
-        </div>
-        <div class="hero-info-row__item">
-          <p class="eyebrow">Enfoque</p>
-          <p>Alineación articular y respiración</p>
-        </div>
-      </div>
     </div>
-    <div class="hero-media">
-      {{ mediaPlaceholder("Fotografía: estiramiento consciente", "4 / 5") }}
-      <div class="hero-media__quote">
-        <p class="eyebrow eyebrow--dot hero-media__quote-label">Presencia somática</p>
-        <p class="hero-media__quote-text">«La postura no es una posición fija que se impone, sino un equilibrio dinámico que se descubre al respirar.»</p>
+    <div class="page-hero__actions-col">
+      <div class="hero__actions">
+        {{ button("Conoce Pilates", "/contacto/", "primary") }}
       </div>
+      <a class="link-arrow" href="/contacto/">Consultar valoración</a>
     </div>
   </div>
-</section>
+</div>
 
-<section class="section section--alt">
-  <div class="container">
-    <div class="section-head section-head--center-desktop">
+<div class="container page-hero__media">
+  <div class="hero-media">
+    {{ mediaPlaceholder("Fotografía: estiramiento consciente", "21 / 9") }}
+    <div class="hero-media__quote">
+      <p class="eyebrow eyebrow--dot hero-media__quote-label">Presencia somática</p>
+      <p class="hero-media__quote-text">«La postura no es una posición fija que se impone, sino un equilibrio dinámico que se descubre al respirar.»</p>
+    </div>
+  </div>
+  <div class="hero-info-row">
+    <div class="hero-info-row__item">
+      <p class="eyebrow">Ratio</p>
+      <p>Grupos reducidos máx. 8 personas</p>
+    </div>
+    <div class="hero-info-row__item">
+      <p class="eyebrow">Cuidado</p>
+      <p>Atención somática individualizada 1:1</p>
+    </div>
+    <div class="hero-info-row__item">
+      <p class="eyebrow">Enfoque</p>
+      <p>Alineación articular y respiración</p>
+    </div>
+  </div>
+</div>
+
+<section class="section filosofia" id="filosofia">
+  <div class="container hero__grid">
+    <div class="filosofia__head">
       <p class="eyebrow">Manifiesto del movimiento</p>
       <h2>El movimiento también es una forma de cuidarte.</h2>
     </div>
-    <div class="manifesto-grid">
-      <div>
-        {{ quoteInline("El movimiento no consiste en exigirle más a tu cuerpo, sino en aprender a conocerlo, escucharlo y moverte respetando tu propio ritmo.", "Equipo de Movimiento, Integra Studio") }}
-      </div>
-      <div>
-        {{ mediaPlaceholder("Fotografía: materiales naturales", "1 / 1") }}
-        <p class="eyebrow" style="text-align: center; margin-top: 12px;">Materiales naturales · Roble & Lino</p>
-      </div>
-      <div>
-        <p>En Integra no buscamos hacer más ni llegar más lejos. Trabajamos para que conozcas mejor tu cuerpo, entiendas cómo te mueves y encuentres una forma de hacerlo con mayor seguridad y libertad.</p>
-        <p style="margin-top: 16px;">A través del movimiento, te ayudamos a ganar fuerza, mejorar tu movilidad y sentirte más cómodo en tu cuerpo, para que todo eso te acompañe también en tu día a día.</p>
+    <div class="filosofia__media">{{ mediaPlaceholder("Fotografía: escucha activa en sesión") }}</div>
+    <div class="filosofia__content">
+      <p>En Integra no buscamos hacer más ni llegar más lejos. Trabajamos para que conozcas mejor tu cuerpo, entiendas cómo te mueves y encuentres una forma de hacerlo con mayor seguridad y libertad.</p>
+      <p>A través del movimiento, te ayudamos a ganar fuerza, mejorar tu movilidad y sentirte más cómodo en tu cuerpo, para que todo eso te acompañe también en tu día a día.</p>
+      <div style="margin-top: 24px;">
+        {{ quoteCard("El movimiento no consiste en exigirle más a tu cuerpo, sino en aprender a conocerlo, escucharlo y moverte respetando tu propio ritmo.", "— Equipo de Movimiento, Integra Studio") }}
       </div>
     </div>
   </div>
@@ -84,7 +82,7 @@ description: "Pilates, movimiento consciente y trabajo corporal integral para mo
         {{ featureRow(iconLeaf(), "Movimiento consciente", "Entender cómo se mueve tu cuerpo y ayudarte a moverte mejor.") }}
         {{ featureRow(iconScan(), "Trabajo corporal integral", "Tonificación de la musculatura tónica profunda, transverso abdominal, estabilizadores lumbares y suelo pélvico.") }}
         {{ featureRow(iconHandRaised(), "Acompañamiento profesional", "Instrucción clínica y correcciones táctiles de sutileza milimétrica por fisioterapeutas y especialistas certificados.") }}
-        {{ button("Conoce la práctica de Pilates →", "/contacto/", "primary") }}
+        {{ button("Conoce la práctica de Pilates", "/contacto/", "primary") }}
       </div>
     </div>
   </div>
@@ -116,26 +114,7 @@ description: "Pilates, movimiento consciente y trabajo corporal integral para mo
 <section class="section section--alt">
   <div class="container">
     {{ sectionHead("Entorno terapéutico", "Un espacio para moverte, escucharte y avanzar.", "Un espacio tranquilo y cuidado, pensado para que puedas bajar el ritmo desde que entras. La luz, los materiales y el silencio forman parte de un entorno sin distracciones, donde puedas sentirte cómodo y estar presente.", "left") }}
-    <div class="gallery-split">
-      {{ mediaPlaceholder("Fotografía: sala principal de Pilates", "4 / 5") }}
-      <div class="gallery-split__stack">
-        {{ mediaPlaceholder("Fotografía: detalle de materiales", "1 / 1") }}
-        {{ mediaPlaceholder("Fotografía: sesión individual", "1 / 1") }}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="panel panel--split">
-      <div>
-        <p class="eyebrow eyebrow--dot">Evolución orgánica</p>
-        <h2>Propuestas en evolución</h2>
-        <p style="margin-top: 12px;">En Integra concebimos la práctica somática en constante crecimiento. En este momento Pilates conforma nuestro eje principal, pero el espacio reserva plazas para futuros talleres de movimiento restaurativo, danza terapéutica y movilidad funcional estacional.</p>
-      </div>
-      {{ button("Saber más sobre talleres →", "/contacto/", "secondary") }}
-    </div>
+    {{ mediaPlaceholder("Fotografía: sala principal de Pilates", "21 / 9") }}
   </div>
 </section>
 

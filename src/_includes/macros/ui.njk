@@ -223,13 +223,6 @@
 </div>
 {% endmacro %}
 
-{% macro quoteInline(quote, author) %}
-<blockquote class="quote-inline">
-  <p class="quote-inline__text">«{{ quote }}»</p>
-  {% if author %}<p class="quote-inline__author">— {{ author }}</p>{% endif %}
-</blockquote>
-{% endmacro %}
-
 {% macro featureRow(icon, title, body) %}
 <div class="feature-row">
   <div class="feature-row__head">
