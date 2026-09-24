@@ -35,6 +35,10 @@
     }
   }
 
+  textarea {
+    resize: none;
+  }
+
   &__note {
     font-size: 12px;
     color: $c-text-muted;

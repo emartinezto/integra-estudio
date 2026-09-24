@@ -8,6 +8,13 @@
   border-radius: $radius-md;
   box-shadow: $shadow-sm;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  // Empuja el pie de la tarjeta abajo para alinearlo entre tarjetas de la misma fila
+  > :last-child {
+    margin-top: auto;
+  }
 }
 
 .contact-card__icon {
@@ -20,6 +27,7 @@
   background: $c-bg-alt;
   color: $c-heading;
   margin-bottom: 16px;
+  align-self: flex-start;
 
   svg {
     width: 17px;
@@ -36,16 +44,16 @@
   font-size: 14px;
   color: $c-text;
   line-height: 1.5;
+  margin-bottom: 12px;
 }
 
-// El enlace usa el estilo global .link-arrow; aquí solo se separa del texto
+// El enlace usa el estilo global .link-arrow
 .contact-card__footer {
-  margin-top: 12px;
+  align-self: flex-start;
 }
 
 .contact-card__footer-note {
   display: block;
-  margin-top: 12px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
