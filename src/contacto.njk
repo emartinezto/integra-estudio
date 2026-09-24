@@ -5,23 +5,17 @@ description: "Reserva tu primera sesión en Integra Studio, en Parla, Madrid."
 ---
 {% from "macros/ui.njk" import breadcrumb, mediaPlaceholder, contactCard, iconPin, iconPhone, iconMail, iconClock, iconTrain, iconLock %}
 
-<div class="page-hero">
-  <div class="page-hero__top">
-    {{ breadcrumb([{ label: "Contacto" }]) }}
-    <span class="pilar-badge">Atención & acompañamiento</span>
-  </div>
+<div class="page-hero page-hero--contacto">
+  {{ breadcrumb([{ label: "Contacto" }]) }}
   <div class="page-hero__head">
+    <p class="eyebrow">Atención & acompañamiento</p>
     <h1>Estamos aquí para acompañarte</h1>
     <p class="hero__body">Si tienes alguna duda, quieres conocer mejor Integra o dar el primer paso, estaremos encantados de escucharte y valorar contigo la mejor manera de acompañarte.</p>
   </div>
 </div>
 
-<div class="container contact-hero-media">
+<div class="container">
   {{ mediaPlaceholder("Fotografía: recepción de Integra Studio", "21 / 9") }}
-  <div class="contact-hero-media__bar">
-    <span>Recepción y espacio de acogida · Integra Studio, {{ site.address[0] }}</span>
-    <span class="contact-hero-media__tag">Estudio presencial</span>
-  </div>
 </div>
 
 <section class="section">
@@ -32,9 +26,9 @@ description: "Reserva tu primera sesión en Integra Studio, en Parla, Madrid."
       <p style="margin-top: 12px;">Atendemos siempre con cita previa y dedicando a cada persona el tiempo y la atención que necesita, en un espacio tranquilo donde puedas sentirte cómodo y acompañado.</p>
 
       <div class="grid grid--2" style="margin-top: 24px;">
-        {{ contactCard(iconPin(), "Dirección", site.address[0] ~ "<br>" ~ site.address[1], "Edificio residencial accesible") }}
+        {{ contactCard(iconPin(), "Dirección", "Calle Alcorcón 12.<br>Parla, 28981<br>Madrid", "Edificio residencial accesible") }}
         {{ contactCard(iconPhone(), "Teléfono directo", site.phone ~ "<br>Atención sosegada en recepción", "Llamar ahora", "tel:" ~ site.phone) }}
-        {{ contactCard(iconMail(), "Correo electrónico", site.email, "Respuesta en 24h laborables") }}
+        {{ contactCard(iconMail(), "Correo electrónico", site.email ~ "<br>" ~ site.emailConsultas, "Respuesta en 24h laborables") }}
         {{ contactCard(iconClock(), "Horario de estudio", "Lunes a Viernes: 09:00 – 20:00 h<br>Sábados: Con cita previa diagnóstica", "Domingos cerrado por descanso") }}
       </div>
 
@@ -53,15 +47,6 @@ description: "Reserva tu primera sesión en Integra Studio, en Parla, Madrid."
             <p>Parla Centro</p>
           </div>
         </div>
-      </div>
-
-      <div class="contact-map">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <p class="eyebrow" style="margin-bottom: 0;">Cartografía del entorno</p>
-          <a class="link-arrow" href="{{ site.mapsUrl }}" target="_blank" rel="noopener">Ver en Google Maps ↗</a>
-        </div>
-        {{ mediaPlaceholder("Mapa: entorno de Integra Studio", "16 / 10") }}
-        <span class="contact-map__pin">{{ site.address[0] }}, Parla</span>
       </div>
     </div>
 
@@ -118,5 +103,18 @@ description: "Reserva tu primera sesión en Integra Studio, en Parla, Madrid."
 
       <p class="contact-form__note">Este formulario aún no está conectado a ningún servicio de envío: hay que enlazarlo con tu proveedor de email o formularios antes de publicarlo.</p>
     </form>
+  </div>
+
+  <div class="container">
+    <div class="contact-map">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+        <p class="eyebrow" style="margin-bottom: 0;">Cartografía del entorno</p>
+        <a class="link-arrow" href="{{ site.mapsUrl }}" target="_blank" rel="noopener">Ver en Google Maps ↗</a>
+      </div>
+      <div class="contact-map__viewport">
+        <iframe class="contact-map__frame" src="{{ site.mapsEmbedUrl }}" title="Mapa: C/ Alcorcón 12, Parla" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <span class="contact-map__pin">C/ Alcorcón 12, Parla</span>
+    </div>
   </div>
 </section>

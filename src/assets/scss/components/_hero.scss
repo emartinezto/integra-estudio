@@ -275,7 +275,8 @@
     }
   }
 
-  &--metodo &__head .hero__body {
+  &--metodo &__head .hero__body,
+  &--contacto &__head .hero__body {
     @include desktop {
       font-family: $font-sans;
       font-weight: 300;

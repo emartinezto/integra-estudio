@@ -1,54 +1,10 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-// Hero image with bottom caption bar (/contacto/)
-.contact-hero-media {
-  position: relative;
-  margin-top: 32px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: $radius-lg;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 40%);
-    pointer-events: none;
-  }
-}
-
-.contact-hero-media__bar {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 16px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  color: $c-white;
-  font-size: 13px;
-
-  @include desktop {
-    left: 32px;
-    right: 32px;
-    bottom: 24px;
-  }
-}
-
-.contact-hero-media__tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba($c-white, 0.85);
-}
-
 // Contact info cards
 .contact-card {
   padding: 24px;
-  background: $c-bg-soft;
+  background: $c-white;
   border-radius: $radius-md;
   box-shadow: $shadow-sm;
   height: 100%;
@@ -82,7 +38,11 @@
   line-height: 1.5;
 }
 
-.contact-card__footer,
+// El enlace usa el estilo global .link-arrow; aquí solo se separa del texto
+.contact-card__footer {
+  margin-top: 12px;
+}
+
 .contact-card__footer-note {
   display: block;
   margin-top: 12px;
@@ -103,6 +63,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  @include desktop {
+    gap: 32px;
+  }
+
   .eyebrow {
     margin-bottom: 4px;
   }
@@ -116,13 +80,40 @@
 // Map
 .contact-map {
   position: relative;
-  margin-top: 16px;
+  margin-top: 40px;
 }
 
+// El iframe de Google no se puede estilar por dentro: se desplaza hacia arriba
+// y se recorta para ocultar la tarjeta "Abrir en Maps" (ya hay enlace fuera).
+$map-crop-top: 110px;
+
+.contact-map__viewport {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+
+  @include desktop {
+    aspect-ratio: 3 / 1;
+  }
+}
+
+.contact-map__frame {
+  position: absolute;
+  top: -$map-crop-top;
+  left: 0;
+  width: 100%;
+  height: calc(100% + #{$map-crop-top});
+  border: 0;
+}
+
+// Queda por encima del logo de Google, que ocupa la esquina inferior izquierda
 .contact-map__pin {
   position: absolute;
   left: 16px;
-  bottom: 16px;
+  bottom: 36px;
+  pointer-events: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;

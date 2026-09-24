@@ -3,8 +3,10 @@ module.exports = {
   tagline: "Cuerpo · Mente · Movimiento. Práctica holística, terapéutica y consciente.",
   address: ["Calle Alcorcón 12", "28981 Parla, Madrid"],
   mapsUrl: "https://maps.google.com/?q=Calle+Alcorcón+12,+28981+Parla,+Madrid",
-  phone: "+34 910 000 000",
+  mapsEmbedUrl: "https://www.google.com/maps?q=Calle+Alcorc%C3%B3n+12,+28981+Parla,+Madrid&z=16&output=embed",
+  phone: "+34 690 677 479",
   email: "hola@integrastudio.es",
+  emailConsultas: "consultas@integrastudio.es",
   currentYear: new Date().getFullYear(),
   nav: [
     { label: "Inicio", url: "/" },

@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: $c-bg-soft;
+  background: $c-white;
   padding: 32px;
   border-radius: $radius-md;
   box-shadow: $shadow-sm;
@@ -25,9 +25,9 @@
   select,
   textarea {
     padding: 12px 14px;
-    border: 1px solid $c-border;
+    border: 1px solid transparent;
     border-radius: $radius-sm;
-    background: $c-white;
+    background: $c-bg-muted;
 
     &:focus {
       outline: 2px solid $c-brand;
