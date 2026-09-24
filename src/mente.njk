@@ -3,16 +3,13 @@ layout: layouts/base.njk
 title: Mente
 description: "Orientación, apoyo psicológico y preparación de oposiciones con cercanía y método."
 ---
-{% from "macros/ui.njk" import button, sectionHead, card, pillar, quoteCard, opoCard, ctaBanner, mediaPlaceholder, breadcrumb, iconMente, iconPin, iconGraduate, iconUsers, iconMindSpark, iconMeditate, iconFaceSmile, iconBookOpen, iconFolder %}
+{% from "macros/ui.njk" import button, sectionHead, card, pillar, quoteCard, opoCard, ctaBanner, mediaPlaceholder, breadcrumb, iconPin, iconGraduate, iconUsers, iconMindSpark, iconMeditate, iconFaceSmile, iconBookOpen, iconFolder %}
 
 <div class="page-hero">
   {{ breadcrumb([{ label: "Mente" }]) }}
   <div class="page-hero__grid">
     <div class="page-hero__head">
-      <div class="hero__badge">
-        <span class="hero__badge-icon" aria-hidden="true">{{ iconMente() }}</span>
-        <p class="eyebrow">Cuidado cognitivo & transición vital</p>
-      </div>
+      <p class="eyebrow">Pilar fundamental · 02</p>
       <h1>Mente</h1>
       <p class="hero__body">Para quienes necesitan orientación, apoyo o simplemente sentirse acompañados en algún momento de su camino. Y para quienes se preparan unas oposiciones y buscan recorrer ese proceso con método, calma y el apoyo necesario para seguir avanzando.</p>
     </div>
@@ -46,7 +43,7 @@ description: "Orientación, apoyo psicológico y preparación de oposiciones con
 <section class="section section--tint philosophy">
   <div class="container hero__grid">
     <div>
-      <p class="eyebrow">— Nuestro manifiesto</p>
+      <p class="eyebrow">Nuestro manifiesto</p>
       <h2>Cuidar la mente es ordenar el ritmo con el que habitamos nuestras metas y transiciones.</h2>
       {{ quoteCard("No concebimos el aprendizaje ni la orientación como una exigencia asfixiante, sino como un proceso de clarificación serena donde la persona adquiere herramientas duraderas de autogestión, presencia y confianza.", "Equipo de Orientación y Pedagogía", "Integra Studio · Madrid", iconGraduate()) }}
     </div>
@@ -69,41 +66,22 @@ description: "Orientación, apoyo psicológico y preparación de oposiciones con
     <div style="display: flex; flex-direction: column; gap: 24px;">
       {{ pillar("01 · Claridad vocacional y decisiones vitales", "Orientación", "", "Un espacio para parar, hablar y poner un poco de orden en aquello que estás viviendo. Te acompañamos en momentos de cambio, dudas o decisiones, ayudándote a entender qué necesitas y hacia dónde quieres avanzar.", "Conoce el programa de Orientación", "/contacto/", "Fotografía: sesión de orientación", true, "", ["Claridad de objetivos", "Gestión de la incertidumbre", "Transición vital"]) }}
       {{ pillar("02 · Acompañamiento educativo y emocional", "Apoyo", "", "Un apoyo personalizado para esos momentos en los que el estudio se hace cuesta arriba. Te ayudamos a organizarte, encontrar tu forma de estudiar y afrontar los exámenes con más calma y seguridad.", "Explorar sesiones de Apoyo", "/contacto/", "Fotografía: sesión de apoyo al estudio", false, "", ["Técnicas de estudio", "Regulación emocional", "Hábitos de foco"]) }}
+      {% call pillar("03 · Pedagogía cercana y rigor formativo", "Formación: Preparación de Oposiciones", "", ["Te acompañamos en la preparación de tus oposiciones con método, materiales actualizados y un trabajo adaptado a cada proceso. Queremos ayudarte a avanzar con seguridad, sin olvidar cómo te encuentras durante el camino.", "Aquí no serás un número en un aula masificada. Diseñamos planes de estudio realistas, simulacros individualizados y tutorías semanales donde resolver dudas de temario y calibrar tu descanso."], "", "", "Fotografía: preparación de oposiciones", true) %}
+        <div class="pillar__itineraries" id="formacion">
+          <h3>Itinerarios Oficiales con Acompañamiento Continuo</h3>
+          <p class="eyebrow">Plazas limitadas por grupo</p>
+        </div>
+        <div class="grid">
+          {{ opoCard(iconFaceSmile(), "Educación", "Técnico de Educación Infantil (T.E.I.)", "Preparación integral del temario específico y supuestos prácticos con enfoque en pedagogía activa, desarrollo evolutivo y normativa autonómica vigente.", ["Simulacros de examen reales", "Corrección exhaustiva 1:1"], "Ver preparación TEI", "/contacto/") }}
+          {{ opoCard(iconBookOpen(), "Docencia pública", "Magisterio (Infantil y Primaria)", "Elaboración cuidada de la programación didáctica, desarrollo de unidades, defensa oral serena ante tribunal y resolución de casos sin memorizaciones vacías.", ["Oratoria y ensayo ante tribunal", "Unidades didácticas innovadoras"], "Ver preparación Magisterio", "/contacto/") }}
+          {{ opoCard(iconFolder(), "Administración", "Auxiliar Administrativo", "Dominio de la legislación administrativa, ofimática y psicotécnicos con simulacros periódicos pautados y resolución individualizada de dudas jurídicas.", ["Técnicas de agilidad psicotécnica", "Esquemas normativos sintetizados"], "Ver preparación Auxiliar", "/contacto/") }}
+        </div>
+      {% endcall %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="formacion">
-  <div class="container">
-    <div class="formacion-panel">
-      <div class="hero__grid">
-        <div>
-          <p class="eyebrow">03 · Pedagogía cercana y rigor formativo</p>
-          <h2>Formación: Preparación de Oposiciones</h2>
-          <p>Te acompañamos en la preparación de tus oposiciones con método, materiales actualizados y un trabajo adaptado a cada proceso. Queremos ayudarte a avanzar con seguridad, sin olvidar cómo te encuentras durante el camino.</p>
-          <p style="margin-top: 16px;">Aquí no serás un número en un aula masificada. Diseñamos planes de estudio realistas, simulacros individualizados y tutorías semanales donde resolver dudas de temario y calibrar tu descanso.</p>
-        </div>
-        <div class="formacion-panel__media">
-          {{ mediaPlaceholder("Fotografía: preparación de oposiciones", "4 / 3") }}
-          <span class="formacion-panel__media-tag">Itinerarios convocatorias 2025–2026</span>
-        </div>
-      </div>
-
-      <div class="formacion-panel__itineraries">
-        <h3>Itinerarios Oficiales con Acompañamiento Continuo</h3>
-        <p class="eyebrow">Plazas limitadas por grupo</p>
-      </div>
-
-      <div class="grid" style="margin-top: 24px;">
-        {{ opoCard(iconFaceSmile(), "Educación", "Técnico de Educación Infantil (T.E.I.)", "Preparación integral del temario específico y supuestos prácticos con enfoque en pedagogía activa, desarrollo evolutivo y normativa autonómica vigente.", ["Simulacros de examen reales", "Corrección exhaustiva 1:1"], "Ver preparación TEI", "/contacto/") }}
-        {{ opoCard(iconBookOpen(), "Docencia pública", "Magisterio (Infantil y Primaria)", "Elaboración cuidada de la programación didáctica, desarrollo de unidades, defensa oral serena ante tribunal y resolución de casos sin memorizaciones vacías.", ["Oratoria y ensayo ante tribunal", "Unidades didácticas innovadoras"], "Ver preparación Magisterio", "/contacto/") }}
-        {{ opoCard(iconFolder(), "Administración", "Auxiliar Administrativo", "Dominio de la legislación administrativa, ofimática y psicotécnicos con simulacros periódicos pautados y resolución individualizada de dudas jurídicas.", ["Técnicas de agilidad psicotécnica", "Esquemas normativos sintetizados"], "Ver preparación Auxiliar", "/contacto/") }}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--soft">
+<section class="section section--alt" id="principios-formativos">
   <div class="container">
     {{ sectionHead("Principios del espacio formativo", "Cómo entendemos el acompañamiento", "Nuestra pedagogía se asienta en tres compromisos irrenunciables que garantizan confianza, rigor y calma a lo largo de todo tu recorrido.", "center") }}
     <div class="grid">
@@ -114,4 +92,4 @@ description: "Orientación, apoyo psicológico y preparación de oposiciones con
   </div>
 </section>
 
-{{ ctaBanner("Conversación inicial sin compromiso", "El objetivo, un poco más cerca", "Cuéntanos en qué punto estás. Queremos escucharte y conocer lo que necesitas para valorar juntos la mejor manera de acompañarte.", "Solicitar información", "/contacto/", "Reservar sesión diagnóstica", "/contacto/", "Atención individualizada · Alcorcón 12, Parla · Madrid", "", true, "left", true) }}
+{{ ctaBanner("Conversación inicial sin compromiso", "El objetivo, un poco más cerca", "Cuéntanos en qué punto estás. Queremos escucharte y conocer lo que necesitas para valorar juntos la mejor manera de acompañarte.", "Solicitar información", "/contacto/", "", "", "", "", false, "left", true) }}

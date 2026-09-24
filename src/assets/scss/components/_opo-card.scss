@@ -1,61 +1,6 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-.formacion-panel {
-  background: rgba($c-bg-alt, 0.6);
-  border-radius: $radius-lg;
-  padding: 24px;
-
-  @include desktop {
-    padding: 48px;
-  }
-}
-
-.formacion-panel__media {
-  position: relative;
-  margin-top: 24px;
-
-  @include desktop {
-    margin-top: 0;
-  }
-}
-
-.formacion-panel__media-tag {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
-  padding: 10px 16px;
-  background: rgba($c-brand, 0.85);
-  backdrop-filter: blur(4px);
-  border-radius: $radius-sm;
-  color: $c-white;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.formacion-panel__itineraries {
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 1px solid $c-border;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-
-  h3 {
-    font-size: 22px;
-  }
-
-  .eyebrow {
-    margin-bottom: 0;
-  }
-}
-
 .opo-card {
   display: flex;
   flex-direction: column;
@@ -90,7 +35,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $c-accent-sage;
+  color: $c-accent;
 }
 
 .opo-card__title {

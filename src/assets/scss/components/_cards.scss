@@ -115,3 +115,12 @@
     color: $c-accent;
   }
 }
+
+// Bloque "Principios del espacio formativo" en /mente/
+#principios-formativos .card__footer {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.55px;
+  color: $c-accent-sage;
+}

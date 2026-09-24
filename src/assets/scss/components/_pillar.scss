@@ -93,6 +93,10 @@
     color: $c-text;
   }
 
+  &__body + &__body {
+    margin-top: 16px;
+  }
+
   &__content &__tag--inline {
     color: $c-text-muted;
 
@@ -116,6 +120,37 @@
 
   &__content .link-arrow {
     margin-top: 16px;
+  }
+
+  // Contenido adicional bajo imagen y texto (p. ej. itinerarios en /mente/)
+  &__extra {
+    grid-column: 1 / -1;
+    order: 3;
+    padding: 0 24px 24px;
+
+    @include desktop {
+      padding: 0;
+    }
+  }
+
+  &__itineraries {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 32px;
+    margin-bottom: 24px;
+    border-top: 1px solid $c-border;
+    scroll-margin-top: 96px;
+
+    h3 {
+      font-size: 22px;
+    }
+
+    .eyebrow {
+      margin-bottom: 0;
+    }
   }
 
   &__points {
@@ -143,7 +178,7 @@
   align-items: center;
   padding: 6px 14px;
   border-radius: 999px;
-  background: $c-bg-alt;
+  background: $c-white;
   font-size: 13px;
   color: $c-text;
 }
@@ -176,8 +211,44 @@
       padding: 48px 0 48px 48px;
     }
   }
+}
 
-  .pillar__point {
-    background: $c-bg;
+// /mente/ "Formas de cuidar": en desktop la imagen va a sangre, pegada a los bordes de la caja
+#formas-de-cuidar .pillar {
+  @include desktop {
+    padding: 0;
+    gap: 48px;
+    align-items: stretch;
+    overflow: hidden;
+
+    .pillar__media {
+      min-height: 360px;
+
+      .media-placeholder {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        aspect-ratio: auto;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+
+    .pillar__content {
+      align-self: center;
+      padding: 48px 48px 48px 0;
+    }
+  }
+}
+
+#formas-de-cuidar .pillar__extra {
+  @include desktop {
+    padding: 0 48px 48px;
+  }
+}
+
+#formas-de-cuidar .pillar--reverse .pillar__content {
+  @include desktop {
+    padding: 48px 0 48px 48px;
   }
 }

@@ -161,19 +161,6 @@
   color: $c-heading;
 }
 
-.hero__badge-icon {
-  display: inline-flex;
-  width: 14px;
-  height: 14px;
-  flex: none;
-  color: $c-accent-sage;
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-}
-
 .hero__stats {
   display: none;
   align-items: center;
@@ -264,18 +251,6 @@
     max-width: 48rem;
   }
 
-  &--cuerpo &__head .hero__body {
-    @include desktop {
-      font-family: $font-serif;
-      font-weight: 400;
-      font-size: 28px;
-      line-height: 38.5px;
-      letter-spacing: 0;
-      color: $c-brand;
-    }
-  }
-
-  &--metodo &__head .hero__body,
   &--contacto &__head .hero__body {
     @include desktop {
       font-family: $font-sans;

@@ -5,20 +5,20 @@ description: "Fisioterapia, prevención y recuperación funcional con un enfoque
 ---
 {% from "macros/ui.njk" import button, sectionHead, card, pillar, ctaBanner, mediaPlaceholder, breadcrumb, quoteCard, iconClock, iconShield, iconLeaf %}
 
-<div class="page-hero page-hero--cuerpo">
+<div class="page-hero">
   {{ breadcrumb([{ label: "Cuerpo" }]) }}
   <div class="page-hero__grid">
     <div class="page-hero__head">
       <p class="eyebrow">Pilar fundamental · 01</p>
       <h1>Cuerpo</h1>
       <p class="hero__body">Fisioterapia, prevención y recuperación para acompañarte en cada etapa.</p>
+      <p class="hero__body">Entendemos que cada cuerpo es diferente y que detrás de cada molestia hay una historia. Por eso escuchamos, valoramos lo que necesitas y trabajamos contigo para ayudarte a recuperar el bienestar y volver a sentirte bien en tu cuerpo.</p>
     </div>
-    <div>
-      <p>Entendemos que cada cuerpo es diferente y que detrás de cada molestia hay una historia. Por eso escuchamos, valoramos lo que necesitas y trabajamos contigo para ayudarte a recuperar el bienestar y volver a sentirte bien en tu cuerpo.</p>
+    <div class="page-hero__actions-col">
       <div class="hero__actions">
         {{ button("Reservar primera valoración", "/contacto/", "primary") }}
-        <a class="link-arrow" href="#areas">Explorar áreas ↓</a>
       </div>
+      <a class="link-arrow" href="#areas">Explorar áreas ↓</a>
     </div>
   </div>
 </div>
@@ -70,4 +70,4 @@ description: "Fisioterapia, prevención y recuperación funcional con un enfoque
   </div>
 </section>
 
-{{ ctaBanner("Intégrate en el bienestar", "Momento de cuidar tu cuerpo", "Un espacio para escucharte, entender lo que necesitas y acompañarte en el camino para aliviar tus molestias y volver a sentirte bien.", "Reservar sesión", "/contacto/", "", "", "Atención individualizada con cita previa en Parla · Alcorcón 12", "", false, "left", true) }}
+{{ ctaBanner("Intégrate en el bienestar", "Momento de cuidar tu cuerpo", "Un espacio para escucharte, entender lo que necesitas y acompañarte en el camino para aliviar tus molestias y volver a sentirte bien.", "Reservar sesión", "/contacto/", "", "", "", "", false, "left", true) }}

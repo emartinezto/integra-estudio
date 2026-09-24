@@ -20,4 +20,9 @@
     margin-top: 24px;
     gap: 16px;
   }
+
+  .quote-card,
+  .card.card--muted {
+    background: $c-white;
+  }
 }
