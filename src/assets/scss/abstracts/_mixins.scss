@@ -11,10 +11,19 @@
 }
 
 @mixin section-padding {
-  padding-block: 56px;
+  padding-block: 3rem;
 
   @media (min-width: $bp-desktop) {
-    padding-block: 104px;
+    padding-block: 5rem;
+  }
+}
+
+// Separación entre bloques (tarjetas, columnas, listas): 1rem en móvil, 2rem en desktop
+@mixin layout-gap {
+  gap: 1rem;
+
+  @media (min-width: $bp-desktop) {
+    gap: 2rem;
   }
 }
 

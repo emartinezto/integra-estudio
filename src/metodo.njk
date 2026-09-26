@@ -14,11 +14,11 @@ description: "Un proceso holístico terapéutico que pone a la persona en el cen
   </div>
 </div>
 
-<div class="container">
+<div class="container page-hero__media">
   {{ mediaPlaceholder("Fotografía: panorámica del estudio", "21 / 9") }}
 </div>
 
-<section class="section filosofia" id="filosofia">
+<section class="section section--alt filosofia" id="filosofia">
   <div class="container hero__grid">
     <div class="filosofia__head">
       <p class="eyebrow">Nuestra filosofía</p>
@@ -35,7 +35,7 @@ description: "Un proceso holístico terapéutico que pone a la persona en el cen
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section">
   <div class="container">
     {{ sectionHead("Atmósfera y entorno", "Un espacio pensado para acompañarte", "Queremos que cuando entres en Integra sientas que estás en un lugar en el que puedes estar tranquilo, parar un momento y sentirte a gusto.", "center") }}
     <div class="grid">
@@ -46,10 +46,10 @@ description: "Un proceso holístico terapéutico que pone a la persona en el cen
   </div>
 </section>
 
-<section class="section">
+<section class="section section--alt">
   <div class="container">
     {{ sectionHead("Integración constante", "Cuerpo · Mente · Movimiento", "Cuerpo, mente y movimiento se relacionan y se complementan. Conoce cómo cada uno puede acompañarte para ayudarte a sentirte bien.", "split") }}
-    <div style="display: flex; flex-direction: column; gap: 24px;">
+    <div class="stack">
       {{ integrationRow("I", "Cuidado & Recuperación", "Cuerpo", "Fisioterapia, prevención y recuperación. Cuidamos tu cuerpo en cada momento: para prevenir, aliviar una molestia o acompañarte en tu recuperación. Escuchamos lo que necesitas y trabajamos contigo para ayudarte a volver a sentirte bien.", "Conoce el área de Cuerpo", "/cuerpo/") }}
       {{ integrationRow("II", "Escucha & Acompañamiento", "Mente", "Orientación, apoyo y formación. Un espacio para escuchar, acompañar y ayudarte a avanzar. Desde tus procesos personales hasta tus objetivos de formación y preparación de oposiciones, estamos a tu lado en cada momento.", "Conoce el área de Mente", "/mente/") }}
       {{ integrationRow("III", "Energía & Conexión", "Movimiento", "Pilates y movimiento consciente. Un espacio para conocer mejor tu cuerpo, ganar fuerza, mejorar tu movilidad y volver a moverte con seguridad. Trabajamos de forma personalizada, respetando tu ritmo y lo que necesitas en cada momento.", "Conoce el área de Movimiento", "/movimiento/") }}
@@ -57,4 +57,4 @@ description: "Un proceso holístico terapéutico que pone a la persona en el cen
   </div>
 </section>
 
-{{ ctaBanner("Intégrate en el bienestar", "Empezamos escuchándote", "Queremos conocerte, entender cómo te encuentras y saber qué necesitas en este momento. A partir de ahí, vemos contigo la mejor manera de acompañarte, respetando tu ritmo y tus objetivos.", "Reserva tu primera sesión", "/contacto/", "Descubrir Servicios", "/#areas-de-trabajo", "Atención con cita previa en Integra Studio · Primera valoración sin compromiso") }}
+{{ ctaBanner("Intégrate en el bienestar", "Empezamos escuchándote", "Queremos conocerte, entender cómo te encuentras y saber qué necesitas en este momento. A partir de ahí, vemos contigo la mejor manera de acompañarte, respetando tu ritmo y tus objetivos.", "Reserva tu primera sesión", "/contacto/", "", "", "Atención con cita previa", "", false) }}

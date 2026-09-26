@@ -3,9 +3,9 @@
 
 .pillar {
   display: grid;
-  gap: 32px;
+  @include layout-gap;
   align-items: center;
-  background: rgba(243, 238, 233, 0.6);
+  background: $c-bg-soft;
   border-radius: $radius-lg;
   overflow: hidden;
 
@@ -178,7 +178,7 @@
   align-items: center;
   padding: 6px 14px;
   border-radius: 999px;
-  background: $c-white;
+  background: $c-bg-alt;
   font-size: 13px;
   color: $c-text;
 }
@@ -188,7 +188,6 @@
   .pillar {
     align-items: stretch;
     overflow: hidden;
-    background: $c-bg-alt;
 
     @include desktop {
       padding: 0;
@@ -217,7 +216,6 @@
 #formas-de-cuidar .pillar {
   @include desktop {
     padding: 0;
-    gap: 48px;
     align-items: stretch;
     overflow: hidden;
 

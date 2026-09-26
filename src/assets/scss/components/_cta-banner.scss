@@ -17,11 +17,7 @@
 
 .cta-banner {
   @include container;
-  padding-block: 56px;
-
-  @include desktop {
-    padding-block: 104px;
-  }
+  @include section-padding;
 
   &__inner {
     position: relative;

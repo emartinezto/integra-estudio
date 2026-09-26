@@ -7,7 +7,7 @@
   @include desktop {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 2rem;
   }
 }
 
@@ -17,7 +17,7 @@
   gap: 12px;
   height: 100%;
   padding: 32px;
-  background: $c-bg-alt;
+  background: $c-bg-soft;
   border-radius: $radius-lg;
 
   &__icon {
@@ -28,7 +28,7 @@
     height: 40px;
     flex: none;
     border-radius: $radius-sm;
-    background: $c-bg-soft;
+    background: $c-bg-alt;
     color: $c-brand;
 
     svg {

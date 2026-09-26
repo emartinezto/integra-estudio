@@ -40,7 +40,7 @@ description: "Tratamiento fisioterapéutico personalizado, con planes de recuper
   </div>
 </div>
 
-<section class="section filosofia filosofia--reverse" id="filosofia">
+<section class="section section--alt filosofia filosofia--reverse" id="filosofia">
   <div class="container hero__grid">
     <div class="filosofia__head">
       <p class="eyebrow">Filosofía de intervención</p>
@@ -57,7 +57,7 @@ description: "Tratamiento fisioterapéutico personalizado, con planes de recuper
   </div>
 </section>
 
-<section class="section section--soft" id="beneficios">
+<section class="section" id="beneficios">
   <div class="container">
     {{ sectionHead("Criterio terapéutico", "Beneficios de nuestra práctica", "Un abordaje respetuoso con tus tiempos.", "") }}
     <div class="grid grid--4">
@@ -69,10 +69,10 @@ description: "Tratamiento fisioterapéutico personalizado, con planes de recuper
   </div>
 </section>
 
-<section class="section">
+<section class="section section--alt" id="proceso">
   <div class="container">
     {{ sectionHead("Itinerario de cuidados", "¿Cómo funciona el proceso?", "Un camino estructurado en tres tiempos sin aceleraciones artificiales.", "") }}
-    <div style="display: flex; flex-direction: column; gap: 24px;">
+    <div class="stack">
       {{ integrationRow("I", "", "Primera toma de contacto", "Empezamos escuchándote, conociendo tu historia y valorando cómo se encuentra tu cuerpo antes de empezar a trabajar. Así podemos entender mejor qué puede estar detrás de tus molestias y decidir contigo cómo acompañarte.") }}
       {{ integrationRow("II", "", "Valoración y acompañamiento", "Trabajamos con técnicas manuales y movilizaciones suaves, adaptando cada sesión a cómo responde tu cuerpo y a lo que necesitas en cada momento.") }}
       {{ integrationRow("III", "", "Proceso personalizado", "Te acompañamos también después de la sesión, con recomendaciones para tu día a día, cuando lo necesites, conectando el trabajo con el área de Movimiento para seguir avanzando en tu recuperación.") }}
@@ -80,7 +80,7 @@ description: "Tratamiento fisioterapéutico personalizado, con planes de recuper
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="destinatarios">
   <div class="container">
     {{ sectionHead("Destinatarios", "Para quién está pensado", "La fisioterapia en Integra acoge a perfiles que priorizan la calidad de atención y el análisis holístico de sus síntomas.", "center") }}
     <div class="grid persona-cards-mobile">
@@ -98,7 +98,7 @@ description: "Tratamiento fisioterapéutico personalizado, con planes de recuper
 </section>
 
 {# Oculto por ahora: bloque de preguntas frecuentes
-<section class="section section--soft">
+<section class="section section--alt">
   <div class="container">
     {{ sectionHead("Dudas habituales", "Preguntas frecuentes", "", "center") }}
     <div class="faq-list">
@@ -112,4 +112,4 @@ description: "Tratamiento fisioterapéutico personalizado, con planes de recuper
 </section>
 #}
 
-{{ ctaBanner("Tu momento de recuperación", "Ponte en nuestras manos", "Reserva tu primera valoración diagnóstica o llámanos para resolver cualquier consulta sobre tu caso particular con nuestro equipo.", "Reservar sesión", "/contacto/", "Contactar por teléfono", "tel:" ~ site.phone, "Atención individualizada con cita previa en Integra Studio") }}
+{{ ctaBanner("Tu momento de recuperación", "Ponte en nuestras manos", "Reserva tu primera valoración diagnóstica o llámanos para resolver cualquier consulta sobre tu caso particular con nuestro equipo.", "Reservar sesión", "/contacto/", "", "", "Atención con cita previa", "", false) }}

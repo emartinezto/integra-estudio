@@ -18,7 +18,7 @@
 
   &__stats {
     margin-top: 24px;
-    gap: 16px;
+    @include layout-gap;
   }
 
   .quote-card,

@@ -13,22 +13,11 @@
   background: $c-bg-alt;
 }
 
-.section--soft {
-  background: $c-bg-soft-2;
-}
-
-.section--tint {
-  background: rgba($c-bg-alt, 0.7);
-}
-
-// Fondo específico del bloque "Áreas de Acción" en /cuerpo/
-#areas.section--alt {
-  background: $c-bg;
-}
-
-// Fondo específico del bloque "Formas de cuidar" en /mente/
-#formas-de-cuidar {
-  background: $c-white;
+// Lista vertical de bloques (filas, pilares, tarjetas apiladas)
+.stack {
+  display: flex;
+  flex-direction: column;
+  @include layout-gap;
 }
 
 .text-center {

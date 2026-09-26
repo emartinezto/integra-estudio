@@ -3,23 +3,22 @@
 
 .site-footer {
   background: $c-bg-alt;
-  margin-top: 80px;
+  @include section-padding;
 
   &__inner {
     @include container;
     display: grid;
-    gap: 32px 24px;
+    @include layout-gap;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "brand brand"
       "pilares nav"
       "contact contact";
-    padding-block: 56px 32px;
+    padding-bottom: 32px;
 
     @include tablet {
       grid-template-columns: 1.4fr 1fr 1fr;
       grid-template-areas: none;
-      gap: 40px;
     }
 
     @include desktop {
@@ -77,7 +76,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 12px;
-  padding-block: 16px;
+  padding-top: 16px;
 
   @include tablet {
     flex-direction: row;

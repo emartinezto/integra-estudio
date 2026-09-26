@@ -11,12 +11,11 @@
 
   &__grid {
     display: grid;
-    gap: 40px;
+    @include layout-gap;
     align-items: center;
 
     @include desktop {
       grid-template-columns: 5fr 7fr;
-      gap: 48px;
     }
   }
 
@@ -75,7 +74,7 @@
   border-top: 1px solid $c-border;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  @include layout-gap;
 
   @include tablet {
     grid-template-columns: repeat(3, 1fr);
@@ -205,13 +204,22 @@
 
 .page-hero {
   @include container;
-  padding-block: 32px 40px;
+  padding-block: 32px 56px;
+
+  @include desktop {
+    padding-bottom: 104px;
+  }
+
+  // Si el hero continúa con una imagen, el espacio inferior lo pone la imagen
+  &:has(+ .page-hero__media) {
+    padding-bottom: 40px;
+  }
 
   &__media {
-    margin-bottom: 40px;
+    padding-bottom: 56px;
 
     @include desktop {
-      margin-bottom: 64px;
+      padding-bottom: 104px;
     }
   }
 
@@ -232,12 +240,11 @@
 
   &__grid {
     display: grid;
-    gap: 16px;
+    @include layout-gap;
     align-items: start;
 
     @include desktop {
       grid-template-columns: 8fr 4fr;
-      gap: 48px;
       align-items: end;
     }
   }
