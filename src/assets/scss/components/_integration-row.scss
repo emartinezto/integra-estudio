@@ -23,6 +23,18 @@
     column-gap: 32px;
   }
 
+  &--no-tag {
+    grid-template-areas:
+      "number number"
+      "title title"
+      "body body"
+      "cta cta";
+
+    @include desktop {
+      grid-template-areas: "number title body cta";
+    }
+  }
+
   &__number {
     grid-area: number;
     font-family: $font-serif;

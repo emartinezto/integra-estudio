@@ -99,3 +99,12 @@
     }
   }
 }
+
+// Variante con el texto a la izquierda y la imagen a la derecha (/cuerpo/fisioterapia/)
+.filosofia--reverse {
+  @include desktop {
+    .hero__grid {
+      grid-template-areas: "head media" "content media";
+    }
+  }
+}

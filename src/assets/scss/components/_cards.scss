@@ -124,3 +124,17 @@
   letter-spacing: 0.55px;
   color: $c-accent-sage;
 }
+
+// Etiquetas del bloque "Beneficios de nuestra práctica" en /cuerpo/fisioterapia/
+#beneficios .card__footer {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: $radius-sm;
+  background: $c-bg;
+  font-family: $font-sans;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.88px;
+  color: #2E4130;
+}

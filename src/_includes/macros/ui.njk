@@ -124,7 +124,7 @@
 {% macro personaCardDesktop(icon, label, headline, body) %}
 <div class="persona-list-card">
   <span class="persona-list-card__icon" aria-hidden="true">{{ icon }}</span>
-  <p class="persona-list-card__label">{{ label }}</p>
+  {% if label %}<p class="persona-list-card__label">{{ label }}</p>{% endif %}
   <h3 class="persona-list-card__headline">{{ headline }}</h3>
   <p class="persona-list-card__body">{{ body }}</p>
 </div>
@@ -290,12 +290,12 @@
 {% endmacro %}
 
 {% macro integrationRow(number, tag, title, body, ctaText, ctaUrl) %}
-<div class="integration-row">
+<div class="integration-row{% if not tag %} integration-row--no-tag{% endif %}">
   <p class="integration-row__number">{{ number }}</p>
-  <span class="integration-row__tag">{{ tag }}</span>
+  {% if tag %}<span class="integration-row__tag">{{ tag }}</span>{% endif %}
   <h3 class="integration-row__title">{{ title }}</h3>
   <p class="integration-row__body">{{ body }}</p>
-  <a class="integration-row__cta link-arrow" href="{{ ctaUrl }}">{{ ctaText }}{{ iconArrowRight() }}</a>
+  {% if ctaUrl %}<a class="integration-row__cta link-arrow" href="{{ ctaUrl }}">{{ ctaText }}{{ iconArrowRight() }}</a>{% endif %}
 </div>
 {% endmacro %}
 
