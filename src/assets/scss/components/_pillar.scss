@@ -9,10 +9,10 @@
   border-radius: $radius-lg;
   overflow: hidden;
 
+  // En desktop la imagen va a sangre: ocupa toda su columna, pegada a los bordes de la caja
   @include desktop {
     grid-template-columns: 7fr 5fr;
-    padding: 48px;
-    overflow: visible;
+    align-items: stretch;
   }
 
   &--reverse {
@@ -33,12 +33,18 @@
     position: relative;
 
     .media-placeholder {
-      border-radius: $radius-lg $radius-lg 0 0;
+      border-radius: 0;
       box-shadow: none;
+    }
 
-      @include desktop {
-        border-radius: $radius-lg;
-        box-shadow: $shadow-md;
+    @include desktop {
+      min-height: 360px;
+
+      .media-placeholder {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        aspect-ratio: auto;
       }
     }
   }
@@ -81,7 +87,14 @@
     padding: 24px;
 
     @include desktop {
-      padding: 0;
+      align-self: center;
+      padding: 48px 48px 48px 0;
+    }
+  }
+
+  &--reverse &__content {
+    @include desktop {
+      padding: 48px 0 48px 48px;
     }
   }
 
@@ -183,70 +196,9 @@
   color: $c-text;
 }
 
-// Ajustes específicos del bloque "Áreas de Acción" en /cuerpo/
-#areas {
-  .pillar {
-    align-items: stretch;
-    overflow: hidden;
-
-    @include desktop {
-      padding: 0;
-    }
-
-    &__media .media-placeholder {
-      border-radius: 0;
-      box-shadow: none;
-    }
-
-    &__content {
-      @include desktop {
-        padding: 48px 48px 48px 0;
-      }
-    }
-  }
-
-  .pillar--reverse .pillar__content {
-    @include desktop {
-      padding: 48px 0 48px 48px;
-    }
-  }
-}
-
-// /mente/ "Formas de cuidar": en desktop la imagen va a sangre, pegada a los bordes de la caja
-#formas-de-cuidar .pillar {
-  @include desktop {
-    padding: 0;
-    align-items: stretch;
-    overflow: hidden;
-
-    .pillar__media {
-      min-height: 360px;
-
-      .media-placeholder {
-        position: absolute;
-        inset: 0;
-        height: 100%;
-        aspect-ratio: auto;
-        border-radius: 0;
-        box-shadow: none;
-      }
-    }
-
-    .pillar__content {
-      align-self: center;
-      padding: 48px 48px 48px 0;
-    }
-  }
-}
-
+// /mente/ "Formas de cuidar": contenido extra bajo imagen y texto
 #formas-de-cuidar .pillar__extra {
   @include desktop {
     padding: 0 48px 48px;
-  }
-}
-
-#formas-de-cuidar .pillar--reverse .pillar__content {
-  @include desktop {
-    padding: 48px 0 48px 48px;
   }
 }

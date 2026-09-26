@@ -147,9 +147,9 @@
 <a class="btn btn--{{ style }}" href="{{ url }}">{{ text }}</a>
 {% endmacro %}
 
-{% macro mediaPlaceholder(label, ratio="4 / 3") %}
-<div class="media-placeholder" style="--ratio: {{ ratio }};">
-  <span>{{ label }}</span>
+{% macro mediaPlaceholder(label, ratio="4 / 3", src="", eager=false) %}
+<div class="media-placeholder{% if src %} media-placeholder--image{% endif %}" style="--ratio: {{ ratio }};">
+  {% if src %}<img src="{{ src }}" alt="{{ label }}"{% if not eager %} loading="lazy"{% endif %} decoding="async">{% else %}<span>{{ label }}</span>{% endif %}
 </div>
 {% endmacro %}
 
@@ -163,10 +163,10 @@
 </div>
 {% endmacro %}
 
-{% macro pillar(tag, title, subtitle, body, ctaText, ctaUrl, imageLabel, reverse=false, mediaTag="", points=[]) %}
+{% macro pillar(tag, title, subtitle, body, ctaText, ctaUrl, imageLabel, reverse=false, mediaTag="", points=[], image="") %}
 <div class="pillar {% if reverse %}pillar--reverse{% endif %}">
   <div class="pillar__media">
-    {{ mediaPlaceholder(imageLabel) }}
+    {{ mediaPlaceholder(imageLabel, "4 / 3", image) }}
     {% if mediaTag or tag %}<span class="pillar__tag pillar__tag--floating">{{ mediaTag or tag }}</span>{% endif %}
   </div>
   <div class="pillar__content">
