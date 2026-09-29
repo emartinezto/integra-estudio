@@ -130,9 +130,9 @@
 </div>
 {% endmacro %}
 
-{% macro atmosphereCard(imageLabel, label, icon, title) %}
+{% macro atmosphereCard(imageLabel, label, icon, title, image="") %}
 <div class="atmosphere-card">
-  {{ mediaPlaceholder(imageLabel) }}
+  {{ mediaPlaceholder(imageLabel, "4 / 3", image) }}
   <div class="atmosphere-card__body">
     <div class="atmosphere-card__row">
       <p class="atmosphere-card__label">{{ label }}</p>

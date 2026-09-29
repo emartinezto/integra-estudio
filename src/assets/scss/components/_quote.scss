@@ -87,8 +87,19 @@
       grid-area: head;
     }
 
+    // La imagen ocupa todo el alto del título + contenido
     .filosofia__media {
       grid-area: media;
+      position: relative;
+      align-self: stretch;
+      min-height: 360px;
+
+      .media-placeholder {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        aspect-ratio: auto;
+      }
     }
 
     .filosofia__content {
