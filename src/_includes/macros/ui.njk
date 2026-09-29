@@ -77,8 +77,8 @@
 </div>
 {% endmacro %}
 
-{% macro areaListCard(icon, title, rows, tag, note) %}
-<div class="area-list-card">
+{% macro areaListCard(icon, title, rows, tag, note, url) %}
+<a class="area-list-card" href="{{ url }}">
   <div class="area-list-card__head">
     <h3>{{ title }}</h3>
     <span class="area-list-card__icon" aria-hidden="true">{{ icon }}</span>
@@ -89,17 +89,11 @@
         <p class="area-list-card__group-title">{{ row.group }}</p>
         <div class="area-list-card__group-rows">
           {% for sub in row.items %}
-          <a class="area-list-card__group-row" href="{{ sub.url }}">
-            <span>{{ sub.label }}</span>
-            <span class="area-list-card__row-arrow" aria-hidden="true">→</span>
-          </a>
+          <p class="area-list-card__group-row">{{ sub.label }}</p>
           {% endfor %}
         </div>
       {% else %}
-        <a class="area-list-card__row" href="{{ row.url }}">
-          <span>{{ row.label }}</span>
-          <span class="area-list-card__row-arrow" aria-hidden="true">→</span>
-        </a>
+        <p class="area-list-card__row">{{ row.label }}</p>
       {% endif %}
     {% endfor %}
   </div>
@@ -110,7 +104,7 @@
   </div>
   {% endif %}
   {% if tag %}<span class="area-list-card__tag">{{ tag }}</span>{% endif %}
-</div>
+</a>
 {% endmacro %}
 
 {% macro personaCard(number, headline, body) %}
@@ -274,7 +268,7 @@
 </details>
 {% endmacro %}
 
-{% macro opoCard(icon, category, title, body, checks, ctaText, ctaUrl) %}
+{% macro opoCard(icon, category, title, body, checks) %}
 <div class="opo-card">
   <span class="opo-card__icon" aria-hidden="true">{{ icon }}</span>
   <p class="opo-card__category">{{ category }}</p>
@@ -285,7 +279,6 @@
     <li><span class="opo-card__check-icon" aria-hidden="true">{{ iconCheck() }}</span>{{ item }}</li>
     {% endfor %}
   </ul>
-  {% if ctaUrl %}<a class="link-arrow opo-card__cta" href="{{ ctaUrl }}">{{ ctaText }}{{ iconArrowRight() }}</a>{% endif %}
 </div>
 {% endmacro %}
 

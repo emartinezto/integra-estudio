@@ -7,6 +7,22 @@
   padding: 32px;
   background: $c-bg-soft;
   border-radius: $radius-lg;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  // Toda la tarjeta es un enlace al pilar
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+
+    .area-list-card__head h3 {
+      color: $c-brand;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $c-brand;
+    outline-offset: 4px;
+  }
 
   &__head {
     display: flex;
@@ -18,6 +34,7 @@
       font-size: 18px;
       letter-spacing: 0.02em;
       text-transform: uppercase;
+      transition: color 0.2s ease;
     }
   }
 
@@ -41,36 +58,9 @@
   }
 
   &__row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
     padding: 10px 0;
     font-size: 15px;
     color: $c-heading;
-
-    span:first-child {
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    &:hover {
-      color: $c-brand;
-
-      span:first-child {
-        border-color: currentColor;
-      }
-
-      .area-list-card__row-arrow {
-        transform: translateX(4px);
-      }
-    }
-  }
-
-  &__row-arrow {
-    flex: none;
-    color: $c-accent;
-    transition: transform 0.2s ease;
   }
 
   &__group-title {
@@ -89,31 +79,10 @@
   }
 
   &__group-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
     padding: 8px 0;
     font-size: 12px;
     line-height: 21px;
     color: $c-text;
-
-    span:first-child {
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    &:hover {
-      color: $c-brand;
-
-      span:first-child {
-        border-color: currentColor;
-      }
-
-      .area-list-card__row-arrow {
-        transform: translateX(4px);
-      }
-    }
   }
 
   &__note {

@@ -96,9 +96,9 @@ description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bi
   <div class="container">
     {{ sectionHead("Bases de nuestra práctica", "Los Tres Pilares", "Una atención cercana y personalizada, adaptada a ti, a tu ritmo y a lo que necesitas en cada momento.") }}
     <div class="stack">
-      {{ pillar("Pilar I", "Cuerpo", "Prevención · Fisioterapia · Recuperación", "Valoramos lo que necesitas y trabajamos contigo para entender el origen de tus molestias, tratar el dolor y ayudarte a recuperar el bienestar y la confianza en tu cuerpo.", "Descubrir Cuerpo", "/cuerpo/", "Fisioterapeuta atendiendo a una paciente en camilla", image="/assets/images/pilar-cuerpo.jpg") }}
-      {{ pillar("Pilar II", "Mente", "Orientación · Apoyo · Formación", "Te acompañamos en momentos de cambio, en tus procesos de formación y en aquellos momentos en los que necesitas parar, ordenar ideas y encontrar un poco más de claridad.", "Descubrir Mente", "/mente/", "Dos mujeres conversando en una sesión de acompañamiento", true, image="/assets/images/pilar-mente.jpg") }}
-      {{ pillar("Pilar III", "Movimiento", "Pilates", "A través de Pilates te acompañamos a conocer mejor tu cuerpo, ganar fuerza y volver a moverte con más libertad. Cada sesión se adapta a ti, a tu ritmo y a lo que necesitas en ese momento.", "Descubrir Movimiento", "/movimiento/", "Mujer practicando Pilates en reformer", image="/assets/images/pilar-movimiento.jpg") }}
+      {{ pillar("Pilar I", "Cuerpo", "Prevención · Fisioterapia · Recuperación", "Valoramos lo que necesitas y trabajamos contigo para entender el origen de tus molestias, tratar el dolor y ayudarte a recuperar el bienestar y la confianza en tu cuerpo.", "", "", "Fisioterapeuta atendiendo a una paciente en camilla", image="/assets/images/pilar-cuerpo.jpg") }}
+      {{ pillar("Pilar II", "Mente", "Orientación · Apoyo · Formación", "Te acompañamos en momentos de cambio, en tus procesos de formación y en aquellos momentos en los que necesitas parar, ordenar ideas y encontrar un poco más de claridad.", "", "", "Dos mujeres conversando en una sesión de acompañamiento", true, image="/assets/images/pilar-mente.jpg") }}
+      {{ pillar("Pilar III", "Movimiento", "Pilates", "A través de Pilates te acompañamos a conocer mejor tu cuerpo, ganar fuerza y volver a moverte con más libertad. Cada sesión se adapta a ti, a tu ritmo y a lo que necesitas en ese momento.", "", "", "Mujer practicando Pilates en reformer", image="/assets/images/pilar-movimiento.jpg") }}
     </div>
   </div>
 </section>
@@ -128,27 +128,27 @@ description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bi
     </div>
 
     {% set cuerpoRows = [
-      { label: "Prevención", url: "/cuerpo/" },
-      { label: "Fisioterapia", url: "/cuerpo/fisioterapia/" },
-      { label: "Recuperación", url: "/cuerpo/" }
+      { label: "Prevención" },
+      { label: "Fisioterapia" },
+      { label: "Recuperación" }
     ] %}
     {% set menteRows = [
-      { label: "Orientación", url: "/mente/" },
-      { label: "Apoyo", url: "/mente/" },
+      { label: "Orientación" },
+      { label: "Apoyo" },
       { group: "Formación específica", items: [
-        { label: "Técnico de Educación Infantil", url: "/formacion/" },
-        { label: "Magisterio", url: "/formacion/" },
-        { label: "Auxiliar Administrativo", url: "/formacion/" }
+        { label: "Técnico de Educación Infantil" },
+        { label: "Magisterio" },
+        { label: "Auxiliar Administrativo" }
       ] }
     ] %}
     {% set movimientoRows = [
-      { label: "Pilates (Suelo)", url: "/movimiento/" }
+      { label: "Pilates (Suelo)" }
     ] %}
 
     <div class="area-cards-desktop">
-      {{ areaListCard(iconCuerpo(), "Cuerpo", cuerpoRows, "Sesiones individuales") }}
-      {{ areaListCard(iconMente(), "Mente", menteRows, "Personal y formativo") }}
-      {{ areaListCard(iconMovimiento(), "Movimiento", movimientoRows, "Grupos reducidos y 1:1", "Próximamente nuevas disciplinas conscientes") }}
+      {{ areaListCard(iconCuerpo(), "Cuerpo", cuerpoRows, "Sesiones individuales", "", "/cuerpo/") }}
+      {{ areaListCard(iconMente(), "Mente", menteRows, "Personal y formativo", "", "/mente/") }}
+      {{ areaListCard(iconMovimiento(), "Movimiento", movimientoRows, "Grupos reducidos y 1:1", "Próximamente nuevas disciplinas conscientes", "/movimiento/") }}
     </div>
   </div>
 </section>

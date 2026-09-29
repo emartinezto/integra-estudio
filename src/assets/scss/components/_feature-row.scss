@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .feature-row {
   padding: 24px;
@@ -38,6 +39,21 @@
   font-size: 14px;
   color: $c-text;
   padding-left: 44px;
+}
+
+// Columna de imagen junto a las feature-row: en desktop la imagen se estira
+// hasta la altura de las cajas de al lado en lugar de mantener su proporción
+.feature-media {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    .media-placeholder {
+      flex: 1;
+      aspect-ratio: auto;
+      min-height: 320px;
+    }
+  }
 }
 
 .feature-cta {

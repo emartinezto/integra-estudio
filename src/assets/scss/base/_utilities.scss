@@ -7,6 +7,11 @@
 
 .section {
   @include section-padding;
+
+  // Al saltar a una sección por ancla, que no quede debajo de la cabecera fija
+  &[id] {
+    scroll-margin-top: 72px;
+  }
 }
 
 .section--alt {
