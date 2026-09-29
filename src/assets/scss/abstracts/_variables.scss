@@ -24,8 +24,8 @@ $c-accent-sage: $c-verde;
 $c-border: #DCD3C7;
 $c-white: #FFFFFF;
 
-$font-heading: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-$font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-heading: "Nunito Sans", "Nunito Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-body: "Montserrat", "Montserrat Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
 $radius-sm: 4px;
 $radius-md: 8px;

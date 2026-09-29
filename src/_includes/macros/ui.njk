@@ -149,7 +149,7 @@
 
 {% macro mediaPlaceholder(label, ratio="4 / 3", src="", eager=false, position="") %}
 <div class="media-placeholder{% if src %} media-placeholder--image{% endif %}" style="--ratio: {{ ratio }};">
-  {% if src %}<img src="{{ src }}" alt="{{ label }}"{% if not eager %} loading="lazy"{% endif %} decoding="async"{% if position %} style="object-position: {{ position }};"{% endif %}>{% else %}<span>{{ label }}</span>{% endif %}
+  {% if src %}<img src="{{ src }}" alt="{{ label }}"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async"{% if position %} style="object-position: {{ position }};"{% endif %}>{% else %}<span>{{ label }}</span>{% endif %}
 </div>
 {% endmacro %}
 
