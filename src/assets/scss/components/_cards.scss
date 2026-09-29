@@ -29,7 +29,7 @@
   }
 
   &--muted {
-    background: $c-bg;
+    background: $c-marfil;
 
     h3 {
       font-weight: 500;
@@ -43,6 +43,15 @@
       line-height: 21px;
       letter-spacing: 0;
     }
+  }
+}
+
+// En secciones marfil la tarjeta pasa a beige para no fundirse con el fondo
+.section:not(.section--alt) .card {
+  background: $c-bg-alt;
+
+  .card__icon {
+    background: $c-bg;
   }
 }
 
@@ -136,5 +145,5 @@
   font-size: 11px;
   line-height: 16px;
   letter-spacing: 0.88px;
-  color: #2E4130;
+  color: $c-text;
 }

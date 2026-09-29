@@ -2,7 +2,7 @@
 
 .feature-row {
   padding: 24px;
-  background: $c-bg-soft;
+  background: $c-bg-alt;
   border-radius: $radius-md;
 }
 
@@ -24,7 +24,7 @@
   height: 32px;
   flex: none;
   border-radius: $radius-sm;
-  background: $c-bg-alt;
+  background: $c-bg;
   color: $c-accent-sage;
 
   svg {

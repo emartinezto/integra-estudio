@@ -5,7 +5,7 @@
   display: grid;
   @include layout-gap;
   align-items: center;
-  background: $c-bg-soft;
+  background: $c-bg-alt;
   border-radius: $radius-lg;
   overflow: hidden;
 
@@ -191,7 +191,7 @@
   align-items: center;
   padding: 6px 14px;
   border-radius: 999px;
-  background: $c-bg-alt;
+  background: $c-bg;
   font-size: 13px;
   color: $c-text;
 }

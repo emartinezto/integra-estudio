@@ -1,15 +1,26 @@
-// Paleta — extraída del diseño en Figma "Integra Studio"
-$c-bg: #F6F4F1;
-$c-bg-alt: #F3EEE9;
-$c-bg-soft: #FBF9F6;
-$c-bg-muted: #EFEEEB;
-$c-bg-panel: #E4E2DF;
-$c-brand: #684E3D;
-$c-heading: #4F3728;
-$c-text: #4F453F;
-$c-text-muted: #81756E;
-$c-accent: #A8876A;
-$c-accent-sage: #7A8F7A;
+// Gama cromática de Integra Studio
+// Regla: el marrón es el ancla, marfil/beige son fondos, grafito es texto,
+// verde y salvia solo como apoyo.
+$c-marron: #684E3D;
+$c-arena: #A8876A;
+$c-beige: #F3EEE9;
+$c-marfil: #F6F4F1;
+$c-grafito: #333333;
+$c-verde: #7A8F7A;
+$c-salvia: #A9B0A2;
+
+// Roles
+$c-bg: $c-marfil;
+$c-bg-alt: $c-beige;
+$c-bg-soft: $c-marfil;
+$c-bg-muted: $c-beige;
+$c-bg-panel: $c-beige;
+$c-brand: $c-marron;
+$c-heading: $c-grafito;
+$c-text: $c-grafito;
+$c-text-muted: #666666; // grafito aclarado para textos secundarios
+$c-accent: $c-arena;
+$c-accent-sage: $c-verde;
 $c-border: #DCD3C7;
 $c-white: #FFFFFF;
 

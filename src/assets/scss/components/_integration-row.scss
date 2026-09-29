@@ -57,12 +57,12 @@
     align-items: center;
     padding: 6px 14px;
     border-radius: 999px;
-    background: rgba(#a9b0a2, 0.15);
+    background: rgba($c-salvia, 0.15);
     font-weight: 600;
     font-size: 11px;
     line-height: 16px;
     letter-spacing: 0.88px;
-    color: #2e4130;
+    color: $c-text;
 
     @include desktop {
       justify-self: start;

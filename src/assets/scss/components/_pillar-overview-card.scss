@@ -2,7 +2,7 @@
 
 .pillar-overview-card {
   padding: 28px;
-  background: $c-bg-soft;
+  background: $c-bg-alt;
   border-radius: $radius-md;
   height: 100%;
   display: flex;
@@ -13,9 +13,9 @@
     margin-bottom: 8px;
   }
 
+  // Mismo fondo que el resto: se distingue por el borde arena, la sombra y el icono marrón
   &--active {
-    background: $c-bg-alt;
-    box-shadow: $shadow-sm;
+    box-shadow: inset 0 0 0 1px $c-accent, $shadow-sm;
 
     .pillar-overview-card__icon {
       background: $c-brand;
@@ -31,7 +31,7 @@
   width: 36px;
   height: 36px;
   border-radius: $radius-sm;
-  background: $c-bg-alt;
+  background: $c-bg;
   color: $c-heading;
   margin-bottom: 16px;
 
