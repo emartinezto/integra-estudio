@@ -82,7 +82,7 @@
 }
 
 .card__number {
-  font-family: $font-serif;
+  font-family: $font-heading;
   font-size: 28px;
   line-height: 1;
   color: $c-border;
@@ -131,7 +131,7 @@
   padding: 4px 10px;
   border-radius: $radius-sm;
   background: $c-bg;
-  font-family: $font-sans;
+  font-family: $font-body;
   font-weight: 600;
   font-size: 11px;
   line-height: 16px;

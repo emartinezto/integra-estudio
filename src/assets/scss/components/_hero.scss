@@ -121,7 +121,7 @@
 }
 
 .hero-media__quote-text {
-  font-family: $font-serif;
+  font-family: $font-heading;
   font-style: italic;
   font-size: 15px;
   line-height: 1.5;
@@ -141,7 +141,7 @@
 
 .hero__stat {
   &-number {
-    font-family: $font-serif;
+    font-family: $font-heading;
     font-size: 32px;
     color: $c-heading;
     line-height: 1;
@@ -229,7 +229,7 @@
 
   &--contacto &__head .hero__body {
     @include desktop {
-      font-family: $font-sans;
+      font-family: $font-body;
       font-weight: 300;
       font-size: 18px;
       line-height: 29.3px;
@@ -338,7 +338,7 @@
 }
 
 .media-feature__caption-text {
-  font-family: $font-serif;
+  font-family: $font-heading;
   font-size: 22px;
   color: $c-white;
 

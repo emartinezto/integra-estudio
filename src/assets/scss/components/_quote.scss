@@ -9,7 +9,7 @@
   height: 100%;
 
   &__text {
-    font-family: $font-serif;
+    font-family: $font-heading;
     font-weight: 400;
     font-style: italic;
     font-size: 18px;
@@ -20,7 +20,7 @@
   }
 
   &__author {
-    font-family: $font-sans;
+    font-family: $font-body;
     font-weight: 600;
     font-size: 11px;
     line-height: 16px;
@@ -52,7 +52,7 @@
   }
 
   &__role {
-    font-family: $font-sans;
+    font-family: $font-body;
     font-size: 12px;
     color: $c-text-muted;
   }
