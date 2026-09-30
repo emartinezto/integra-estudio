@@ -123,6 +123,29 @@
     letter-spacing: 0.55px;
     color: $c-accent;
   }
+
+  // En móvil el icono ocupa su propia columna y el texto va al lado
+  @media (max-width: $bp-desktop - 1px) {
+    .card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 16px;
+      row-gap: 8px;
+      align-content: start;
+      padding: 24px;
+
+      > * {
+        grid-column: 2;
+      }
+    }
+
+    .card__icon {
+      grid-column: 1;
+      grid-row: 1 / span 3;
+      align-self: start;
+      margin-bottom: 0;
+    }
+  }
 }
 
 // Bloque "Principios del espacio formativo" en /mente/
@@ -146,4 +169,32 @@
   line-height: 16px;
   letter-spacing: 0.88px;
   color: $c-text;
+}
+
+// Bloque "Una forma diferente de moverte" en /movimiento/:
+// en móvil el número ocupa su propia columna y el texto va al lado
+#fundamentos .card {
+  @media (max-width: $bp-desktop - 1px) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    row-gap: 8px;
+    align-content: start;
+    padding: 24px;
+
+    > * {
+      grid-column: 2;
+    }
+
+    .card__head {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      align-self: start;
+      margin-bottom: 0;
+    }
+
+    .card__number {
+      color: $c-accent;
+    }
+  }
 }

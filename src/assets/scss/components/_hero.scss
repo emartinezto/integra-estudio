@@ -61,64 +61,53 @@
   flex: none;
 }
 
+// Franja de datos clave bajo la imagen del hero: un único bloque beige
+// con separadores finos, para que se lea como parte de la imagen
 .hero-info-row {
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid $c-border;
   display: grid;
   grid-template-columns: 1fr;
-  @include layout-gap;
+  margin-top: 16px;
+  padding-inline: 24px;
+  background: $c-bg-alt;
+  border-radius: $radius-lg;
 
   @include tablet {
     grid-template-columns: repeat(3, 1fr);
+    padding-inline: 0;
+    padding-block: 28px;
   }
 }
 
 .hero-info-row__item {
-  padding: 24px;
-  background: $c-bg-soft;
-  border-radius: $radius-md;
+  padding-block: 20px;
+
+  & + & {
+    border-top: 1px solid $c-border;
+  }
+
+  @include tablet {
+    padding: 0 32px;
+
+    & + & {
+      border-top: 0;
+      border-left: 1px solid $c-border;
+    }
+  }
 
   .eyebrow {
     margin-bottom: 6px;
   }
 
   p:last-child {
-    font-size: 14px;
-    color: $c-text;
+    font-family: $font-heading;
+    font-size: 17px;
+    line-height: 1.4;
+    color: $c-heading;
   }
 }
 
 .hero-media {
   position: relative;
-}
-
-.hero-media__quote {
-  margin-top: 16px;
-  padding: 20px 24px;
-  background: $c-bg-soft;
-  border-radius: $radius-md;
-  box-shadow: $shadow-md;
-
-  @include desktop {
-    position: absolute;
-    left: 32px;
-    bottom: 32px;
-    max-width: 360px;
-    margin-top: 0;
-  }
-}
-
-.hero-media__quote-label {
-  margin-bottom: 8px;
-}
-
-.hero-media__quote-text {
-  font-family: $font-heading;
-  font-style: italic;
-  font-size: 15px;
-  line-height: 1.5;
-  color: $c-heading;
 }
 
 .page-hero {
@@ -186,43 +175,5 @@
 
   .media-placeholder span {
     display: none;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: $radius-lg;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 45%);
-    pointer-events: none;
-  }
-}
-
-.media-feature__caption {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 20px;
-  z-index: 1;
-
-  @include desktop {
-    left: 32px;
-    bottom: 32px;
-    right: 32px;
-  }
-
-  .eyebrow {
-    color: rgba($c-white, 0.85);
-    margin-bottom: 6px;
-  }
-}
-
-.media-feature__caption-text {
-  font-family: $font-heading;
-  font-size: 22px;
-  color: $c-white;
-
-  @include desktop {
-    font-size: 28px;
   }
 }

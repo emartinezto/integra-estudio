@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as *;
 
 .panel {
-  background: rgba($c-salvia, 0.25);
+  background: $c-bg-alt;
   border-radius: $radius-lg;
   padding: 32px 24px;
 
