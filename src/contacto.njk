@@ -111,8 +111,12 @@ description: "Reserva tu primera sesión en Integra Studio, en Parla, Madrid."
         <p class="eyebrow" style="margin-bottom: 0;">Cartografía del entorno</p>
         <a class="link-arrow" href="{{ site.mapsUrl }}" target="_blank" rel="noopener">Ver en Google Maps ↗</a>
       </div>
-      <div class="contact-map__viewport">
-        <iframe class="contact-map__frame" src="{{ site.mapsEmbedUrl }}" title="Mapa: C/ Alcorcón 12, Parla" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      {# El iframe lo inserta cookie-consent.js solo si se aceptan las cookies #}
+      <div class="contact-map__viewport" data-consent-src="{{ site.mapsEmbedUrl }}" data-consent-title="Mapa: C/ Alcorcón 12, Parla" data-consent-class="contact-map__frame">
+        <div class="contact-map__consent" data-consent-placeholder>
+          <p>Para ver el mapa necesitamos tu permiso: Google Maps instala cookies en tu navegador al cargarlo. <a href="/cookies/">Más información</a></p>
+          <button class="btn btn--primary btn--sm" type="button" data-cookie-choice="accepted">Aceptar y ver mapa</button>
+        </div>
       </div>
       <span class="contact-map__pin">C/ Alcorcón 12, Parla</span>
     </div>

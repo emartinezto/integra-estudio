@@ -8,6 +8,19 @@ module.exports = {
   email: "hola@integrastudio.es",
   emailConsultas: "consultas@integrastudio.es",
   currentYear: new Date().getFullYear(),
+  // Datos para Aviso Legal, Privacidad y Cookies. Los valores entre [corchetes]
+  // los debe facilitar el titular; los vacíos ("") ocultan esa línea en la web.
+  legal: {
+    titular: "[Nombre y apellidos o razón social]",
+    nif: "[NIF/CIF]",
+    registroMercantil: "", // solo sociedades: "Registro Mercantil de Madrid, Tomo X, Folio X, Hoja M-X"
+    registroSanitario: "[CS-XXXX]", // n.º en el Registro de Centros Sanitarios de la Comunidad de Madrid
+    dpd: "", // Delegado de Protección de Datos: "Nombre — correo@dominio.es"
+    hosting: "[Proveedor de alojamiento web]",
+    formularios: "[Proveedor de correo y formularios]",
+    conservacion: "un año",
+    ultimaActualizacion: "30 de septiembre de 2026",
+  },
   nav: [
     { label: "Inicio", url: "/" },
     { label: "El Método Integra", url: "/metodo/" },

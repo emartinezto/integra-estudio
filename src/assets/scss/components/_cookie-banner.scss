@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Banner de consentimiento de cookies (ver assets/js/modules/cookie-consent.js)
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70; // por encima del header y del menú móvil
+  background: $c-white;
+  border-top: 1px solid $c-border;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+
+  &[hidden] {
+    display: none;
+  }
+
+  p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: $c-text;
+  }
+
+  a {
+    color: $c-brand;
+    text-decoration: underline;
+  }
+}
+
+// Contenido alineado con el resto de la web
+.cookie-banner__inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-block: 20px;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+.cookie-banner__title {
+  margin-bottom: 4px !important;
+  font-family: $font-heading;
+  font-size: 16px !important;
+  font-weight: 600;
+  color: $c-heading !important;
+}
+
+// Aceptar y Rechazar con el mismo peso visual, como pide la AEPD
+.cookie-banner__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  flex: none;
+}

@@ -96,13 +96,22 @@
   flex-wrap: wrap;
   gap: 20px;
 
-  a {
+  a,
+  button {
     font-size: 13px;
     color: $c-text-muted;
 
     &:hover {
       color: $c-brand;
     }
+  }
+
+  button {
+    padding: 0;
+    background: none;
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
   }
 }
 

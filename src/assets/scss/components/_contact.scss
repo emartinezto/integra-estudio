@@ -115,13 +115,58 @@ $map-crop-top: 110px;
 
 .contact-map__viewport {
   position: relative;
-  aspect-ratio: 16 / 10;
+  height: 280px; // en móvil deja sitio al aviso de consentimiento
   overflow: hidden;
   border-radius: $radius-lg;
   box-shadow: $shadow-md;
 
+  @include tablet {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
   @include desktop {
     aspect-ratio: 3 / 1;
+  }
+}
+
+// Se muestra mientras no se acepten las cookies de Google Maps
+.contact-map__consent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 24px 72px;
+  text-align: center;
+  background-color: $c-beige;
+  // Retícula de calles sugerida, sin datos reales del mapa
+  background-image:
+    linear-gradient(rgba($c-white, 0.7) 2px, transparent 2px),
+    linear-gradient(90deg, rgba($c-white, 0.7) 2px, transparent 2px),
+    linear-gradient(35deg, transparent 48%, rgba($c-salvia, 0.35) 48%, rgba($c-salvia, 0.35) 52%, transparent 52%);
+  background-size: 64px 64px, 64px 64px, 100% 100%;
+
+  &[hidden] {
+    display: none;
+  }
+
+  p {
+    max-width: 44ch;
+    margin: 0;
+    font-size: 14px;
+    color: $c-text;
+  }
+
+  a {
+    color: $c-brand;
+    text-decoration: underline;
+  }
+
+  @include desktop {
+    padding-bottom: 24px;
   }
 }
 
