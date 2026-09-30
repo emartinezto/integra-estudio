@@ -62,7 +62,7 @@
       <span class="area-card__check" aria-hidden="true">{{ iconCheck() }}</span>
       <div>
         <p class="area-card__item-title">{{ item.title }}</p>
-        <p class="area-card__item-body">{{ item.body }}</p>
+        {% if item.body %}<p class="area-card__item-body">{{ item.body }}</p>{% endif %}
       </div>
     </div>
     {% endfor %}
@@ -107,9 +107,10 @@
 </a>
 {% endmacro %}
 
-{% macro personaCard(number, headline, body) %}
+{% macro personaCard(number, headline, body, label="") %}
 <div class="persona-card">
   <p class="persona-card__number">{{ number }}</p>
+  {% if label %}<p class="persona-card__label">{{ label }}</p>{% endif %}
   <p class="persona-card__headline">{{ headline }}</p>
   <p class="persona-card__body">{{ body }}</p>
 </div>

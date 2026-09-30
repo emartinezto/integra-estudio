@@ -21,6 +21,31 @@
     @include layout-gap;
   }
 
+  // Cifras en tres columnas también en móvil (/cuerpo/)
+  &__stats--cols {
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: $bp-desktop - 1px) {
+      gap: 8px;
+
+      .card {
+        padding: 16px 12px;
+      }
+
+      .card.card--muted {
+        h3 {
+          font-size: 22px;
+          line-height: 1.2;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
   .quote-card,
   .card.card--muted {
     background: $c-marfil;

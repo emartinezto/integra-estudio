@@ -22,6 +22,14 @@
     color: $c-accent;
   }
 
+  &__label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $c-accent;
+  }
+
   &__headline {
     font-family: $font-body;
     font-size: 18px;
@@ -38,5 +46,25 @@
     line-height: 21px;
     letter-spacing: 0;
     color: $c-text;
+  }
+}
+
+// Home: el número ocupa su propia columna y el contenido va al lado
+.persona-cards-mobile--numbered .persona-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+  row-gap: 8px;
+  align-content: start;
+  padding: 24px;
+
+  > * {
+    grid-column: 2;
+  }
+
+  .persona-card__number {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    line-height: 1.2;
   }
 }
