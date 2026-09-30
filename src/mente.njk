@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: Mente
 description: "Orientación, apoyo psicológico y preparación de oposiciones con cercanía y método."
 ---
-{% from "macros/ui.njk" import button, sectionHead, card, pillar, quoteCard, opoCard, ctaBanner, mediaPlaceholder, breadcrumb, iconPin, iconGraduate, iconUsers, iconMindSpark, iconMeditate, iconFaceSmile, iconBookOpen, iconFolder %}
+{% from "macros/ui.njk" import button, sectionHead, card, pillar, quoteCard, opoCard, ctaBanner, mediaPlaceholder, breadcrumb, iconGraduate, iconUsers, iconMindSpark, iconMeditate, iconFaceSmile, iconBookOpen, iconFolder %}
 
 <div class="page-hero">
   {{ breadcrumb([{ label: "Mente" }]) }}
@@ -25,18 +25,10 @@ description: "Orientación, apoyo psicológico y preparación de oposiciones con
 <div class="container page-hero__media">
   <div class="media-feature">
     {{ mediaPlaceholder("Dos jóvenes estudiando juntas y sonriendo en una mesa con libros abiertos", "21 / 9", "/assets/images/mente-estudio.jpg", true) }}
-    <div class="media-feature__badge">
-      <span class="media-feature__badge-icon" aria-hidden="true">{{ iconPin() }}</span>
-      <span>Alcorcón 12, Parla · Madrid</span>
-    </div>
     <div class="media-feature__caption">
       <p class="eyebrow eyebrow--light">Espacio de escucha & acompañamiento</p>
       <p class="media-feature__caption-text">Un acompañamiento cercano, a tu ritmo.</p>
     </div>
-  </div>
-  <div class="media-feature__notes">
-    <p><span class="media-feature__dot" aria-hidden="true"></span>Acompañamiento 1:1 o grupos de máximo 6 personas</p>
-    <p><span class="media-feature__dot" aria-hidden="true"></span>Sin masificación: seguimiento continuo de tu ritmo vital</p>
   </div>
 </div>
 

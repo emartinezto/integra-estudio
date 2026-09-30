@@ -44,6 +44,18 @@
     }
   }
 
+  // Para fondos oscuros o fotográficos
+  &--outline-light {
+    background: transparent;
+    color: $c-marfil;
+    border: 1px solid rgba($c-marfil, 0.7);
+
+    &:hover {
+      background: rgba($c-marfil, 0.12);
+      border-color: $c-marfil;
+    }
+  }
+
   &--sm {
     padding: 10px 24px;
   }
