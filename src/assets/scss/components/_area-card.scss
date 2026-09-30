@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
@@ -73,6 +74,16 @@
     padding: 14px;
     border-radius: $radius-sm;
     background: $c-bg-alt;
+    color: inherit;
+
+    // Enlace a la sección del servicio en la página del pilar
+    &:is(a):active {
+      background: color.adjust($c-bg-alt, $lightness: -4%);
+    }
+  }
+
+  &__link {
+    align-self: flex-start;
   }
 
   &__check {

@@ -93,45 +93,47 @@ description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bi
   <div class="container">
     {{ sectionHead("Bases de nuestra práctica", "Los Tres Pilares", "Una atención cercana y personalizada, adaptada a ti, a tu ritmo y a lo que necesitas en cada momento.") }}
     <div class="stack">
-      {{ pillar("Pilar I", "Cuerpo", "Prevención · Fisioterapia · Recuperación", "Valoramos lo que necesitas y trabajamos contigo para entender el origen de tus molestias, tratar el dolor y ayudarte a recuperar el bienestar y la confianza en tu cuerpo.", "", "", "Fisioterapeuta atendiendo a una paciente en camilla", image="/assets/images/pilar-cuerpo.jpg") }}
-      {{ pillar("Pilar II", "Mente", "Orientación · Apoyo · Formación", "Te acompañamos en momentos de cambio, en tus procesos de formación y en aquellos momentos en los que necesitas parar, ordenar ideas y encontrar un poco más de claridad.", "", "", "Dos mujeres conversando en una sesión de acompañamiento", true, image="/assets/images/pilar-mente.jpg") }}
-      {{ pillar("Pilar III", "Movimiento", "Pilates", "A través de Pilates te acompañamos a conocer mejor tu cuerpo, ganar fuerza y volver a moverte con más libertad. Cada sesión se adapta a ti, a tu ritmo y a lo que necesitas en ese momento.", "", "", "Mujer practicando Pilates en reformer", image="/assets/images/pilar-movimiento.jpg") }}
+      {{ pillar("Pilar I", "Cuerpo", "Alivia el dolor y vuelve a confiar en tu cuerpo", "Valoramos lo que necesitas y trabajamos contigo para entender el origen de tus molestias, tratar el dolor y ayudarte a recuperar el bienestar y la confianza en tu cuerpo.", "", "", "Fisioterapeuta atendiendo a una paciente en camilla", image="/assets/images/pilar-cuerpo.jpg") }}
+      {{ pillar("Pilar II", "Mente", "Claridad para decidir y fuerza para avanzar", "Te acompañamos en momentos de cambio, en tus procesos de formación y en aquellos momentos en los que necesitas parar, ordenar ideas y encontrar un poco más de claridad.", "", "", "Dos mujeres conversando en una sesión de acompañamiento", true, image="/assets/images/pilar-mente.jpg") }}
+      {{ pillar("Pilar III", "Movimiento", "Fuerza, movilidad y conciencia de tu cuerpo", "A través de Pilates te acompañamos a conocer mejor tu cuerpo, ganar fuerza y volver a moverte con más libertad. Cada sesión se adapta a ti, a tu ritmo y a lo que necesitas en ese momento.", "", "", "Mujer practicando Pilates en reformer", image="/assets/images/pilar-movimiento.jpg") }}
     </div>
   </div>
 </section>
 
 <section class="section section--alt" id="areas-de-trabajo">
   <div class="container">
-    {{ sectionHead("Metodología aplicada", "Áreas de Trabajo", "Especialidades guiadas por profesionales sanitarios y docentes certificados.", "center") }}
+    {{ sectionHead("Servicios", "Qué hacemos en cada pilar", "Especialidades guiadas por profesionales sanitarios y docentes certificados.", "center") }}
 
+    {# Cada servicio enlaza a su sección dentro de la página del pilar. Cuando un
+       servicio tenga página propia, basta con cambiar su url aquí. #}
     {% set cuerpoItems = [
-      { title: "Prevención" },
-      { title: "Fisioterapia" },
-      { title: "Recuperación" }
+      { title: "Prevención", body: "Valoración de postura y hábitos del día a día", url: "/cuerpo/#prevencion" },
+      { title: "Fisioterapia", body: "Sesiones 1:1 de 60 minutos en cabina privada", url: "/cuerpo/#fisioterapia" },
+      { title: "Recuperación", body: "Readaptación tras una lesión o cirugía", url: "/cuerpo/#recuperacion" }
     ] %}
     {% set menteItems = [
-      { title: "Orientación" },
-      { title: "Apoyo" },
-      { title: "Formación específica", body: "Técnico de Educación Infantil · Magisterio · Auxiliar Administrativo" }
+      { title: "Orientación", body: "Decisiones, cambios y momentos de bloqueo", url: "/mente/#orientacion" },
+      { title: "Apoyo", body: "Acompañamiento psicológico cercano", url: "/mente/#apoyo" },
+      { title: "Formación específica", body: "Técnico de Educación Infantil · Magisterio · Auxiliar Administrativo", url: "/mente/#formacion" }
     ] %}
     {% set movimientoItems = [
-      { title: "Pilates (Suelo)" }
+      { title: "Pilates (Suelo)", body: "Grupos reducidos o sesiones individuales", url: "/movimiento/#pilates" }
     ] %}
 
     <div class="grid area-cards-mobile">
-      {{ areaCard(iconCuerpo(), "Cuerpo", cuerpoItems, "Sesiones individuales") }}
-      {{ areaCard(iconMente(), "Mente", menteItems, "Personal y formativo") }}
-      {{ areaCard(iconMovimiento(), "Movimiento", movimientoItems, "Grupos reducidos y 1:1", "Próximamente nuevas disciplinas conscientes") }}
+      {{ areaCard(iconCuerpo(), "Cuerpo", cuerpoItems, "Sesiones individuales", "", "/cuerpo/") }}
+      {{ areaCard(iconMente(), "Mente", menteItems, "Personal y formativo", "", "/mente/") }}
+      {{ areaCard(iconMovimiento(), "Movimiento", movimientoItems, "Grupos reducidos y 1:1", "Próximamente nuevas disciplinas conscientes", "/movimiento/") }}
     </div>
 
     {% set cuerpoRows = [
-      { label: "Prevención" },
-      { label: "Fisioterapia" },
-      { label: "Recuperación" }
+      { label: "Prevención", body: "Valoración de postura y hábitos del día a día" },
+      { label: "Fisioterapia", body: "Sesiones 1:1 de 60 minutos en cabina privada" },
+      { label: "Recuperación", body: "Readaptación tras una lesión o cirugía" }
     ] %}
     {% set menteRows = [
-      { label: "Orientación" },
-      { label: "Apoyo" },
+      { label: "Orientación", body: "Decisiones, cambios y momentos de bloqueo" },
+      { label: "Apoyo", body: "Acompañamiento psicológico cercano" },
       { group: "Formación específica", items: [
         { label: "Técnico de Educación Infantil" },
         { label: "Magisterio" },
@@ -139,7 +141,7 @@ description: "Cuidamos tu mente, preparamos tu cuerpo y damos movimiento a tu bi
       ] }
     ] %}
     {% set movimientoRows = [
-      { label: "Pilates (Suelo)" }
+      { label: "Pilates (Suelo)", body: "Grupos reducidos o sesiones individuales" }
     ] %}
 
     <div class="area-cards-desktop">

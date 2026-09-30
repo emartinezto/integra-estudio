@@ -7,21 +7,16 @@
   padding: 32px;
   background: $c-bg-soft;
   border-radius: $radius-lg;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.2s ease;
 
-  // Toda la tarjeta es un enlace al pilar
   &:hover {
     box-shadow: $shadow-md;
-    transform: translateY(-2px);
-
-    .area-list-card__head h3 {
-      color: $c-brand;
-    }
   }
 
-  &:focus-visible {
+  a:focus-visible {
     outline: 2px solid $c-brand;
-    outline-offset: 4px;
+    outline-offset: 2px;
+    border-radius: $radius-sm;
   }
 
   &__head {
@@ -34,7 +29,15 @@
       font-size: 18px;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      transition: color 0.2s ease;
+
+      a {
+        color: inherit;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $c-brand;
+        }
+      }
     }
   }
 
@@ -57,10 +60,48 @@
     margin-bottom: 8px;
   }
 
+  // Cada fila enlaza a su sección en la página del pilar
   &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     padding: 10px 0;
-    font-size: 15px;
     color: $c-heading;
+
+    & + & {
+      border-top: 1px solid $c-border;
+    }
+
+    .link-arrow__icon {
+      width: 10px;
+      height: 10px;
+      margin-left: 8px;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    &:is(a):hover {
+      color: $c-brand;
+
+      .link-arrow__icon {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+
+  &__row-label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    transition: color 0.2s ease;
+  }
+
+  &__row-body {
+    font-size: 13px;
+    line-height: 1.5;
+    color: $c-text-muted;
   }
 
   &__group-title {
@@ -83,6 +124,10 @@
     font-size: 12px;
     line-height: 21px;
     color: $c-text;
+
+    &:is(a):hover {
+      color: $c-brand;
+    }
   }
 
   &__note {
@@ -108,10 +153,17 @@
     }
   }
 
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 16px;
+  }
+
   &__tag {
     display: inline-flex;
-    align-self: flex-start;
-    margin-top: auto;
     padding: 6px 14px;
     border-radius: 999px;
     background: rgba($c-accent-sage, 0.1);

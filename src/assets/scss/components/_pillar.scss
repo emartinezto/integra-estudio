@@ -202,3 +202,8 @@
     padding: 0 48px 48px;
   }
 }
+
+// Al llegar desde un enlace a un servicio (/cuerpo/#prevencion…), que no quede bajo la cabecera
+.pillar[id] {
+  scroll-margin-top: 96px;
+}

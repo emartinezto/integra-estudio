@@ -50,7 +50,8 @@
 
 {% macro iconTrain() %}<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="2.5" width="12" height="10" rx="3" stroke="currentColor" stroke-width="1.2"/><path d="M4 9h12M7 12.5 5 16M13 12.5l2 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="7.2" cy="6.5" r=".9" fill="currentColor"/><circle cx="12.8" cy="6.5" r=".9" fill="currentColor"/></svg>{% endmacro %}
 
-{% macro areaCard(icon, title, items, tag, note) %}
+{# Tarjeta de pilar en móvil. Cada item puede enlazar a su sección (item.url) #}
+{% macro areaCard(icon, title, items, tag, note, url) %}
 <div class="area-card">
   <div class="area-card__head">
     <span class="area-card__icon" aria-hidden="true">{{ icon }}</span>
@@ -58,13 +59,13 @@
   </div>
   <div class="area-card__list">
     {% for item in items %}
-    <div class="area-card__item">
+    {% if item.url %}<a class="area-card__item" href="{{ item.url }}">{% else %}<div class="area-card__item">{% endif %}
       <span class="area-card__check" aria-hidden="true">{{ iconCheck() }}</span>
       <div>
         <p class="area-card__item-title">{{ item.title }}</p>
         {% if item.body %}<p class="area-card__item-body">{{ item.body }}</p>{% endif %}
       </div>
-    </div>
+    {% if item.url %}</a>{% else %}</div>{% endif %}
     {% endfor %}
   </div>
   {% if note %}
@@ -73,14 +74,17 @@
     {{ note }}
   </p>
   {% endif %}
+  {% if url %}<a class="link-arrow area-card__link" href="{{ url }}">Ver {{ title }}{{ iconArrowRight() }}</a>{% endif %}
   {% if tag %}<span class="area-card__tag">{{ tag }}</span>{% endif %}
 </div>
 {% endmacro %}
 
+{# Tarjeta de pilar en escritorio. Cada fila enlaza a su sección en la página del
+   pilar (row.url); el título y el pie enlazan a la página del pilar (url) #}
 {% macro areaListCard(icon, title, rows, tag, note, url) %}
-<a class="area-list-card" href="{{ url }}">
+<div class="area-list-card">
   <div class="area-list-card__head">
-    <h3>{{ title }}</h3>
+    <h3>{% if url %}<a href="{{ url }}">{{ title }}</a>{% else %}{{ title }}{% endif %}</h3>
     <span class="area-list-card__icon" aria-hidden="true">{{ icon }}</span>
   </div>
   <div class="area-list-card__rows">
@@ -89,11 +93,14 @@
         <p class="area-list-card__group-title">{{ row.group }}</p>
         <div class="area-list-card__group-rows">
           {% for sub in row.items %}
-          <p class="area-list-card__group-row">{{ sub.label }}</p>
+          {% if sub.url %}<a class="area-list-card__group-row" href="{{ sub.url }}">{{ sub.label }}</a>{% else %}<p class="area-list-card__group-row">{{ sub.label }}</p>{% endif %}
           {% endfor %}
         </div>
       {% else %}
-        <p class="area-list-card__row">{{ row.label }}</p>
+        {% if row.url %}<a class="area-list-card__row" href="{{ row.url }}">{% else %}<div class="area-list-card__row">{% endif %}
+          <span class="area-list-card__row-label">{{ row.label }}{% if row.url %}{{ iconArrowRight() }}{% endif %}</span>
+          {% if row.body %}<span class="area-list-card__row-body">{{ row.body }}</span>{% endif %}
+        {% if row.url %}</a>{% else %}</div>{% endif %}
       {% endif %}
     {% endfor %}
   </div>
@@ -103,8 +110,11 @@
     <span class="area-list-card__note-icon" aria-hidden="true">{{ iconClock() }}</span>
   </div>
   {% endif %}
-  {% if tag %}<span class="area-list-card__tag">{{ tag }}</span>{% endif %}
-</a>
+  <div class="area-list-card__footer">
+    {% if tag %}<span class="area-list-card__tag">{{ tag }}</span>{% endif %}
+    {% if url %}<a class="link-arrow" href="{{ url }}">Ver {{ title }}{{ iconArrowRight() }}</a>{% endif %}
+  </div>
+</div>
 {% endmacro %}
 
 {% macro personaCard(number, headline, body, label="") %}
@@ -158,8 +168,8 @@
 </div>
 {% endmacro %}
 
-{% macro pillar(tag, title, subtitle, body, ctaText, ctaUrl, imageLabel, reverse=false, mediaTag="", points=[], image="") %}
-<div class="pillar {% if reverse %}pillar--reverse{% endif %}">
+{% macro pillar(tag, title, subtitle, body, ctaText, ctaUrl, imageLabel, reverse=false, mediaTag="", points=[], image="", id="") %}
+<div class="pillar {% if reverse %}pillar--reverse{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <div class="pillar__media">
     {{ mediaPlaceholder(imageLabel, "4 / 3", image) }}
     {% if mediaTag or tag %}<span class="pillar__tag pillar__tag--floating">{{ mediaTag or tag }}</span>{% endif %}
