@@ -80,7 +80,7 @@ $slides-total: $slide-count * $slide-seconds;
 
   &__title {
     margin-top: 12px;
-    font-size: clamp(46px, 12vw, 64px);
+    font-size: clamp(36px, 10vw, 44px);
     line-height: 1.02;
     letter-spacing: -0.025em;
     color: $c-marfil;
@@ -100,7 +100,7 @@ $slides-total: $slide-count * $slide-seconds;
   &__lead {
     margin-top: 24px;
     max-width: 32rem;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.65;
     color: rgba($c-marfil, 0.9);
 

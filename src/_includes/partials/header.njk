@@ -40,7 +40,7 @@
     <nav class="mobile-nav__body" aria-label="Navegación móvil">
       <ul>
         {% for item in site.nav %}
-        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        <li><a href="{{ item.url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
         {% endfor %}
       </ul>
     </nav>
