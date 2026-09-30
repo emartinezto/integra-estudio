@@ -50,7 +50,7 @@ description: "Reserva tu primera sesión en Integra Studio, en Parla, Madrid."
       </div>
     </div>
 
-    <form class="contact-form" action="#" method="post">
+    <form class="contact-form" id="formulario" action="/api/contacto.php" method="post" data-contact-form>
       <div class="contact-form__header">
         <p class="eyebrow">Formulario de contacto</p>
         <h2>Escríbenos tu consulta</h2>
@@ -89,6 +89,12 @@ description: "Reserva tu primera sesión en Integra Studio, en Parla, Madrid."
         <textarea id="message" name="message" rows="4" placeholder="Cuéntanos brevemente en qué podemos ayudarte o tu situación actual…" required></textarea>
       </div>
 
+      {# Campo trampa antispam: oculto para las personas, los robots lo rellenan #}
+      <div class="contact-form__trap" aria-hidden="true">
+        <label for="website">No rellenes este campo</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
       <label class="contact-form__check">
         <input type="checkbox" name="consent" required>
         <span>Acepto la <a href="/privacidad/">política de privacidad</a> y el tratamiento consciente de mis datos personales según las directrices del RGPD.</span>
@@ -101,7 +107,7 @@ description: "Reserva tu primera sesión en Integra Studio, en Parla, Madrid."
         Tus datos son tratados con estricta confidencialidad médica y profesional.
       </p>
 
-      <p class="contact-form__note">Este formulario aún no está conectado a ningún servicio de envío: hay que enlazarlo con tu proveedor de email o formularios antes de publicarlo.</p>
+      <p class="contact-form__status" data-form-status role="status" hidden></p>
     </form>
   </div>
 

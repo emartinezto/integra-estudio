@@ -16,8 +16,8 @@ module.exports = {
     registroMercantil: "", // solo sociedades: "Registro Mercantil de Madrid, Tomo X, Folio X, Hoja M-X"
     registroSanitario: "[CS-XXXX]", // n.º en el Registro de Centros Sanitarios de la Comunidad de Madrid
     dpd: "", // Delegado de Protección de Datos: "Nombre — correo@dominio.es"
-    hosting: "[Proveedor de alojamiento web]",
-    formularios: "[Proveedor de correo y formularios]",
+    hosting: "SW Hosting (SW Panel)",
+    formularios: "El formulario se procesa en nuestro propio servidor (SW Hosting) y nos llega por correo electrónico a través de [Proveedor de correo]",
     conservacion: "un año",
     ultimaActualizacion: "30 de septiembre de 2026",
   },

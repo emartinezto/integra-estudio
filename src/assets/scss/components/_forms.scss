@@ -39,6 +39,41 @@
     resize: none;
   }
 
+  // Campo trampa antispam: fuera de la vista pero no display:none (algunos robots lo detectan)
+  &__trap {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  &__status {
+    padding: 12px 14px;
+    border-radius: $radius-sm;
+    font-size: 14px;
+    max-width: none;
+
+    &[hidden] {
+      display: none;
+    }
+
+    &--ok {
+      background: rgba($c-verde, 0.15);
+      color: $c-heading;
+    }
+
+    &--error {
+      background: rgba($c-marron, 0.1);
+      color: $c-marron;
+    }
+  }
+
+  button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
   &__note {
     font-size: 12px;
     color: $c-text-muted;
